@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
+    <title>Zoo </title>
 </head>
 <body>
-Hello World
-<script>fetch( '/M_133_Projektarbeit_Zoo_war_exploded/api/hello-world').then(x => console.log(x.body.getReader().toString()));</script>
+Zoo
+<script>fetch( '/M_133_Projektarbeit_Zoo_war_exploded/zoo/hello-world').then(response => response.json())
+    .then(data => console.log(data));</script>
 </body>
 </html>
