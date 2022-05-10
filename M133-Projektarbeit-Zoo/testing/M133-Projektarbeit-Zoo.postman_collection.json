@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "df6cd96c-e429-4df6-882b-7618aa2f16a7",
+		"name": "M133-Projektarbeit-Zoo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test TestService with Config",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/api/hello-world/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+						"api",
+						"hello-world",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test hello-world with HelloApplication",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/test/test/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+						"resource",
+						"test",
+						"test",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
