@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dev.muetzilla</groupId>
-    <artifactId>M-133-Projektarbeit-Zoo</artifactId>
+    <artifactId>M133-Projektarbeit-Zoo</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>M-133-Projektarbeit-Zoo</name>
+    <name>M133-Projektarbeit-Zoo</name>
     <packaging>war</packaging>
 
     <properties>
@@ -19,9 +19,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>9.1.0</version>
+            <groupId>jakarta.ws.rs</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+            <version>3.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
