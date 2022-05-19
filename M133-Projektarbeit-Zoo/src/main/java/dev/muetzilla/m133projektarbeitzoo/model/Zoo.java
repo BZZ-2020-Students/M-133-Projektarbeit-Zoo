@@ -15,6 +15,10 @@ public class Zoo {
         this.zooName = zooName;
         this.gehege = gehege;
     }
+    public Zoo(String zooUUID, String zooName){
+        this.zooUUID = zooUUID;
+        this.zooName = zooName;
+    }
     public String getZooUUID() {
         return zooUUID;
     }

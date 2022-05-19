@@ -6,5 +6,5 @@ public enum Lebensraum {
     OZEAN,
     MISCHWALD,
     TUNDRA,
-    SEE,
+    SEE
 }
