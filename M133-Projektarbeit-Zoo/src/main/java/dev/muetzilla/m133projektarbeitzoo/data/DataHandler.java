@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import dev.muetzilla.m133projektarbeitzoo.model.Gehege;
 import dev.muetzilla.m133projektarbeitzoo.model.Tier;
 import dev.muetzilla.m133projektarbeitzoo.model.Zoo;
+import dev.muetzilla.m133projektarbeitzoo.service.Config;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -28,10 +29,12 @@ public class DataHandler {
      * private constructor defeats instantiation
      */
     private DataHandler() {
-        setPublisherList(new ArrayList<>());
-        readPublisherJSON();
-        setBookList(new ArrayList<>());
-        readBookJSON();
+        setZooList(new ArrayList<>());
+        readZooJSON();
+        setGehegeList(new ArrayList<>());
+        readGehegeJSON();
+        setTierList(new ArrayList<>());
+        readTierJSON();
     }
 
     /**
@@ -49,52 +52,67 @@ public class DataHandler {
      * reads all books
      * @return list of books
      */
-    public List<Book> readAllBooks() {
-        return getBookList();
+    public List<Zoo> readAllZoos() {
+        return getZooList();
     }
 
     /**
-     * reads a book by its uuid
-     * @param bookUUID
-     * @return the Book (null=not found)
+     * reads a zoo by its uuid
+     * @param zooUUID
+     * @return the Zoo (null=not found)
      */
-    public Book readBookByUUID(String bookUUID) {
-        Book book = null;
-        for (Book entry : getBookList()) {
-            if (entry.getBookUUID().equals(bookUUID)) {
-                book = entry;
+    public Zoo readZooByUUID(String zooUUID) {
+        Zoo zoo = null;
+        for (Zoo entry : getZooList()) {
+            if (entry.getZooUUID().equals(zooUUID)) {
+                zoo = entry;
             }
         }
-        return book;
+        return zoo;
+    }
+
+    /**
+     * reads a gehege by its uuid
+     * @param gehegeUUID
+     * @return the Gehege (null=not found)
+     */
+    public Gehege readGehegeByUUID(String gehegeUUID) {
+        Gehege gehege = null;
+        for (Gehege entry : getGehegeList()) {
+            if (entry.getGehegeUUID().equals(gehegeUUID)) {
+                gehege = entry;
+            }
+        }
+        return gehege;
     }
 
     /**
      * inserts a new book into the bookList
      *
-     * @param book the book to be saved
+     * @param zoo the book to be saved
      */
-    public void insertBook(Book book) {
-        getBookList().add(book);
-        writeBookJSON();
+    public void insertZoo(Zoo zoo) {
+        getZooList().add(zoo);
+        writeZooJSON();
     }
 
     /**
      * updates the bookList
      */
-    public void updateBook() {
-        writeBookJSON();
+    public void upadteZoo() {
+        writeZooJSON();
     }
 
     /**
      * deletes a book identified by the bookUUID
-     * @param bookUUID  the key
+     * @param zooUUID  the key
      * @return  success=true/false
      */
-    public boolean deleteBook(String bookUUID) {
-        Book book = readBookByUUID(bookUUID);
-        if (book != null) {
-            getBookList().remove(book);
-            writeBookJSON();
+    public boolean deleteZoo(String zooUUID) {
+        Zoo zoo = readZooByUUID(zooUUID);
+        if (zoo != null) {
+            getZooList().remove(zoo);
+            writeZooJSON();
             return true;
         } else {
             return false;
@@ -105,52 +123,66 @@ public class DataHandler {
      * reads all publishers
      * @return list of books
      */
-    public List<Publisher> readAllPublishers() {
-        return publisherList;
+    public List<Gehege> readAllGehege() {
+        return gehegeList;
     }
 
     /**
      * reads a publisher by its uuid
-     * @param publisherUUID
+     * @param tierUUID
      * @return the Publisher (null=not found)
      */
-    public Publisher readPublisherByUUID(String publisherUUID) {
-        Publisher publisher = null;
-        for (Publisher entry : getPublisherList()) {
-            if (entry.getPublisherUUID().equals(publisherUUID)) {
-                publisher = entry;
+    public Tier readTierByUUID(String tierUUID) {
+        Tier tier = null;
+        for (Tier entry : getTierList()) {
+            if (entry.getTierUUID().equals(tierUUID)) {
+                tier = entry;
             }
         }
-        return publisher;
+        return tier;
     }
 
     /**
      * inserts a new publisher into the bookList
      *
-     * @param publisher the publisher to be saved
+     * @param gehege the publisher to be saved
      */
-    public void insertPublisher(Publisher publisher) {
-        getPublisherList().add(publisher);
-        writePublisherJSON();
+    public void insertGehege(Gehege gehege) {
+        getGehegeList().add(gehege);
+        writeGehegeJSON();
     }
 
     /**
      * updates the publisherList
      */
-    public void updatePublisher() {
-        writePublisherJSON();
+    public void updateGehege() {
+        writeGehegeJSON();
+    }
+
+    /**
+     * updates the publisherList
+     */
+    public void updateZoo() {
+        writeZooJSON();
+    }
+
+    /**
+     * updates the publisherList
+     */
+    public void updateTier() {
+        writeTierJSON();
     }
 
     /**
      * deletes a publisher identified by the publisherUUID
-     * @param publisherUUID  the key
+     * @param gehegeUUID  the key
      * @return  success=true/false
      */
-    public boolean deletePublisher(String publisherUUID) {
-        Publisher publisher = readPublisherByUUID(publisherUUID);
+    public boolean deleteGehege(String gehegeUUID) {
+        Gehege publisher = readGehegeByUUID(gehegeUUID);
         if (publisher != null) {
-            getPublisherList().remove(publisher);
-            writePublisherJSON();
+            getGehegeList().remove(publisher);
+            writeGehegeJSON();
             return true;
         } else {
             return false;
@@ -160,16 +192,16 @@ public class DataHandler {
     /**
      * reads the books from the JSON-file
      */
-    private void readBookJSON() {
+    private void readTierJSON() {
         try {
-            String path = Config.getProperty("bookJSON");
+            String path = Config.getProperty("tierJSON");
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(path)
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Book[] books = objectMapper.readValue(jsonData, Book[].class);
-            for (Book book : books) {
-                getBookList().add(book);
+            Tier[] tiere = objectMapper.readValue(jsonData, Tier[].class);
+            for (Tier tier : tiere) {
+                getTierList().add(tier);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -179,17 +211,56 @@ public class DataHandler {
     /**
      * writes the bookList to the JSON-file
      */
-    private void writeBookJSON() {
+    private void writeTierJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String bookPath = Config.getProperty("bookJSON");
+        String bookPath = Config.getProperty("tierJSON");
         try {
             fileOutputStream = new FileOutputStream(bookPath);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getBookList());
+            objectWriter.writeValue(fileWriter, getTierList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
+    /**
+     * reads the books from the JSON-file
+     */
+    private void readZooJSON() {
+        try {
+            String path = Config.getProperty("zooJSON");
+            byte[] jsonData = Files.readAllBytes(
+                    Paths.get(path)
+            );
+            ObjectMapper objectMapper = new ObjectMapper();
+            Zoo[] zoos = objectMapper.readValue(jsonData, Zoo[].class);
+            for (Zoo zoo : zoos) {
+                getZooList().add(zoo);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * writes the bookList to the JSON-file
+     */
+    private void writeZooJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("zooJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getZooList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -198,17 +269,17 @@ public class DataHandler {
     /**
      * reads the publishers from the JSON-file
      */
-    private void readPublisherJSON() {
+    private void readGehegeJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
-                            Config.getProperty("publisherJSON")
+                            Config.getProperty("gehegeJSON")
                     )
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Publisher[] publishers = objectMapper.readValue(jsonData, Publisher[].class);
-            for (Publisher publisher : publishers) {
-                getPublisherList().add(publisher);
+            Gehege[] geheges = objectMapper.readValue(jsonData, Gehege[].class);
+            for (Gehege gehege : geheges) {
+                getGehegeList().add(gehege);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -218,17 +289,17 @@ public class DataHandler {
     /**
      * writes the publisherList to the JSON-file
      */
-    private void writePublisherJSON() {
+    private void writeGehegeJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String bookPath = Config.getProperty("publisherJSON");
+        String bookPath = Config.getProperty("gehegeJSON");
         try {
             fileOutputStream = new FileOutputStream(bookPath);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getBookList());
+            objectWriter.writeValue(fileWriter, getGehegeList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -287,7 +358,7 @@ public class DataHandler {
     /**
      * sets tierlist
      *
-     * @param tierlist the value to set
+     * @param tierList the value to set
      */
 
     private void setTierList(List<Tier> tierList) {

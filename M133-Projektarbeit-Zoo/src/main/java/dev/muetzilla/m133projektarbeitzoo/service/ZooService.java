@@ -1,5 +1,6 @@
 package dev.muetzilla.m133projektarbeitzoo.service;
 
+import dev.muetzilla.m133projektarbeitzoo.data.DataHandler;
 import dev.muetzilla.m133projektarbeitzoo.model.Zoo;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -11,8 +12,8 @@ import jakarta.ws.rs.core.Response;
 import java.util.List;
 
 
-@Path("book")
-public class BookService {
+@Path("zoo")
+public class ZooService {
 
     /**
      * reads a list of all books
@@ -21,33 +22,33 @@ public class BookService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listBooks() {
-        List<Book> bookList = DataHandler.getInstance().readAllBooks();
+    public Response listZoos() {
+        List<Zoo> zooList = DataHandler.getInstance().readAllZoos();
         return Response
                 .status(200)
-                .entity(bookList)
+                .entity(zooList)
                 .build();
     }
 
     /**
-     * reads a book identified by the uuid
-     * @param bookUUID
-     * @return book
+     * reads a zoo identified by the uuid
+     * @param zooUUID
+     * @return zoo
      */
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response readBook(
-            @QueryParam("uuid") String bookUUID
+    public Response readZoo(
+            @QueryParam("uuid") String zooUUID
     ) {
         int httpStatus = 200;
-        Book book = DataHandler.getInstance().readBookByUUID(bookUUID);
-        if (book == null) {
+        Zoo zoo = DataHandler.getInstance().readZooByUUID(zooUUID);
+        if (zoo == null) {
             httpStatus = 410;
         }
         return Response
                 .status(httpStatus)
-                .entity(book)
+                .entity(zoo)
                 .build();
     }
 }
