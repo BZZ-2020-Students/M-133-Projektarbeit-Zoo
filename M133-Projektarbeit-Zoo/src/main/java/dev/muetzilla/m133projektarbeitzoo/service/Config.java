@@ -17,7 +17,7 @@ import java.util.Set;
 @ApplicationPath("/resource")
 
 public class Config extends Application {
-    private static final String PROPERTIES_PATH = "C:\\Github\\M-133-Projektarbeit-Zoo\\testing\\data\\projektarbeit.properties";
+    private static final String PROPERTIES_PATH = "C:\\Github\\M-133-Projektarbeit-Zoo\\testing\\data\\projektarbeitZoo.properties";
     private static Properties properties = null;
 
     /**
@@ -28,7 +28,9 @@ public class Config extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet<Class<?>> providers = new HashSet<>();
-        providers.add(TestService.class);
+        providers.add(ZooService.class);
+        //providers.add(TierService.class);
+       // providers.add(GehegeService.class);
         return providers;
     }
 

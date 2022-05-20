@@ -1,5 +1,7 @@
 package dev.muetzilla.m133projektarbeitzoo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -8,25 +10,28 @@ public class Tier {
     private String name;
     private LocalDate geburtsdatum;
     private Integer anzahlBeine;
-    private Character Geschelcht;
+    private Character geschelcht;
     private ArrayList<String> futter;
     private GehegeArt gehegeArt;
     private Lebensraum lebensraum;
+    @JsonIgnore
+    private Gehege gehege;
 
 
     public Tier(){
 
     }
 
-    public Tier(String tierUUID, String name, LocalDate geburtsdatum, Integer anzahlBeine, Character geschelcht, ArrayList<String> futter, GehegeArt gehegeArt, Lebensraum lebensraum) {
+    public Tier(String tierUUID, String name, LocalDate geburtsdatum, Integer anzahlBeine, Character geschelcht, ArrayList<String> futter, GehegeArt gehegeArt, Lebensraum lebensraum, Gehege gehege) {
         this.tierUUID = tierUUID;
         this.name = name;
         this.geburtsdatum = geburtsdatum;
         this.anzahlBeine = anzahlBeine;
-        Geschelcht = geschelcht;
+        this.geschelcht = geschelcht;
         this.futter = futter;
         this.gehegeArt = gehegeArt;
         this.lebensraum = lebensraum;
+        this.gehege = gehege;
     }
 
     public String getTierUUID() {
@@ -62,11 +67,11 @@ public class Tier {
     }
 
     public Character getGeschelcht() {
-        return Geschelcht;
+        return geschelcht;
     }
 
     public void setGeschelcht(Character geschelcht) {
-        Geschelcht = geschelcht;
+        geschelcht = geschelcht;
     }
 
     public ArrayList<String> getFutter() {

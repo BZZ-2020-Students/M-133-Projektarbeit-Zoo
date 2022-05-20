@@ -1,5 +1,7 @@
 package dev.muetzilla.m133projektarbeitzoo.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 
 public class Gehege {
@@ -9,18 +11,30 @@ public class Gehege {
     private ArrayList<Tier> tiere;
     private GehegeArt gehegeArt;
 
+    @JsonIgnore
+    private Zoo zoo;
+
 
 
     public Gehege(){
 
     }
 
-    public Gehege(String gehegeUUID, Integer laenge, Integer breite, ArrayList<Tier> tiere, GehegeArt gehegeArt) {
+    public Gehege(String gehegeUUID, Integer laenge, Integer breite, ArrayList<Tier> tiere, GehegeArt gehegeArt, Zoo zoo) {
         this.gehegeUUID = gehegeUUID;
         this.laenge = laenge;
         this.breite = breite;
         this.tiere = tiere;
         this.gehegeArt = gehegeArt;
+        this.zoo = zoo;
+    }
+
+    public Zoo getZoo() {
+        return zoo;
+    }
+
+    public void setZoo(Zoo zoo) {
+        this.zoo = zoo;
     }
 
     public String getGehegeUUID() {
