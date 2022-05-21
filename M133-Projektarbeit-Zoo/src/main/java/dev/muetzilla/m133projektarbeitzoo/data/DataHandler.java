@@ -277,8 +277,8 @@ public class DataHandler {
                     )
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Gehege[] geheges = objectMapper.readValue(jsonData, Gehege[].class);
-            for (Gehege gehege : geheges) {
+            Gehege[] gehegeArray = objectMapper.readValue(jsonData, Gehege[].class);
+            for (Gehege gehege : gehegeArray) {
                 getGehegeList().add(gehege);
             }
         } catch (IOException ex) {

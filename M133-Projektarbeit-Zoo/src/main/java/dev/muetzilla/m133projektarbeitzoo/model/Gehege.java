@@ -1,6 +1,7 @@
 package dev.muetzilla.m133projektarbeitzoo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import dev.muetzilla.m133projektarbeitzoo.data.DataHandler;
 
 import java.util.ArrayList;
 
@@ -8,8 +9,9 @@ public class Gehege {
     private String gehegeUUID;
     private Integer laenge;
     private Integer breite;
+    private String gehegeArt;
+
     private ArrayList<Tier> tiere;
-    private GehegeArt gehegeArt;
 
     @JsonIgnore
     private Zoo zoo;
@@ -20,14 +22,15 @@ public class Gehege {
 
     }
 
-    public Gehege(String gehegeUUID, Integer laenge, Integer breite, ArrayList<Tier> tiere, GehegeArt gehegeArt, Zoo zoo) {
+    public Gehege(String gehegeUUID, Integer laenge, Integer breite, String gehegeArt, ArrayList<Tier> tiere,  Zoo zoo) {
         this.gehegeUUID = gehegeUUID;
         this.laenge = laenge;
         this.breite = breite;
-        this.tiere = tiere;
         this.gehegeArt = gehegeArt;
+        this.tiere = tiere;
         this.zoo = zoo;
     }
+
 
     public Zoo getZoo() {
         return zoo;
@@ -69,11 +72,32 @@ public class Gehege {
         this.tiere = tiere;
     }
 
-    public GehegeArt getGehegeArt() {
+    public String getGehegeArt() {
         return gehegeArt;
     }
 
-    public void setGehegeArt(GehegeArt gehegeArt) {
+    public void setGehegeArt(String gehegeArt) {
         this.gehegeArt = gehegeArt;
+    }
+
+
+    /**
+     * gets the publisherUUID from the Publisher-object
+     * @return
+     */
+    public String getZooUUID() {
+        return getZoo().getZooUUID();
+    }
+
+    /**
+     * creates a Publisher-object without the booklist
+     * @param zooUUID
+     */
+    public void setZooUUID(String zooUUID) {
+        setZoo(new Zoo());
+        Zoo zoo = DataHandler.getInstance().readZooByUUID(zooUUID);
+        getZoo().setZooUUID(zooUUID);
+        getZoo().setZooName(zoo.getZooName());
+
     }
 }
