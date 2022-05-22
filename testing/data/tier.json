@@ -1,0 +1,38 @@
+[
+  {
+    "tierUUID": "f369d306-d8f2-11ec-9d64-0242ac120002",
+    "name":"Max der Tiger",
+    "geburtsdatum": "2015-07-12",
+    "anzahlBeine": 4,
+    "geschlecht": "M",
+    "gehegeArt": "Trockengehege",
+    "lebensraum": "Savanne",
+    "futter": ["Fleisch", "Fisch"],
+    "gattung" : "Tiger",
+    "gehegeUUID" : "9b45446c-d8ed-11ec-9d64-0242ac120002"
+  },
+  {
+    "tierUUID": "e5a3c7fd-5440-4ce8-90ad-30379665fc2c",
+    "name":"Michelle die Giraffe",
+    "geburtsdatum": "2012-12-09",
+    "anzahlBeine": 4,
+    "geschlecht": "W",
+    "gehegeArt": "Trockengehege",
+    "lebensraum": "Savanne",
+    "futter": ["Blätter", "Äste"],
+    "gattung" : "Giraffe",
+    "gehegeUUID" : "d93e2f78-d923-11ec-9d64-0242ac120002"
+  },
+  {
+    "tierUUID": "f3515080-d9ea-11ec-9d64-0242ac120002",
+    "name":"Peter der Pinguin",
+    "geburtsdatum": "2020-11-11",
+    "anzahlBeine": 2,
+    "geschlecht": "M",
+    "gehegeArt": "Abgedecktesgehege",
+    "lebensraum": "Savanne",
+    "futter": ["Fisch"],
+    "gattung" : "Pinguin",
+    "gehegeUUID" : "a022a586-d8ef-11ec-9d64-0242ac120002"
+  }
+]

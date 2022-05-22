@@ -124,7 +124,15 @@ public class DataHandler {
      * @return list of books
      */
     public List<Gehege> readAllGehege() {
-        return gehegeList;
+        return getGehegeList();
+    }
+
+    /**
+     * reads all publishers
+     * @return list of books
+     */
+    public List<Tier> readAllTiere() {
+        return getTierList();
     }
 
     /**
@@ -179,10 +187,26 @@ public class DataHandler {
      * @return  success=true/false
      */
     public boolean deleteGehege(String gehegeUUID) {
-        Gehege publisher = readGehegeByUUID(gehegeUUID);
-        if (publisher != null) {
-            getGehegeList().remove(publisher);
+        Gehege gehege = readGehegeByUUID(gehegeUUID);
+        if (gehege != null) {
+            getGehegeList().remove(gehege);
             writeGehegeJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * deletes a publisher identified by the publisherUUID
+     * @param tierUUID  the key
+     * @return  success=true/false
+     */
+    public boolean deleteTier(String tierUUID) {
+        Tier tier = readTierByUUID(tierUUID);
+        if (tier != null) {
+            getGehegeList().remove(tier);
+            writeTierJSON();
             return true;
         } else {
             return false;
@@ -202,6 +226,7 @@ public class DataHandler {
             Tier[] tiere = objectMapper.readValue(jsonData, Tier[].class);
             for (Tier tier : tiere) {
                 getTierList().add(tier);
+                System.out.println(tier);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -280,6 +305,7 @@ public class DataHandler {
             Gehege[] gehegeArray = objectMapper.readValue(jsonData, Gehege[].class);
             for (Gehege gehege : gehegeArray) {
                 getGehegeList().add(gehege);
+                System.out.println(gehege);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
