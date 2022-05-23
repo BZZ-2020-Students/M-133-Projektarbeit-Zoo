@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "df6cd96c-e429-4df6-882b-7618aa2f16a7",
+		"_postman_id": "bef27f0a-08a1-4872-8256-009ec8acbb20",
 		"name": "M133-Projektarbeit-Zoo",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20897198"
 	},
 	"item": [
 		{
@@ -45,6 +46,368 @@
 						"test",
 						"test",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Zoo List - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test Status whole Zoo List Success\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/list/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+						"resource",
+						"zoo",
+						"list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Single Zoo - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test Status Single Zoo Success\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=fe18f574-d803-11ec-9d64-0242ac120002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+						"resource",
+						"zoo",
+						"read"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "fe18f574-d803-11ec-9d64-0242ac120002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Single Gehege - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test Status Single Gehege Success\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/gehege/read?uuid=9b45446c-d8ed-11ec-9d64-0242ac120002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+						"resource",
+						"gehege",
+						"read"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "9b45446c-d8ed-11ec-9d64-0242ac120002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test  Gehege List - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test Status whole Gehege List Success\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/gehege/list/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+						"resource",
+						"gehege",
+						"list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Tier List - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test\"Test Status whole Tier List Success\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/tier/list/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+						"resource",
+						"tier",
+						"list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Single Tier - Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test Status Single Tier Success\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/tier/read?uuid=f369d306-d8f2-11ec-9d64-0242ac120002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+						"resource",
+						"tier",
+						"read"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "f369d306-d8f2-11ec-9d64-0242ac120002"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Single Tier - Fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test Status Single Tier Fail\", function () {\r",
+							"    pm.response.to.have.status(410);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/tier/read?uuid=test1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+						"resource",
+						"tier",
+						"read"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "test1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Single Gehege - Fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test Status Single Gehege Fail\", function () {\r",
+							"    pm.response.to.have.status(410);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/gehege/read?uuid=test1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+						"resource",
+						"gehege",
+						"read"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "test1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Single Zoo - Fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Test Status Single Gehege Fail\", function () {\r",
+							"    pm.response.to.have.status(410);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=test1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+						"resource",
+						"zoo",
+						"read"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "test1234"
+						}
 					]
 				}
 			},
