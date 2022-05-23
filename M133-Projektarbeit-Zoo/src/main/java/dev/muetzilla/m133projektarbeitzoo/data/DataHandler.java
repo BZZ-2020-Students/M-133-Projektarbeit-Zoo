@@ -17,7 +17,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * reads and writes the data in the JSON-files
+ * @Author: Moritz
+ * @Date: 2022-05-16
+ * @Since 1.0.0-SNAPSHOT
+ *
+ * @Description: Liest Daten aus der JSON Datei aus und bereitet diese für die Service vor.
+ *
  */
 public class DataHandler {
     private static DataHandler instance = null;
@@ -38,8 +43,7 @@ public class DataHandler {
     }
 
     /**
-     * gets the only instance of this class
-     * @return
+     * @return Instanz des DataHandlers
      */
     public static DataHandler getInstance() {
         if (instance == null)
@@ -49,17 +53,32 @@ public class DataHandler {
 
 
     /**
-     * reads all books
-     * @return list of books
+     * @return Liste von Zoos
      */
     public List<Zoo> readAllZoos() {
         return getZooList();
     }
 
+
     /**
-     * reads a zoo by its uuid
-     * @param zooUUID
-     * @return the Zoo (null=not found)
+     * @return Liste von Gehegen
+     */
+    public List<Gehege> readAllGehege() {
+        return getGehegeList();
+    }
+
+    /**
+     * @return Liste von Tieren
+     */
+    public List<Tier> readAllTiere() {
+        return getTierList();
+    }
+
+
+
+    /**
+     * @param zooUUID die UUID des Zoos
+     * @return den Zoo (null=not found)
      */
     public Zoo readZooByUUID(String zooUUID) {
         Zoo zoo = null;
@@ -72,24 +91,8 @@ public class DataHandler {
     }
 
     /**
-     * reads a gehege by its uuid
-     * @param gehegeUUID
-     * @return the Gehege (null=not found)
-     */
-    public Gehege readGehegeByUUID(String gehegeUUID) {
-        Gehege gehege = null;
-        for (Gehege entry : getGehegeList()) {
-            if (entry.getGehegeUUID().equals(gehegeUUID)) {
-                gehege = entry;
-            }
-        }
-        return gehege;
-    }
-
-    /**
-     * inserts a new book into the bookList
-     *
-     * @param zoo the book to be saved
+     * Fügt einen neuen Zoo hinzu
+     * @param zoo der neue Zoo
      */
     public void insertZoo(Zoo zoo) {
         getZooList().add(zoo);
@@ -97,15 +100,14 @@ public class DataHandler {
     }
 
     /**
-     * updates the bookList
+     * Die Liste der Zoos updaten
      */
     public void upadteZoo() {
         writeZooJSON();
     }
 
     /**
-     * deletes a book identified by the bookUUID
-     * @param zooUUID  the key
+     * @param zooUUID  die UUID des Zoos, welcher gelöscht werden soll
      * @return  success=true/false
      */
     public boolean deleteZoo(String zooUUID) {
@@ -120,141 +122,24 @@ public class DataHandler {
     }
 
     /**
-     * reads all publishers
-     * @return list of books
-     */
-    public List<Gehege> readAllGehege() {
-        return getGehegeList();
-    }
-
-    /**
-     * reads all publishers
-     * @return list of books
-     */
-    public List<Tier> readAllTiere() {
-        return getTierList();
-    }
-
-    /**
-     * reads a publisher by its uuid
-     * @param tierUUID
-     * @return the Publisher (null=not found)
-     */
-    public Tier readTierByUUID(String tierUUID) {
-        Tier tier = null;
-        for (Tier entry : getTierList()) {
-            if (entry.getTierUUID().equals(tierUUID)) {
-                tier = entry;
-            }
-        }
-        return tier;
-    }
-
-    /**
-     * inserts a new publisher into the bookList
      *
-     * @param gehege the publisher to be saved
+     * @return Eine Liste aller Zoos
      */
-    public void insertGehege(Gehege gehege) {
-        getGehegeList().add(gehege);
-        writeGehegeJSON();
+
+    private List<Zoo> getZooList() {
+        return zooList;
+    }
+
+    /***
+     * @param zooList die Liste der Zoos, welche gesetzt werden soll
+     */
+
+    private void setZooList(List<Zoo> zooList) {
+        this.zooList = zooList;
     }
 
     /**
-     * updates the publisherList
-     */
-    public void updateGehege() {
-        writeGehegeJSON();
-    }
-
-    /**
-     * updates the publisherList
-     */
-    public void updateZoo() {
-        writeZooJSON();
-    }
-
-    /**
-     * updates the publisherList
-     */
-    public void updateTier() {
-        writeTierJSON();
-    }
-
-    /**
-     * deletes a publisher identified by the publisherUUID
-     * @param gehegeUUID  the key
-     * @return  success=true/false
-     */
-    public boolean deleteGehege(String gehegeUUID) {
-        Gehege gehege = readGehegeByUUID(gehegeUUID);
-        if (gehege != null) {
-            getGehegeList().remove(gehege);
-            writeGehegeJSON();
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * deletes a publisher identified by the publisherUUID
-     * @param tierUUID  the key
-     * @return  success=true/false
-     */
-    public boolean deleteTier(String tierUUID) {
-        Tier tier = readTierByUUID(tierUUID);
-        if (tier != null) {
-            getGehegeList().remove(tier);
-            writeTierJSON();
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * reads the books from the JSON-file
-     */
-    private void readTierJSON() {
-        try {
-            String path = Config.getProperty("tierJSON");
-            byte[] jsonData = Files.readAllBytes(
-                    Paths.get(path)
-            );
-            ObjectMapper objectMapper = new ObjectMapper();
-            Tier[] tiere = objectMapper.readValue(jsonData, Tier[].class);
-            for (Tier tier : tiere) {
-                getTierList().add(tier);
-                System.out.println(tier);
-            }
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    /**
-     * writes the bookList to the JSON-file
-     */
-    private void writeTierJSON() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
-        FileOutputStream fileOutputStream = null;
-        Writer fileWriter;
-
-        String bookPath = Config.getProperty("tierJSON");
-        try {
-            fileOutputStream = new FileOutputStream(bookPath);
-            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getTierList());
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-
-    /**
-     * reads the books from the JSON-file
+     * Liest die Zoos aus einer JSON Datei aus
      */
     private void readZooJSON() {
         try {
@@ -273,7 +158,7 @@ public class DataHandler {
     }
 
     /**
-     * writes the bookList to the JSON-file
+     * Schreibt die Zoos in eine JSON Datei
      */
     private void writeZooJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -291,8 +176,53 @@ public class DataHandler {
         }
     }
 
+
     /**
-     * reads the publishers from the JSON-file
+     * @param gehegeUUID die UUID des Geheges, welches gelsen werden soll
+     * @return das Gehege (null=not found)
+     */
+    public Gehege readGehegeByUUID(String gehegeUUID) {
+        Gehege gehege = null;
+        for (Gehege entry : getGehegeList()) {
+            if (entry.getGehegeUUID().equals(gehegeUUID)) {
+                gehege = entry;
+            }
+        }
+        return gehege;
+    }
+
+    /**
+     * @param gehege fügt ein neues Gehege in die Liste der Gehege ein
+     */
+    public void insertGehege(Gehege gehege) {
+        getGehegeList().add(gehege);
+        writeGehegeJSON();
+    }
+
+    /**
+     * Updated die Liste der Gehege
+     */
+    public void updateGehege() {
+        writeGehegeJSON();
+    }
+
+    /**
+     * @param gehegeUUID die UUID des Geheges, welches gelöscht werden soll
+     * @return  success=true/false
+     */
+    public boolean deleteGehege(String gehegeUUID) {
+        Gehege gehege = readGehegeByUUID(gehegeUUID);
+        if (gehege != null) {
+            getGehegeList().remove(gehege);
+            writeGehegeJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Liest alle Gehege aus einer JSON Datei
      */
     private void readGehegeJSON() {
         try {
@@ -313,7 +243,7 @@ public class DataHandler {
     }
 
     /**
-     * writes the publisherList to the JSON-file
+     * Schreibt die Liste aller Gehege in eine JSON Datei
      */
     private void writeGehegeJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -332,29 +262,7 @@ public class DataHandler {
     }
 
     /**
-     * gets zooList
-     *
-     * @return value of zooList
-     */
-
-    private List<Zoo> getZooList() {
-        return zooList;
-    }
-
-    /**
-     * sets zooList
-     *
-     * @param zooList the value to set
-     */
-
-    private void setZooList(List<Zoo> zooList) {
-        this.zooList = zooList;
-    }
-
-    /**
-     * gets gehegeList
-     *
-     * @return value of gehegeList
+     * @return eine Liste aller Gehege
      */
 
     private List<Gehege> getGehegeList() {
@@ -362,19 +270,90 @@ public class DataHandler {
     }
 
     /**
-     * sets gehegeList
-     *
-     * @param gehegeList the value to set
+     * @param gehegeList setzt die Liste aller Gehege
      */
 
     private void setGehegeList(List<Gehege> gehegeList) {
         this.gehegeList = gehegeList;
     }
 
+
     /**
-     * gets tierlist
-     *
-     * @return value of tierList
+     * @param tierUUID die UUID des Tiers, welches gelsen werden soll
+     * @return das Tier (null=not found)
+     */
+    public Tier readTierByUUID(String tierUUID) {
+        Tier tier = null;
+        for (Tier entry : getTierList()) {
+            if (entry.getTierUUID().equals(tierUUID)) {
+                tier = entry;
+            }
+        }
+        return tier;
+    }
+
+    /**
+     * Updated die Liste der Tiere
+     */
+    public void updateTier() {
+        writeTierJSON();
+    }
+
+    /**
+     * @param tierUUID die UUID des Tiers, welches gelöscht werden soll
+     * @return  success=true/false
+     */
+    public boolean deleteTier(String tierUUID) {
+        Tier tier = readTierByUUID(tierUUID);
+        if (tier != null) {
+            getGehegeList().remove(tier);
+            writeTierJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Liest eine Liste aller Tiere aus einer JSON Datei
+     */
+    private void readTierJSON() {
+        try {
+            String path = Config.getProperty("tierJSON");
+            byte[] jsonData = Files.readAllBytes(
+                    Paths.get(path)
+            );
+            ObjectMapper objectMapper = new ObjectMapper();
+            Tier[] tiere = objectMapper.readValue(jsonData, Tier[].class);
+            for (Tier tier : tiere) {
+                getTierList().add(tier);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * Schreibt eine Liste aller Tiere in eine JSON Datei
+     */
+    private void writeTierJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("tierJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getTierList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * @return eine Liste aller Tiere
      */
 
     private List<Tier> getTierList() {
@@ -382,14 +361,11 @@ public class DataHandler {
     }
 
     /**
-     * sets tierlist
-     *
-     * @param tierList the value to set
+     * @param tierList setzt eine Liste aller Tiere
      */
 
     private void setTierList(List<Tier> tierList) {
         this.tierList = tierList;
     }
-
 
 }

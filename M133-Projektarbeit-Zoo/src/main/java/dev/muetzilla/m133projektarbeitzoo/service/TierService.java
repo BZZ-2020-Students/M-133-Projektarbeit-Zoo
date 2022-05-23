@@ -12,11 +12,18 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
+/**
+ * @Author: Moritz
+ * @Date: 2022-05-16
+ * @Since 1.0.0-SNAPSHOT
+ *
+ * @Description: Service für das Tier
+ *
+ */
 @Path("/tier")
 public class TierService {
     /**
-     * reads a list of all books
-     * @return  books as JSON
+     * @return alle Tiere welche im JSON gespeichert werden
      */
     @GET
     @Path("list")
@@ -30,9 +37,9 @@ public class TierService {
     }
 
     /**
-     * reads a zoo identified by the uuid
-     * @param zooUUID
-     * @return zoo
+     *
+     * @param tierUUID uuid des Tieres
+     * @return das Tier, welches mit der gesuchten UUID
      */
     @GET
     @Path("read")

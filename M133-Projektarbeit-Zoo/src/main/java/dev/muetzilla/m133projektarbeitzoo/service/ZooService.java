@@ -11,13 +11,19 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
-
+/**
+ * @Author: Moritz
+ * @Date: 2022-05-16
+ * @Since 1.0.0-SNAPSHOT
+ *
+ * @Description: Service für einen Zoo
+ *
+ */
 @Path("zoo")
 public class ZooService {
 
     /**
-     * reads a list of all books
-     * @return  books as JSON
+     * @return Eine Liste aller Zoos als JSON
      */
     @GET
     @Path("list")
@@ -31,9 +37,8 @@ public class ZooService {
     }
 
     /**
-     * reads a zoo identified by the uuid
-     * @param zooUUID
-     * @return zoo
+     * @param zooUUID UUID des Zoos
+     * @return Zoo, welcher mit der übergebenen UUID übereinstimmt
      */
     @GET
     @Path("read")

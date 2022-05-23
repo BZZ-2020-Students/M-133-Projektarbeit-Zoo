@@ -10,12 +10,20 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
+
+/**
+ * @Author: Moritz
+ * @Date: 2022-05-16
+ * @Since 1.0.0-SNAPSHOT
+ *
+ * @Description: Service für das Gehege
+ *
+ */
 @Path("gehege")
 public class GehegeService {
 
     /**
-     * reads a list of all books
-     * @return  books as JSON
+     * @return alle Gehege welche im JSON gespeichert werden
      */
     @GET
     @Path("list")
@@ -29,9 +37,9 @@ public class GehegeService {
     }
 
     /**
-     * reads a zoo identified by the uuid
-     * @param zooUUID
-     * @return zoo
+     *
+     * @param gehegeUUID UUID des Geheges welches geladen werden soll
+     * @return Gehege welches mit der gegebenen UUID übereinstimmt
      */
     @GET
     @Path("read")

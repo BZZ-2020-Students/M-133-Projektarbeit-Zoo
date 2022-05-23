@@ -11,8 +11,13 @@ import java.util.Properties;
 import java.util.Set;
 
 /**
-* configure the web services and properties
-*/
+ * @Author: Moritz
+ * @Date: 2022-05-16
+ * @Since 1.0.0-SNAPSHOT
+ *
+ * @Description: configure the web services and properties
+ *
+ */
 
 @ApplicationPath("/resource")
 
