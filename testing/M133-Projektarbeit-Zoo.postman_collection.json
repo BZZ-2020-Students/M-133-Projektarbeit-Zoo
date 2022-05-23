@@ -7,51 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "Test TestService with Config",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/api/hello-world/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
-						"api",
-						"hello-world",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Test hello-world with HelloApplication",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/test/test/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
-						"resource",
-						"test",
-						"test",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Test Zoo List - Success",
 			"event": [
 				{
@@ -216,9 +171,10 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test\"Test Status whole Tier List Success\", function () {\r",
+							"pm.test(\"Test Status whole Tier List Success\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
+							"\r",
 							""
 						],
 						"type": "text/javascript"
