@@ -1,0 +1,297 @@
+{
+	"id": "5973dc18-8dee-4363-8c52-3c3a6939a129",
+	"name": "M133-Projektarbeit-Zoo",
+	"timestamp": "2022-05-23T21:30:27.118Z",
+	"collection_id": "20897198-bef27f0a-08a1-4872-8256-009ec8acbb20",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 9,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "b2d72e51-1c13-4e53-8ae7-16f167b6cf9c",
+			"name": "Test Zoo List - Success",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/list/",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status whole Zoo List Success": true
+			},
+			"testPassFailCounts": {
+				"Test Status whole Zoo List Success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"Test Status whole Zoo List Success": true
+				}
+			]
+		},
+		{
+			"id": "08846ad0-33ca-4534-a1e4-e843bfcc808c",
+			"name": "Test Single Zoo - Success",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=fe18f574-d803-11ec-9d64-0242ac120002",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status Single Zoo Success": true
+			},
+			"testPassFailCounts": {
+				"Test Status Single Zoo Success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status Single Zoo Success": true
+				}
+			]
+		},
+		{
+			"id": "89c1a5e7-2aa6-43ea-80e3-8eab0f08a710",
+			"name": "Test Single Gehege - Success",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/gehege/read?uuid=9b45446c-d8ed-11ec-9d64-0242ac120002",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status Single Gehege Success": true
+			},
+			"testPassFailCounts": {
+				"Test Status Single Gehege Success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Test Status Single Gehege Success": true
+				}
+			]
+		},
+		{
+			"id": "c9321f5c-de96-40cf-917d-63d942e1c95d",
+			"name": "Test  Gehege List - Success",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/gehege/list/",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status whole Gehege List Success": true
+			},
+			"testPassFailCounts": {
+				"Test Status whole Gehege List Success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Test Status whole Gehege List Success": true
+				}
+			]
+		},
+		{
+			"id": "ecba0a86-7cde-4cee-9738-4de240fbe118",
+			"name": "Test Tier List - Success",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/tier/list/",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status whole Tier List Success": true
+			},
+			"testPassFailCounts": {
+				"Test Status whole Tier List Success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status whole Tier List Success": true
+				}
+			]
+		},
+		{
+			"id": "265768b6-0dec-4d00-82df-fb0465def465",
+			"name": "Test Single Tier - Success",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/tier/read?uuid=f369d306-d8f2-11ec-9d64-0242ac120002",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status Single Tier Success": true
+			},
+			"testPassFailCounts": {
+				"Test Status Single Tier Success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Test Status Single Tier Success": true
+				}
+			]
+		},
+		{
+			"id": "a5fd6a7f-613b-43b9-8fa0-5e854d14d3e8",
+			"name": "Test Single Tier - Fail",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/tier/read?uuid=test1234",
+			"time": 3,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"Test Status Single Tier Fail": true
+			},
+			"testPassFailCounts": {
+				"Test Status Single Tier Fail": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Test Status Single Tier Fail": true
+				}
+			]
+		},
+		{
+			"id": "d64708ae-0a6b-4da0-8449-28edf48b3314",
+			"name": "Test Single Gehege - Fail",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/gehege/read?uuid=test1234",
+			"time": 3,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"Test Status Single Gehege Fail": true
+			},
+			"testPassFailCounts": {
+				"Test Status Single Gehege Fail": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Test Status Single Gehege Fail": true
+				}
+			]
+		},
+		{
+			"id": "75f424f4-58ae-4c44-b798-0016762c7638",
+			"name": "Test Single Zoo - Fail",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=test1234",
+			"time": 3,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"Test Status Single Gehege Fail": true
+			},
+			"testPassFailCounts": {
+				"Test Status Single Gehege Fail": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Test Status Single Gehege Fail": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 37,
+	"collection": {
+		"requests": [
+			{
+				"id": "b2d72e51-1c13-4e53-8ae7-16f167b6cf9c",
+				"method": "GET"
+			},
+			{
+				"id": "08846ad0-33ca-4534-a1e4-e843bfcc808c",
+				"method": "GET"
+			},
+			{
+				"id": "89c1a5e7-2aa6-43ea-80e3-8eab0f08a710",
+				"method": "GET"
+			},
+			{
+				"id": "c9321f5c-de96-40cf-917d-63d942e1c95d",
+				"method": "GET"
+			},
+			{
+				"id": "ecba0a86-7cde-4cee-9738-4de240fbe118",
+				"method": "GET"
+			},
+			{
+				"id": "265768b6-0dec-4d00-82df-fb0465def465",
+				"method": "GET"
+			},
+			{
+				"id": "a5fd6a7f-613b-43b9-8fa0-5e854d14d3e8",
+				"method": "GET"
+			},
+			{
+				"id": "d64708ae-0a6b-4da0-8449-28edf48b3314",
+				"method": "GET"
+			},
+			{
+				"id": "75f424f4-58ae-4c44-b798-0016762c7638",
+				"method": "GET"
+			}
+		]
+	}
+}
