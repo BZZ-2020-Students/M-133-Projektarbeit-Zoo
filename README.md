@@ -7,3 +7,7 @@ Der Stand des Projektes, welcher für Milestone 1 bewertet wird ist im Branch "M
   - Service für die drei Modelklassen
       - Read aller Objekte
       - Read eines einzelnen Objektes via uuid
+  - Test 
+     - Tests welche die Rückgabe aller Objekte anzeigen
+     - Tests welche die Rückgabe eines einzelnen Objektes via UUID anzeigen
+     - Tests welche das Verhalten anzeigen, wenn kein gültiges Objekt gefunden wurde
