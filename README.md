@@ -13,7 +13,7 @@
       - Tests welche das Verhalten anzeigen, wenn kein gültiges Objekt gefunden wurde
  ## Milestone 2
  Der Stand des Projektes, welcher für Milestone 2 bewertet wird ist im Branch "Milestone-2". 
-  ### Änderungen für Milestone 1
+  ### Änderungen für Milestone 2
    - Service für die drei Modelklassen
        - Create eines neuen Objektes
        - Update eines bereits bestehenden Objektes (via UUID)
