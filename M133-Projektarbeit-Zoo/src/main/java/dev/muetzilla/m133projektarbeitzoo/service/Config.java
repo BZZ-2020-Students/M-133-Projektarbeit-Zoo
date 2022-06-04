@@ -22,7 +22,7 @@ import java.util.Set;
 @ApplicationPath("/resource")
 
 public class Config extends Application {
-    private static final String PROPERTIES_PATH = "C:\\Github\\M-133-Projektarbeit-Zoo\\testing\\data\\projektarbeitZoo.properties";
+    private static final String PROPERTIES_PATH = "C:\\Users\\muetz\\Documents\\Github\\M-133-Projektarbeit-Zoo\\testing\\data\\projektarbeitZoo.properties";
     private static Properties properties = null;
 
     /**
