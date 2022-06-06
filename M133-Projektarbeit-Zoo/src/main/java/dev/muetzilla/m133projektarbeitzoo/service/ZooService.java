@@ -57,19 +57,20 @@ public class ZooService {
 
     /**
      *
-     * @param publisherUUID
+     * @param zooUUID UUID des Zoos
      * @return
      */
     @GET
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteZoo(
-            @QueryParam("uuid") String zooUUID
+            @QueryParam("zooUUID") String zooUUID
     ) {
         int httpStatus = 200;
         DataHandler.getInstance().deleteZoo(zooUUID);
         return Response
                 .status(httpStatus)
+                .entity("Deletion of zoo successful")
                 .build();
     }
 
@@ -86,6 +87,7 @@ public class ZooService {
         DataHandler.getInstance().upadteZoo();
         return Response
                 .status(httpStatus)
+                .entity("Update of zoo successful")
                 .build();
     }
 
@@ -100,7 +102,7 @@ public class ZooService {
     public Response insertZoo(
             @FormParam("zooName") String zooName    ) {
         Zoo zoo = new Zoo();
-        zoo.setZooUUID(String.valueOf(UUID.randomUUID()));
+        zoo.setZooUUID(UUID.randomUUID().toString());
         zoo.setZooName(zooName);
 
         DataHandler.getInstance().insertZoo(zoo);
@@ -109,6 +111,7 @@ public class ZooService {
 
         return Response
                 .status(httpStatus)
+                .entity("Creation of Zoo successful")
                 .build();
     }
 }

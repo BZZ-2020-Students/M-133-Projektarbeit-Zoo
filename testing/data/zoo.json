@@ -1,14 +1,10 @@
-[
-    {
-        "zooUUID": "991478a6-d803-11ec-9d64-0242ac120002",
-        "zooName": "Zoo Zürich"
-    },
-    {
-        "zooUUID": "fe18f574-d803-11ec-9d64-0242ac120002",
-        "zooName": "Zoo München"
-    },
-    {
-        "zooUUID": "0d9be7c2-d804-11ec-9d64-0242ac120002",
-        "zooName": "Zoo Berlin"
-    }
-]   
+[ {
+  "zooUUID" : "991478a6-d803-11ec-9d64-0242ac120002",
+  "zooName" : "Zoo Zürich"
+}, {
+  "zooUUID" : "fe18f574-d803-11ec-9d64-0242ac120002",
+  "zooName" : "Zoo München"
+}, {
+  "zooUUID" : "0d9be7c2-d804-11ec-9d64-0242ac120002",
+  "zooName" : "Zoo Berlin"
+}]

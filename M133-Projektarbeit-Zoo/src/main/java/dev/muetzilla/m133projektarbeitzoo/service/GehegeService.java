@@ -2,14 +2,12 @@ package dev.muetzilla.m133projektarbeitzoo.service;
 
 import dev.muetzilla.m133projektarbeitzoo.data.DataHandler;
 import dev.muetzilla.m133projektarbeitzoo.model.Gehege;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @Author: Moritz
@@ -55,6 +53,58 @@ public class GehegeService {
         return Response
                 .status(httpStatus)
                 .entity(gehege)
+                .build();
+    }
+    /**
+     * @return alle Gehege welche im JSON gespeichert werden
+     */
+    @POST
+    @Path("create")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response insertGehege(
+            @FormParam("laenge") Integer laenge,
+            @FormParam("breite") Integer breite,
+            @FormParam("gehegeArt") String gehegeArt,
+            @FormParam("zooUUID") String zooUUID
+    ) {
+        Gehege gehege = new Gehege();
+        gehege.setGehegeUUID(UUID.randomUUID().toString());
+        gehege.setLaenge(laenge);
+        gehege.setBreite(breite);
+        gehege.setGehegeArt(gehegeArt);
+        gehege.setZooUUID(zooUUID);
+        DataHandler.getInstance().insertGehege(gehege);
+        return Response
+                .status(200)
+                .entity("Creation of Gehege successful")
+                .build();
+    }
+    /**
+     * @return alle Gehege welche im JSON gespeichert werden
+     */
+    @PUT
+    @Path("update")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateGehege() {
+        List<Gehege> gehegeList = DataHandler.getInstance().readAllGehege();
+        return Response
+                .status(200)
+                .entity(gehegeList)
+                .build();
+    }
+    /**
+     * @return alle Gehege welche im JSON gespeichert werden
+     */
+    @GET
+    @Path("delete")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response deleteGehege(
+            @QueryParam("gehegeUuid") String gehegeUUID
+    ) {
+        DataHandler.getInstance().deleteGehege(gehegeUUID);
+        return Response
+                .status(200)
+                .entity("Deletion of Gehege successful")
                 .build();
     }
 }

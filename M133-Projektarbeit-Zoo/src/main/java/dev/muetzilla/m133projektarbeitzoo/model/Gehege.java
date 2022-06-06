@@ -19,8 +19,6 @@ public class Gehege {
     private Integer breite;
     private String gehegeArt;
 
-    private ArrayList<Tier> tiere;
-
     @JsonIgnore
     private Zoo zoo;
 
@@ -38,7 +36,6 @@ public class Gehege {
      * @param laenge die Länge des Geheges
      * @param breite die Breite des Geheges
      * @param gehegeArt die Art des Geheges
-     * @param tiere die Tiere, die in diesem Gehege leben
      * @param zoo der Zoo, zu welchem das Gehege gehört
      */
     public Gehege(String gehegeUUID, Integer laenge, Integer breite, String gehegeArt, ArrayList<Tier> tiere,  Zoo zoo) {
@@ -46,7 +43,6 @@ public class Gehege {
         this.laenge = laenge;
         this.breite = breite;
         this.gehegeArt = gehegeArt;
-        this.tiere = tiere;
         this.zoo = zoo;
     }
 
@@ -106,20 +102,6 @@ public class Gehege {
      */
     public void setBreite(Integer breite) {
         this.breite = breite;
-    }
-
-    /**
-     * @return Alle Tiere, die in diesem Gehege sind
-     */
-    public ArrayList<Tier> getTiere() {
-        return tiere;
-    }
-
-    /**
-     * @param tiere setzt alle Tiere, welche in einem Gehege leben
-     */
-    public void setTiere(ArrayList<Tier> tiere) {
-        this.tiere = tiere;
     }
 
     /**
