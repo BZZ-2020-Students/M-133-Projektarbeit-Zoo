@@ -7,4 +7,7 @@
 }, {
   "zooUUID" : "0d9be7c2-d804-11ec-9d64-0242ac120002",
   "zooName" : "Zoo Berlin"
-}]
+}, {
+  "zooUUID" : "75be591a-92cd-4b40-8e85-63be95312ff2",
+  "zooName" : "Zoo London"
+} ]

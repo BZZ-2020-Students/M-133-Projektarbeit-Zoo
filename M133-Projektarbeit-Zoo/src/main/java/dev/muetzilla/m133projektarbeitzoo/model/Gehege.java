@@ -38,7 +38,7 @@ public class Gehege {
      * @param gehegeArt die Art des Geheges
      * @param zoo der Zoo, zu welchem das Gehege gehört
      */
-    public Gehege(String gehegeUUID, Integer laenge, Integer breite, String gehegeArt, ArrayList<Tier> tiere,  Zoo zoo) {
+    public Gehege(String gehegeUUID, Integer laenge, Integer breite, String gehegeArt, ArrayList<Animal> tiere, Zoo zoo) {
         this.gehegeUUID = gehegeUUID;
         this.laenge = laenge;
         this.breite = breite;

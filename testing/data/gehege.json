@@ -28,46 +28,4 @@
   "breite" : 7,
   "gehegeArt" : "Trockengehege",
   "zooUUID" : "fe18f574-d803-11ec-9d64-0242ac120002"
-}, {
-  "gehegeUUID" : "076128e5-e3f2-490b-bc87-e721d846661d",
-  "laenge" : 5,
-  "breite" : 7,
-  "gehegeArt" : "Trockengehege",
-  "zooUUID" : "fe18f574-d803-11ec-9d64-0242ac120002"
-}, {
-  "gehegeUUID" : "cf2d6ccb-9d31-4f31-8b53-8d3b1d6aad46",
-  "laenge" : 5,
-  "breite" : 7,
-  "gehegeArt" : "Trockengehege",
-  "zooUUID" : "fe18f574-d803-11ec-9d64-0242ac120002"
-}, {
-  "gehegeUUID" : "187ba16d-ee0d-4735-95d4-7568fab2d542",
-  "laenge" : 5,
-  "breite" : 7,
-  "gehegeArt" : "Trockengehege",
-  "zooUUID" : "fe18f574-d803-11ec-9d64-0242ac120002"
-}, {
-  "gehegeUUID" : "d53689c5-94d9-43cd-acc8-3888222ab1ef",
-  "laenge" : 5,
-  "breite" : 7,
-  "gehegeArt" : "Trockengehege",
-  "zooUUID" : "fe18f574-d803-11ec-9d64-0242ac120002"
-}, {
-  "gehegeUUID" : "b036d703-c83f-4ad3-b54f-8f61f010bb26",
-  "laenge" : 5,
-  "breite" : 7,
-  "gehegeArt" : "Trockengehege",
-  "zooUUID" : "fe18f574-d803-11ec-9d64-0242ac120002"
-}, {
-  "gehegeUUID" : "ab7f3354-7fbe-4dc8-ac98-544df1271885",
-  "laenge" : 5,
-  "breite" : 7,
-  "gehegeArt" : "Trockengehege",
-  "zooUUID" : "fe18f574-d803-11ec-9d64-0242ac120002"
-}, {
-  "gehegeUUID" : "70ad9adc-823d-4f98-a103-7583075e2e01",
-  "laenge" : 5,
-  "breite" : 7,
-  "gehegeArt" : "Trockengehege",
-  "zooUUID" : "fe18f574-d803-11ec-9d64-0242ac120002"
-} ]
+}]

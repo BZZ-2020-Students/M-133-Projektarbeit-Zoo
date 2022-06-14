@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.muetzilla.m133projektarbeitzoo.data.DataHandler;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Date;
 
 /**
@@ -18,17 +15,17 @@ import java.util.Date;
  * @Description: Ein Tier, welches in einem Zoo lebt
  *
  */
-public class Tier {
-    private String tierUUID;
+public class Animal {
+    private String animalUUID;
     private String name;
     @JsonFormat(pattern="yyyy-MM-dd")
-    private Date geburtsdatum;
-    private Integer anzahlBeine;
-    private String geschlecht;
-    private ArrayList<String> futter;
-    private String gehegeArt;
-    private String lebensraum;
-    private String gattung;
+    private Date birthday;
+    private Integer amountOfLegs;
+    private String gender;
+    private ArrayList<String> feed;
+    private String kindOfEnclosure;
+    private String biotop;
+    private String kindOfAnimal;
 
     @JsonIgnore
     private Gehege gehege;
@@ -36,7 +33,7 @@ public class Tier {
     /**
      * Default Constructor des Geheges
      */
-    public Tier(){
+    public Animal(){
 
     }
 
@@ -45,7 +42,7 @@ public class Tier {
      * @param tierUUID UUID des Tiers
      * @param name Name des Tiers
      * @param geburtsdatum Geburtsdatum des Tiers
-     * @param anzahlBeine Anzahl der Beine des Tiers
+     * @param amountOfLegs Anzahl der Beine des Tiers
      * @param geschlecht Geschlecht des Tiers
      * @param futter Futter, welches das Tier bekommt
      * @param gehegeArt Art des Geheges, in dem das Tier lebt
@@ -53,31 +50,31 @@ public class Tier {
      * @param gehege Gehege, in dem das Tier lebt
      * @param gattung Gattung des Tieres
      */
-    public Tier(String tierUUID, String name, Date geburtsdatum, Integer anzahlBeine, String geschlecht, ArrayList<String> futter, String gehegeArt, String lebensraum, Gehege gehege, String gattung) {
-        this.tierUUID = tierUUID;
+    public Animal(String tierUUID, String name, Date geburtsdatum, Integer amountOfLegs, String geschlecht, ArrayList<String> futter, String gehegeArt, String lebensraum, Gehege gehege, String gattung) {
+        this.animalUUID = tierUUID;
         this.name = name;
-        this.geburtsdatum = geburtsdatum;
-        this.anzahlBeine = anzahlBeine;
-        this.geschlecht = geschlecht;
-        this.futter = futter;
-        this.gehegeArt = gehegeArt;
-        this.lebensraum = lebensraum;
+        this.birthday = geburtsdatum;
+        this.amountOfLegs = amountOfLegs;
+        this.gender = geschlecht;
+        this.feed = futter;
+        this.kindOfEnclosure = gehegeArt;
+        this.biotop = lebensraum;
         this.gehege = gehege;
-        this.gattung = gattung;
+        this.kindOfAnimal = gattung;
     }
 
     /**
      * @return die UUID des Tieres
      */
-    public String getTierUUID() {
-        return tierUUID;
+    public String getAnimalUUID() {
+        return animalUUID;
     }
 
     /**
-     * @param tierUUID UUID des Tieres
+     * @param animalUUID UUID des Tieres
      */
-    public void setTierUUID(String tierUUID) {
-        this.tierUUID = tierUUID;
+    public void setAnimalUUID(String animalUUID) {
+        this.animalUUID = animalUUID;
     }
 
     /**
@@ -97,86 +94,86 @@ public class Tier {
     /**
      * @return Datum, an welchem das Tier geboren wurde
      */
-    public Date getGeburtsdatum() {
-        return geburtsdatum;
+    public Date getBirthday() {
+        return birthday;
     }
 
     /**
-     * @param geburtsdatum Datum, an welchem das Tier geboren wurde
+     * @param birthday Datum, an welchem das Tier geboren wurde
      */
-    public void setGeburtsdatum(Date geburtsdatum) {
-        this.geburtsdatum = geburtsdatum;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
     /**
      * @return Anzahl der Beine, welche das Tier hat
      */
-    public Integer getAnzahlBeine() {
-        return anzahlBeine;
+    public Integer getAmountOfLegs() {
+        return amountOfLegs;
     }
 
     /**
-     * @param anzahlBeine Anzahl der Beine, welche das Tier hat
+     * @param amountOfLegs Anzahl der Beine, welche das Tier hat
      */
 
-    public void setAnzahlBeine(Integer anzahlBeine) {
-        this.anzahlBeine = anzahlBeine;
+    public void setAmountOfLegs(Integer amountOfLegs) {
+        this.amountOfLegs = amountOfLegs;
     }
 
     /**
      * @return Geschlecht des Tieres
      */
-    public String getGeschlecht() {
-        return geschlecht;
+    public String getGender() {
+        return gender;
     }
 
     /**
-     * @param geschlecht Geschlecht des Tieres
+     * @param gender Geschlecht des Tieres
      */
-    public void setGeschlecht(String geschlecht) {
-        this.geschlecht = geschlecht;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     /**
      * @return Futter, welches das Tier bekommt
      */
-    public ArrayList<String> getFutter() {
-        return futter;
+    public ArrayList<String> getFeed() {
+        return feed;
     }
 
     /**
-     * @param futter Futter, welches das Tier bekommt
+     * @param feed Futter, welches das Tier bekommt
      */
-    public void setFutter(ArrayList<String> futter) {
-        this.futter = futter;
+    public void setFeed(ArrayList<String> feed) {
+        this.feed = feed;
     }
 
     /**
      * @return Art des Geheges, in dem das Tier lebt
      */
-    public String getGehegeArt() {
-        return gehegeArt;
+    public String getKindOfEnclosure() {
+        return kindOfEnclosure;
     }
 
     /**
-     * @param gehegeArt Art des Geheges, in dem das Tier lebt
+     * @param kindOfEnclosure Art des Geheges, in dem das Tier lebt
      */
-    public void setGehegeArt(String gehegeArt) {
-        this.gehegeArt = gehegeArt;
+    public void setKindOfEnclosure(String kindOfEnclosure) {
+        this.kindOfEnclosure = kindOfEnclosure;
     }
 
     /**
      * @return Lebensraum, in dem das Tier natürlich lebt
      */
-    public String getLebensraum() {
-        return lebensraum;
+    public String getBiotop() {
+        return biotop;
     }
 
     /**
-     * @param lebensraum Lebensraum, in welchem das Tier natürlich lebt
+     * @param biotop Lebensraum, in welchem das Tier natürlich lebt
      */
-    public void setLebensraum(String lebensraum) {
-        this.lebensraum = lebensraum;
+    public void setBiotop(String biotop) {
+        this.biotop = biotop;
     }
 
     /**
@@ -196,28 +193,28 @@ public class Tier {
     /**
      * @return Gattung des Tieres
      */
-    public String getGattung() {
-        return gattung;
+    public String getKindOfAnimal() {
+        return kindOfAnimal;
     }
 
     /**
-     * @param gattung Gattung des Tieres
+     * @param kindOfAnimal Gattung des Tieres
      */
-    public void setGattung(String gattung) {
-        this.gattung = gattung;
+    public void setKindOfAnimal(String kindOfAnimal) {
+        this.kindOfAnimal = kindOfAnimal;
     }
 
     /**
      * @return UUID des Geheges, in dem das Tier lebt
      */
-    public String getGehegeUUID() {
+    public String getEnclosureUUID() {
         return getGehege().getGehegeUUID();
     }
 
     /**
      * @param gehegeUUID UUID des Geheges, in dem das Tier lebt
      */
-    public void setGehegeUUID(String gehegeUUID) {
+    public void setEnclosureUUID(String gehegeUUID) {
         setGehege(new Gehege());
         Gehege gehege = DataHandler.getInstance().readGehegeByUUID(gehegeUUID);
         getGehege().setGehegeUUID(gehegeUUID);
