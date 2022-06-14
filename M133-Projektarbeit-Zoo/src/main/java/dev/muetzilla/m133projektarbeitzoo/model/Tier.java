@@ -24,7 +24,7 @@ public class Tier {
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date geburtsdatum;
     private Integer anzahlBeine;
-    private Character geschlecht;
+    private String geschlecht;
     private ArrayList<String> futter;
     private String gehegeArt;
     private String lebensraum;
@@ -53,7 +53,7 @@ public class Tier {
      * @param gehege Gehege, in dem das Tier lebt
      * @param gattung Gattung des Tieres
      */
-    public Tier(String tierUUID, String name, Date geburtsdatum, Integer anzahlBeine, Character geschlecht, ArrayList<String> futter, String gehegeArt, String lebensraum, Gehege gehege, String gattung) {
+    public Tier(String tierUUID, String name, Date geburtsdatum, Integer anzahlBeine, String geschlecht, ArrayList<String> futter, String gehegeArt, String lebensraum, Gehege gehege, String gattung) {
         this.tierUUID = tierUUID;
         this.name = name;
         this.geburtsdatum = geburtsdatum;
@@ -126,14 +126,14 @@ public class Tier {
     /**
      * @return Geschlecht des Tieres
      */
-    public Character getGeschlecht() {
+    public String getGeschlecht() {
         return geschlecht;
     }
 
     /**
      * @param geschlecht Geschlecht des Tieres
      */
-    public void setGeschlecht(Character geschlecht) {
+    public void setGeschlecht(String geschlecht) {
         this.geschlecht = geschlecht;
     }
 
