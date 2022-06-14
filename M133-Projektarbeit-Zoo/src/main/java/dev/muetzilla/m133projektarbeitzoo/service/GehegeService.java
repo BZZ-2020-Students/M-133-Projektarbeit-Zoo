@@ -85,23 +85,33 @@ public class GehegeService {
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response updateGehege() {
-        List<Gehege> gehegeList = DataHandler.getInstance().readAllGehege();
+    public Response updateGehege(  @FormParam("enclosureUUID") String enclosureUUID,
+                                   @FormParam("laenge") Integer laenge,
+                                   @FormParam("breite") Integer breite,
+                                   @FormParam("gehegeArt") String gehegeArt,
+                                   @FormParam("zooUUID") String zooUUID) {
+        Gehege enclosure = DataHandler.getInstance().readGehegeByUUID(enclosureUUID);
+        enclosure.setLaenge(laenge);
+        enclosure.setBreite(breite);
+        enclosure.setGehegeArt(gehegeArt);
+        enclosure.setZooUUID(zooUUID);
+
+        DataHandler.getInstance().updateGehege();
         return Response
                 .status(200)
-                .entity(gehegeList)
+                .entity("Update of enclosure successful")
                 .build();
     }
     /**
      * @return alle Gehege welche im JSON gespeichert werden
      */
-    @GET
+    @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteGehege(
-            @QueryParam("gehegeUuid") String gehegeUUID
+            @QueryParam("enclosureUUID") String enclosureUUID
     ) {
-        DataHandler.getInstance().deleteGehege(gehegeUUID);
+        DataHandler.getInstance().deleteGehege(enclosureUUID);
         return Response
                 .status(200)
                 .entity("Deletion of Gehege successful")

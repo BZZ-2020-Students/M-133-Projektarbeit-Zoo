@@ -97,26 +97,45 @@ public class AnimalService {
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response updateAnimal() {
-        List<Gehege> gehegeList = DataHandler.getInstance().readAllGehege();
+    public Response updateAnimal(
+        @FormParam("animalUUID") String animalUUID,
+        @FormParam("name") String name,
+        @FormParam("birthday") Date birthday,
+        @FormParam("amountOfLegs") Integer amountOfLegs,
+        @FormParam("gender") String gender,
+        @FormParam("feed")ArrayList<String> feed,
+        @FormParam("kindOfEnclosure")String kindOfEnclosure,
+        @FormParam("biotop")String biotop,
+        @FormParam("kindOfAnimal")String kindOfAnimal,
+        @FormParam("enclosureUUID") String enclosureUUID) {
+       Animal animal = DataHandler.getInstance().readAnimalByUUID(animalUUID);
+        animal.setName(name);
+        animal.setBirthday(birthday);
+        animal.setAmountOfLegs(amountOfLegs);
+        animal.setGender(gender);
+        animal.setFeed(feed);
+        animal.setKindOfEnclosure(kindOfEnclosure);
+        animal.setBiotop(biotop);
+        animal.setKindOfAnimal(kindOfAnimal);
+        animal.setEnclosureUUID(enclosureUUID);
         return Response
                 .status(200)
-                .entity(gehegeList)
+                .entity("Update of animal successful")
                 .build();
     }
     /**
      * @return alle Gehege welche im JSON gespeichert werden
      */
-    @GET
+    @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteAnimal(
-            @QueryParam("gehegeUuid") String gehegeUUID
+            @QueryParam("animalUUID") String animalUUID
     ) {
-        DataHandler.getInstance().deleteGehege(gehegeUUID);
+        DataHandler.getInstance().deleteAnimal(animalUUID);
         return Response
                 .status(200)
-                .entity("Deletion of Gehege successful")
+                .entity("Deletion of animal successful")
                 .build();
     }
 }

@@ -60,7 +60,7 @@ public class ZooService {
      * @param zooUUID UUID des Zoos
      * @return
      */
-    @GET
+    @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteZoo(
