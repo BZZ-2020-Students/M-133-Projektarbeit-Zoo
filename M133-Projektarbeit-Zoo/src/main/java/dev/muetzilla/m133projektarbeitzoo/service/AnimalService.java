@@ -7,8 +7,11 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 /**
@@ -76,18 +79,17 @@ public class AnimalService {
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertAnimal(
-            @NotEmpty
+           @NotEmpty
             @Size(min=3, max=20)
             @FormParam("name") String name,
 
             @NotEmpty
             @Pattern(regexp = "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$")
-            @FormParam("birthday") Date birthday,
+            @FormParam("birthday") String birthday,
 
             @NotNull
             @DecimalMin(value = "0")
             @DecimalMax(value = "8")
-            @Pattern(regexp = "^-?\\d*[02468]$")
             @FormParam("amountOfLegs") Integer amountOfLegs,
 
             @NotEmpty
@@ -95,6 +97,7 @@ public class AnimalService {
             @FormParam("gender") String gender,
 
             @NotEmpty
+            @Size(min=3, max=100)
             @FormParam("feed")String feed,
 
             @NotEmpty
@@ -116,7 +119,12 @@ public class AnimalService {
         Animal animal = new Animal();
         animal.setAnimalUUID(UUID.randomUUID().toString());
         animal.setName(name);
-        animal.setBirthday(birthday);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.GERMANY);
+        try {
+            animal.setBirthday(formatter.parse(birthday));
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
         animal.setAmountOfLegs(amountOfLegs);
         animal.setGender(gender);
         animal.setFeed(feed);
@@ -157,12 +165,11 @@ public class AnimalService {
 
             @NotEmpty
             @Pattern(regexp = "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$")
-            @FormParam("birthday") Date birthday,
+            @FormParam("birthday") String birthday,
 
             @NotNull
             @DecimalMin(value = "0")
             @DecimalMax(value = "8")
-            @Pattern(regexp = "^-?\\d*[02468]$")
             @FormParam("amountOfLegs") Integer amountOfLegs,
 
             @NotEmpty
@@ -191,7 +198,12 @@ public class AnimalService {
             {
                 Animal animal = DataHandler.getInstance().readAnimalByUUID(animalUUID);
                 animal.setName(name);
-                animal.setBirthday(birthday);
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.GERMANY);
+                try {
+                    animal.setBirthday(formatter.parse(birthday));
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
                 animal.setAmountOfLegs(amountOfLegs);
                 animal.setGender(gender);
                 animal.setFeed(feed);
