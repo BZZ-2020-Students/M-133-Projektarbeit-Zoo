@@ -6,6 +6,9 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,14 +17,14 @@ import java.util.UUID;
  * @Date: 2022-05-16
  * @Since 1.0.0-SNAPSHOT
  *
- * @Description: Service für einen Zoo
+ * @Description: Service for a zoo
  *
  */
 @Path("zoo")
 public class ZooService {
 
     /**
-     * @return Eine Liste aller Zoos als JSON
+     * @return a list of all the zoos in the JSON file
      */
     @GET
     @Path("list")
@@ -35,13 +38,15 @@ public class ZooService {
     }
 
     /**
-     * @param zooUUID UUID des Zoos
-     * @return Zoo, welcher mit der übergebenen UUID übereinstimmt
+     * @param zooUUID the UUID of the zoo
+     * @return the zoo with the UUID passed as parameter
      */
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readZoo(
+            @NotEmpty
+            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
             @QueryParam("uuid") String zooUUID
     ) {
         int httpStatus = 200;
@@ -57,13 +62,15 @@ public class ZooService {
 
     /**
      *
-     * @param zooUUID UUID des Zoos
-     * @return
+     * @param zooUUID the UUID of the zoo that should be deleted
+     * @return weather the deletion of the zoo was successful or not
      */
     @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteZoo(
+            @NotEmpty
+            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
             @QueryParam("zooUUID") String zooUUID
     ) {
         int httpStatus = 200;
@@ -74,11 +81,22 @@ public class ZooService {
                 .build();
     }
 
+    /**
+     *
+     * @param zooUUID the UUID of the zoo that should be updated
+     * @param zooName the name of the zoo
+     * @return weather the update of the zoo was successful or not
+     */
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateZoo(
+            @NotEmpty
+            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
             @FormParam("zooUUID") String zooUUID,
+
+            @NotEmpty
+            @Size(min=3, max=30)
             @FormParam("zooName") String zooName) {
         int httpStatus = 200;
         Zoo zoo = DataHandler.getInstance().readZooByUUID(zooUUID);
@@ -93,14 +111,17 @@ public class ZooService {
 
     /**
      *
-     * @return
+     * @param zooName the name of the zoo
+     * @return weather the creation of the zoo was successful or not
      */
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
 
     public Response insertZoo(
-            @FormParam("zooName") String zooName    ) {
+            @NotEmpty
+            @Size(min=5, max=30)
+            @FormParam("zooName") String zooName) {
         Zoo zoo = new Zoo();
         zoo.setZooUUID(UUID.randomUUID().toString());
         zoo.setZooName(zooName);

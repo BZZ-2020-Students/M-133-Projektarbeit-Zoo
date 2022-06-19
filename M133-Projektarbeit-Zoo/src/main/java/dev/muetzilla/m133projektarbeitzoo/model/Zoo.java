@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @Date: 2022-05-16
  * @Since 1.0.0-SNAPSHOT
  *
- * @Description: Ein Zoo, welcher verschiedene Gehege hat, in welchen wiederrum verschiedene Tiere leben
+ * @Description: A zoo which has different enclosures and in these enclosures there live different animals
  *
  */
 public class Zoo {
@@ -21,10 +21,9 @@ public class Zoo {
     }
 
     /**
-     * Constructor des Geheges
      *
-     * @param zooUUID UUID des Zoos
-     * @param zooName Name des Zoos
+     * @param zooUUID the UUID of the zoo
+     * @param zooName the name of the zoo
      */
     public Zoo(String zooUUID, String zooName){
         this.zooUUID = zooUUID;
@@ -33,28 +32,28 @@ public class Zoo {
 
 
     /**
-     * @return UUID des Zoos
+     * @return the UUID of the zoo
      */
     public String getZooUUID() {
         return zooUUID;
     }
 
     /**
-     * @param zooUUID UUID des Zoos
+     * @param zooUUID the UUID of the zoo
      */
     public void setZooUUID(String zooUUID) {
         this.zooUUID = zooUUID;
     }
 
     /**
-     * @return Name des Zoos
+     * @return the name of the zoo
      */
     public String getZooName() {
         return zooName;
     }
 
     /**
-     * @param zooName Name des Zoos
+     * @param zooName the name of the zoo
      */
     public void setZooName(String zooName) {
         this.zooName = zooName;
