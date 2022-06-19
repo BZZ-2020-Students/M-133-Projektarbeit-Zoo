@@ -22,7 +22,7 @@ public class Animal {
     private Date birthday;
     private Integer amountOfLegs;
     private String gender;
-    private ArrayList<String> feed;
+    private String feed;
     private String kindOfEnclosure;
     private String biotop;
     private String kindOfAnimal;
@@ -50,7 +50,7 @@ public class Animal {
      * @param enclosure the enclosure in which the animal lives
      * @param kindOfAnimal the race of the animal
      */
-    public Animal(String animalUUID, String name, Date birthday, Integer amountOfLegs, String gender, String kindOfEnclosure, String biotop, ArrayList<String> feed, Enclosure enclosure, String kindOfAnimal) {
+    public Animal(String animalUUID, String name, Date birthday, Integer amountOfLegs, String gender, String kindOfEnclosure, String biotop, String feed, Enclosure enclosure, String kindOfAnimal) {
         this.animalUUID = animalUUID;
         this.name = name;
         this.birthday = birthday;
@@ -137,14 +137,14 @@ public class Animal {
     /**
      * @return the feed  the animal gets
      */
-    public ArrayList<String> getFeed() {
+    public String getFeed() {
         return feed;
     }
 
     /**
      * @param feed the feed the animal gets
      */
-    public void setFeed(ArrayList<String> feed) {
+    public void setFeed(String feed) {
         this.feed = feed;
     }
 

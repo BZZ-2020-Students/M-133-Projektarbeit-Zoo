@@ -2,11 +2,11 @@ package dev.muetzilla.m133projektarbeitzoo.service;
 
 import dev.muetzilla.m133projektarbeitzoo.data.DataHandler;
 import dev.muetzilla.m133projektarbeitzoo.model.Enclosure;
+import jakarta.validation.constraints.*;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import javax.validation.constraints.*;
 import java.util.List;
 import java.util.UUID;
 

@@ -7,7 +7,7 @@
     "gender": "M",
     "kindOfEnclosure": "Trockengehege",
     "biotop": "Savanne",
-    "feed": ["Fleisch", "Fisch"],
+    "feed": "Fleisch, Fisch",
     "kindOfAnimal" : "Tiger",
     "enclosureUUID" : "9b45446c-d8ed-11ec-9d64-0242ac120002"
   },
@@ -19,7 +19,7 @@
     "gender": "W",
     "kindOfEnclosure": "Trockengehege",
     "biotop": "Savanne",
-    "feed": ["Blätter", "Äste"],
+    "feed": "Blätter, Äste",
     "kindOfAnimal" : "Giraffe",
     "enclosureUUID" : "d93e2f78-d923-11ec-9d64-0242ac120002"
   },
@@ -31,7 +31,7 @@
     "gender": "M",
     "kindOfEnclosure": "Abgedecktesgehege",
     "biotop": "Savanne",
-    "feed": ["Fisch"],
+    "feed": "Fisch",
     "kindOfAnimal" : "Pinguin",
     "enclosureUUID" : "a022a586-d8ef-11ec-9d64-0242ac120002"
   }

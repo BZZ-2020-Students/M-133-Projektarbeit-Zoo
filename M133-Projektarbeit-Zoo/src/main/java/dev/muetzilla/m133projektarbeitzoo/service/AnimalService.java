@@ -2,12 +2,11 @@ package dev.muetzilla.m133projektarbeitzoo.service;
 
 import dev.muetzilla.m133projektarbeitzoo.data.DataHandler;
 import dev.muetzilla.m133projektarbeitzoo.model.Animal;
+import jakarta.validation.constraints.*;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import javax.validation.constraints.*;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -96,7 +95,7 @@ public class AnimalService {
             @FormParam("gender") String gender,
 
             @NotEmpty
-            @FormParam("feed")ArrayList<String> feed,
+            @FormParam("feed")String feed,
 
             @NotEmpty
             @Size(min=5, max=25)
@@ -171,7 +170,7 @@ public class AnimalService {
             @FormParam("gender") String gender,
 
             @NotEmpty
-            @FormParam("feed")ArrayList<String> feed,
+            @FormParam("feed")String feed,
 
             @NotEmpty
             @Size(min=5, max=25)

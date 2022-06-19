@@ -2,13 +2,13 @@ package dev.muetzilla.m133projektarbeitzoo.service;
 
 import dev.muetzilla.m133projektarbeitzoo.data.DataHandler;
 import dev.muetzilla.m133projektarbeitzoo.model.Zoo;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 import java.util.List;
 import java.util.UUID;
 
