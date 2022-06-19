@@ -46,7 +46,7 @@ public class ZooService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response readZoo(
             @NotEmpty
-            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @QueryParam("uuid") String zooUUID
     ) {
         int httpStatus = 200;
@@ -70,7 +70,7 @@ public class ZooService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteZoo(
             @NotEmpty
-            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @QueryParam("zooUUID") String zooUUID
     ) {
         int httpStatus = 200;
@@ -92,7 +92,7 @@ public class ZooService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateZoo(
             @NotEmpty
-            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @FormParam("zooUUID") String zooUUID,
 
             @NotEmpty

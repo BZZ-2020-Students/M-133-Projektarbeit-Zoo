@@ -45,7 +45,7 @@ public class EnclosureService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response readEnclosures(
             @NotEmpty
-            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @QueryParam("uuid") String enclosureUUID
     ) {
         int httpStatus = 200;
@@ -71,12 +71,12 @@ public class EnclosureService {
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertEnclosure(
-            @NotEmpty
+            @NotNull
             @DecimalMin(value = "1")
             @DecimalMax(value = "500")
             @FormParam("length") Integer length,
 
-            @NotEmpty
+            @NotNull
             @DecimalMin(value = "1")
             @DecimalMax(value = "500")
             @FormParam("width") Integer width,
@@ -86,7 +86,7 @@ public class EnclosureService {
             @FormParam("kindOfEnclosure") String kindOfEnclosure,
 
             @NotEmpty
-            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @FormParam("zooUUID") String zooUUID
     ) {
         Enclosure enclosure = new Enclosure();
@@ -116,15 +116,15 @@ public class EnclosureService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateEnclosure(
             @NotEmpty
-            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @FormParam("enclosureUUID") String enclosureUUID,
 
-            @NotEmpty
+            @NotNull
             @DecimalMin(value = "1")
             @DecimalMax(value = "500")
             @FormParam("length") Integer length,
 
-            @NotEmpty
+            @NotNull
             @DecimalMin(value = "1")
             @DecimalMax(value = "500")
             @FormParam("width") Integer width,
@@ -134,7 +134,7 @@ public class EnclosureService {
             @FormParam("kindOfEnclosure") String kindOfEnclosure,
 
             @NotEmpty
-            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @FormParam("zooUUID") String zooUUID) {
         Enclosure enclosure = DataHandler.getInstance().readEnclosureByUUID(enclosureUUID);
         enclosure.setLength(length);

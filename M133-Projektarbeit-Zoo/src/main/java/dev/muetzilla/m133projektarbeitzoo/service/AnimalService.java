@@ -45,7 +45,7 @@ public class AnimalService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response readAnimal(
             @NotEmpty
-            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @QueryParam("uuid") String tierUUID
     ) {
         int httpStatus = 200;
@@ -84,7 +84,7 @@ public class AnimalService {
             @Pattern(regexp = "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$")
             @FormParam("birthday") Date birthday,
 
-            @NotEmpty
+            @NotNull
             @DecimalMin(value = "0")
             @DecimalMax(value = "8")
             @Pattern(regexp = "^-?\\d*[02468]$")
@@ -110,7 +110,7 @@ public class AnimalService {
             @FormParam("kindOfAnimal")String kindOfAnimal,
 
             @NotEmpty
-            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @FormParam("enclosureUUID") String enclosureUUID
     ) {
         Animal animal = new Animal();
@@ -148,7 +148,7 @@ public class AnimalService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateAnimal(
             @NotEmpty
-            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @FormParam("animalUUID") String animalUUID,
 
             @NotEmpty
@@ -159,7 +159,7 @@ public class AnimalService {
             @Pattern(regexp = "^\\d{4}\\-(0?[1-9]|1[012])\\-(0?[1-9]|[12][0-9]|3[01])$")
             @FormParam("birthday") Date birthday,
 
-            @NotEmpty
+            @NotNull
             @DecimalMin(value = "0")
             @DecimalMax(value = "8")
             @Pattern(regexp = "^-?\\d*[02468]$")
@@ -170,6 +170,7 @@ public class AnimalService {
             @FormParam("gender") String gender,
 
             @NotEmpty
+            @Size(min=3, max=100)
             @FormParam("feed")String feed,
 
             @NotEmpty
@@ -185,7 +186,7 @@ public class AnimalService {
             @FormParam("kindOfAnimal")String kindOfAnimal,
 
             @NotEmpty
-            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @FormParam("enclosureUUID") String enclosureUUID)
             {
                 Animal animal = DataHandler.getInstance().readAnimalByUUID(animalUUID);
@@ -216,7 +217,7 @@ public class AnimalService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteAnimal(
             @NotEmpty
-            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @QueryParam("animalUUID") String animalUUID
     ) {
         DataHandler.getInstance().deleteAnimal(animalUUID);
