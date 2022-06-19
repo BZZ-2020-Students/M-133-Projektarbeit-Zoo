@@ -158,6 +158,8 @@ public class EnclosureService {
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteEnclosure(
+            @NotEmpty
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @QueryParam("enclosureUUID") String enclosureUUID
     ) {
         DataHandler.getInstance().deleteEnclosure(enclosureUUID);
