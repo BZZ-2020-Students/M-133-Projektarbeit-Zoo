@@ -1,14 +1,25 @@
-[
-    {
-        "zooUUID": "991478a6-d803-11ec-9d64-0242ac120002",
-        "zooName": "Zoo Zürich"
-    },
-    {
-        "zooUUID": "fe18f574-d803-11ec-9d64-0242ac120002",
-        "zooName": "Zoo München"
-    },
-    {
-        "zooUUID": "0d9be7c2-d804-11ec-9d64-0242ac120002",
-        "zooName": "Zoo Berlin"
-    }
-]   
+[ {
+  "zooUUID" : "991478a6-d803-11ec-9d64-0242ac120002",
+  "zooName" : "Zoo Zürich"
+}, {
+  "zooUUID" : "fe18f574-d803-11ec-9d64-0242ac120002",
+  "zooName" : "Zoo München"
+}, {
+  "zooUUID" : "0d9be7c2-d804-11ec-9d64-0242ac120002",
+  "zooName" : "Zoo Berlin"
+}, {
+  "zooUUID" : "75be591a-92cd-4b40-8e85-63be95312ff2",
+  "zooName" : "Zoo London"
+}, {
+  "zooUUID" : "0c6c86b0-bc7a-42b3-8da3-54bc8270d018",
+  "zooName" : "Zoo London"
+}, {
+  "zooUUID" : "5b0a6c18-3cbb-42b5-a281-7fcce0f03b2a",
+  "zooName" : "Zoo London"
+}, {
+  "zooUUID" : "c686f99c-f7d4-49d5-a00b-66adf2ecc588",
+  "zooName" : "Zoo London"
+}, {
+  "zooUUID" : "c882b4a7-595d-45d7-b127-f312a1c4774b",
+  "zooName" : "Zoo London"
+} ]

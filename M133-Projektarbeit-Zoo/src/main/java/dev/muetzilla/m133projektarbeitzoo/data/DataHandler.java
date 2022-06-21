@@ -4,8 +4,8 @@ package dev.muetzilla.m133projektarbeitzoo.data;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import dev.muetzilla.m133projektarbeitzoo.model.Gehege;
-import dev.muetzilla.m133projektarbeitzoo.model.Tier;
+import dev.muetzilla.m133projektarbeitzoo.model.Enclosure;
+import dev.muetzilla.m133projektarbeitzoo.model.Animal;
 import dev.muetzilla.m133projektarbeitzoo.model.Zoo;
 import dev.muetzilla.m133projektarbeitzoo.service.Config;
 
@@ -21,14 +21,14 @@ import java.util.List;
  * @Date: 2022-05-16
  * @Since 1.0.0-SNAPSHOT
  *
- * @Description: Liest Daten aus der JSON Datei aus und bereitet diese für die Service vor.
+ * @Description: Reads the data from the JSON files and prepares them for the service
  *
  */
 public class DataHandler {
     private static DataHandler instance = null;
     private List<Zoo> zooList;
-    private List<Gehege> gehegeList;
-    private List<Tier> tierList;
+    private List<Enclosure> enclosureList;
+    private List<Animal> animalList;
 
     /**
      * private constructor defeats instantiation
@@ -36,14 +36,14 @@ public class DataHandler {
     private DataHandler() {
         setZooList(new ArrayList<>());
         readZooJSON();
-        setGehegeList(new ArrayList<>());
+        setEnclosureList(new ArrayList<>());
         readGehegeJSON();
-        setTierList(new ArrayList<>());
-        readTierJSON();
+        setAnimalList(new ArrayList<>());
+        readAnimalJSON();
     }
 
     /**
-     * @return Instanz des DataHandlers
+     * @return the instance of the DataHandler
      */
     public static DataHandler getInstance() {
         if (instance == null)
@@ -53,7 +53,7 @@ public class DataHandler {
 
 
     /**
-     * @return Liste von Zoos
+     * @return a list of all zpps
      */
     public List<Zoo> readAllZoos() {
         return getZooList();
@@ -61,24 +61,24 @@ public class DataHandler {
 
 
     /**
-     * @return Liste von Gehegen
+     * @return the list of all enclosures
      */
-    public List<Gehege> readAllGehege() {
-        return getGehegeList();
+    public List<Enclosure> readAllEnclsoure() {
+        return getEnclosureList();
     }
 
     /**
-     * @return Liste von Tieren
+     * @return the list of all animals
      */
-    public List<Tier> readAllTiere() {
-        return getTierList();
+    public List<Animal> readAllAnimals() {
+        return getAnimalList();
     }
 
 
 
     /**
-     * @param zooUUID die UUID des Zoos
-     * @return den Zoo (null=not found)
+     * @param zooUUID the UUID of the zoo we want to read
+     * @return the zoo with this UUID (null=not found)
      */
     public Zoo readZooByUUID(String zooUUID) {
         Zoo zoo = null;
@@ -91,8 +91,8 @@ public class DataHandler {
     }
 
     /**
-     * Fügt einen neuen Zoo hinzu
-     * @param zoo der neue Zoo
+     * Adds a new Zoo to the JSON file
+     * @param zoo the new zoo
      */
     public void insertZoo(Zoo zoo) {
         getZooList().add(zoo);
@@ -100,14 +100,14 @@ public class DataHandler {
     }
 
     /**
-     * Die Liste der Zoos updaten
+     * updated the list of all Zoos and writes them to the JSON file
      */
     public void upadteZoo() {
         writeZooJSON();
     }
 
     /**
-     * @param zooUUID  die UUID des Zoos, welcher gelöscht werden soll
+     * @param zooUUID  the UUID of the zoo that should be deleted
      * @return  success=true/false
      */
     public boolean deleteZoo(String zooUUID) {
@@ -123,7 +123,7 @@ public class DataHandler {
 
     /**
      *
-     * @return Eine Liste aller Zoos
+     * @return a list of all the zoos
      */
 
     private List<Zoo> getZooList() {
@@ -131,7 +131,7 @@ public class DataHandler {
     }
 
     /***
-     * @param zooList die Liste der Zoos, welche gesetzt werden soll
+     * @param zooList sets the list of all the zoos needed
      */
 
     private void setZooList(List<Zoo> zooList) {
@@ -139,7 +139,7 @@ public class DataHandler {
     }
 
     /**
-     * Liest die Zoos aus einer JSON Datei aus
+     * Reads the Zoos from the JSON file
      */
     private void readZooJSON() {
         try {
@@ -158,7 +158,7 @@ public class DataHandler {
     }
 
     /**
-     * Schreibt die Zoos in eine JSON Datei
+     * Writes all the zoos in the list into the JSON file
      */
     private void writeZooJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -178,13 +178,13 @@ public class DataHandler {
 
 
     /**
-     * @param gehegeUUID die UUID des Geheges, welches gelsen werden soll
-     * @return das Gehege (null=not found)
+     * @param enclosureUUID the UUID of the enclosure that should be read
+     * @return the enclosure with the UUID passed as parameter (null=not found)
      */
-    public Gehege readGehegeByUUID(String gehegeUUID) {
-        Gehege gehege = null;
-        for (Gehege entry : getGehegeList()) {
-            if (entry.getGehegeUUID().equals(gehegeUUID)) {
+    public Enclosure readEnclosureByUUID(String enclosureUUID) {
+        Enclosure gehege = null;
+        for (Enclosure entry : getEnclosureList()) {
+            if (entry.getEnclosureUUID().equals(enclosureUUID)) {
                 gehege = entry;
             }
         }
@@ -192,28 +192,28 @@ public class DataHandler {
     }
 
     /**
-     * @param gehege fügt ein neues Gehege in die Liste der Gehege ein
+     * @param enclosure adds a new enclosure to the list and writes all enclosured to the JSON file
      */
-    public void insertGehege(Gehege gehege) {
-        getGehegeList().add(gehege);
+    public void insertEnclosure(Enclosure enclosure) {
+        getEnclosureList().add(enclosure);
         writeGehegeJSON();
     }
 
     /**
-     * Updated die Liste der Gehege
+     * Updates the list of enclosures
      */
-    public void updateGehege() {
+    public void updateEnclosure() {
         writeGehegeJSON();
     }
 
     /**
-     * @param gehegeUUID die UUID des Geheges, welches gelöscht werden soll
-     * @return  success=true/false
+     * @param enclosureUUID the UUID of the enclsoure which should be deleted
+     * @return success=true/false
      */
-    public boolean deleteGehege(String gehegeUUID) {
-        Gehege gehege = readGehegeByUUID(gehegeUUID);
-        if (gehege != null) {
-            getGehegeList().remove(gehege);
+    public boolean deleteEnclosure(String enclosureUUID) {
+        Enclosure enclosure = readEnclosureByUUID(enclosureUUID);
+        if (enclosure != null) {
+            getEnclosureList().remove(enclosure);
             writeGehegeJSON();
             return true;
         } else {
@@ -222,20 +222,20 @@ public class DataHandler {
     }
 
     /**
-     * Liest alle Gehege aus einer JSON Datei
+     * Reads all the enclosured from the JSON file
      */
     private void readGehegeJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
-                            Config.getProperty("gehegeJSON")
+                            Config.getProperty("enclosureJSON")
                     )
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Gehege[] gehegeArray = objectMapper.readValue(jsonData, Gehege[].class);
-            for (Gehege gehege : gehegeArray) {
-                getGehegeList().add(gehege);
-                System.out.println(gehege);
+            Enclosure[] enclosureArray = objectMapper.readValue(jsonData, Enclosure[].class);
+            for (Enclosure enclosure : enclosureArray) {
+                getEnclosureList().add(enclosure);
+                System.out.println(enclosure);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -243,7 +243,7 @@ public class DataHandler {
     }
 
     /**
-     * Schreibt die Liste aller Gehege in eine JSON Datei
+     * Writes all the enclosures to the JSON file
      */
     private void writeGehegeJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -251,63 +251,63 @@ public class DataHandler {
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String bookPath = Config.getProperty("gehegeJSON");
+        String bookPath = Config.getProperty("enclosureUUID");
         try {
             fileOutputStream = new FileOutputStream(bookPath);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getGehegeList());
+            objectWriter.writeValue(fileWriter, getEnclosureList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
     /**
-     * @return eine Liste aller Gehege
+     * @return the list of all the enclosures
      */
 
-    private List<Gehege> getGehegeList() {
-        return gehegeList;
+    private List<Enclosure> getEnclosureList() {
+        return enclosureList;
     }
 
     /**
-     * @param gehegeList setzt die Liste aller Gehege
+     * @param enclosureList sets the list of all enclosures
      */
 
-    private void setGehegeList(List<Gehege> gehegeList) {
-        this.gehegeList = gehegeList;
+    private void setEnclosureList(List<Enclosure> enclosureList) {
+        this.enclosureList = enclosureList;
     }
 
 
     /**
-     * @param tierUUID die UUID des Tiers, welches gelsen werden soll
-     * @return das Tier (null=not found)
+     * @param animalUUID the UUID of the animal that should be read
+     * @return the animal with the UUID passed as parameter (null=not found)
      */
-    public Tier readTierByUUID(String tierUUID) {
-        Tier tier = null;
-        for (Tier entry : getTierList()) {
-            if (entry.getTierUUID().equals(tierUUID)) {
-                tier = entry;
+    public Animal readAnimalByUUID(String animalUUID) {
+        Animal animal = null;
+        for (Animal entry : getAnimalList()) {
+            if (entry.getAnimalUUID().equals(animalUUID)) {
+                animal = entry;
             }
         }
-        return tier;
+        return animal;
     }
 
     /**
-     * Updated die Liste der Tiere
+     * Updates the list of all animals
      */
-    public void updateTier() {
-        writeTierJSON();
+    public void updateAnimal() {
+        writeAnimalJSON();
     }
 
     /**
-     * @param tierUUID die UUID des Tiers, welches gelöscht werden soll
+     * @param animalUUID the UUID of the animal which should be deleted
      * @return  success=true/false
      */
-    public boolean deleteTier(String tierUUID) {
-        Tier tier = readTierByUUID(tierUUID);
-        if (tier != null) {
-            getGehegeList().remove(tier);
-            writeTierJSON();
+    public boolean deleteAnimal(String animalUUID) {
+        Animal animal = readAnimalByUUID(animalUUID);
+        if (animal != null) {
+            getEnclosureList().remove(animal);
+            writeAnimalJSON();
             return true;
         } else {
             return false;
@@ -315,18 +315,18 @@ public class DataHandler {
     }
 
     /**
-     * Liest eine Liste aller Tiere aus einer JSON Datei
+     * Reads all animals from the JSON file
      */
-    private void readTierJSON() {
+    private void readAnimalJSON() {
         try {
-            String path = Config.getProperty("tierJSON");
+            String path = Config.getProperty("animalJSON");
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(path)
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Tier[] tiere = objectMapper.readValue(jsonData, Tier[].class);
-            for (Tier tier : tiere) {
-                getTierList().add(tier);
+            Animal[] animals = objectMapper.readValue(jsonData, Animal[].class);
+            for (Animal animal : animals) {
+                getAnimalList().add(animal);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -334,38 +334,47 @@ public class DataHandler {
     }
 
     /**
-     * Schreibt eine Liste aller Tiere in eine JSON Datei
+     * Writes all animals into the JSON file
      */
-    private void writeTierJSON() {
+    private void writeAnimalJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String bookPath = Config.getProperty("tierJSON");
+        String bookPath = Config.getProperty("animalJSON");
         try {
             fileOutputStream = new FileOutputStream(bookPath);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getTierList());
+            objectWriter.writeValue(fileWriter, getAnimalList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
     /**
-     * @return eine Liste aller Tiere
+     * Adds a new animal
+     * @param animal the new animal
      */
-
-    private List<Tier> getTierList() {
-        return tierList;
+    public void insertAnimal(Animal animal) {
+        getAnimalList().add(animal);
+        writeAnimalJSON();
     }
 
     /**
-     * @param tierList setzt eine Liste aller Tiere
+     * @return a list of all animals
      */
 
-    private void setTierList(List<Tier> tierList) {
-        this.tierList = tierList;
+    private List<Animal> getAnimalList() {
+        return animalList;
+    }
+
+    /**
+     * @param animalList the list of all animals
+     */
+
+    private void setAnimalList(List<Animal> animalList) {
+        this.animalList = animalList;
     }
 
 }

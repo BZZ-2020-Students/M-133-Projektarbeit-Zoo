@@ -34,8 +34,8 @@ public class Config extends Application {
     public Set<Class<?>> getClasses() {
         HashSet<Class<?>> providers = new HashSet<>();
         providers.add(ZooService.class);
-        providers.add(TierService.class);
-        providers.add(GehegeService.class);
+        providers.add(AnimalService.class);
+        providers.add(EnclosureService.class);
         return providers;
     }
 

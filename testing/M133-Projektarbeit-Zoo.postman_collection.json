@@ -7,367 +7,7500 @@
 	},
 	"item": [
 		{
-			"name": "Test Zoo List - Success",
-			"event": [
+			"name": "Read",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Test Status whole Zoo List Success\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/list/",
-					"protocol": "http",
-					"host": [
-						"localhost"
+					"name": "Test Single Enclosure - Fail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Test Status Single Gehege Fail\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
 					],
-					"port": "8080",
-					"path": [
-						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
-						"resource",
-						"zoo",
-						"list",
-						""
-					]
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/read?uuid=test1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"enclosure",
+								"read"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "test1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Single Zoo - Fail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Test Status Single Gehege Fail\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=test1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"zoo",
+								"read"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "test1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Single Animal- Fail",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Test Status Single Tier Fail\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/read?uuid=test1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"animal",
+								"read"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "test1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Single Animal- Success",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Test Status Single Tier Success\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/read?uuid=f369d306-d8f2-11ec-9d64-0242ac120002",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"animal",
+								"read"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "f369d306-d8f2-11ec-9d64-0242ac120002"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Animal List - Success",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Test Status whole Tier List Success\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"animal",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Single Enclosure- Success",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Test Status Single Gehege Success\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/read?uuid=9b45446c-d8ed-11ec-9d64-0242ac120002",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"enclosure",
+								"read"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "9b45446c-d8ed-11ec-9d64-0242ac120002"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Zoo List - Success",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Test Status whole Zoo List Success\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"zoo",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test Single Zoo - Success",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Test Status Single Zoo Success\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=fe18f574-d803-11ec-9d64-0242ac120002",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"zoo",
+								"read"
+							],
+							"query": [
+								{
+									"key": "uuid",
+									"value": "fe18f574-d803-11ec-9d64-0242ac120002"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test  EnclosureList - Success",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Test Status whole Gehege List Success\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/list/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"enclosure",
+								"list",
+								""
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Test Single Zoo - Success",
-			"event": [
+			"name": "Create",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Test Status Single Zoo Success\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=fe18f574-d803-11ec-9d64-0242ac120002",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
-						"resource",
-						"zoo",
-						"read"
-					],
-					"query": [
+					"name": "Zoo",
+					"item": [
 						{
-							"key": "uuid",
-							"value": "fe18f574-d803-11ec-9d64-0242ac120002"
+							"name": "Create Zoo Correct Values",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create zoo with correct values success\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "zooName",
+											"value": "Zoo London",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"zoo",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Zoo To Short Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create zoo fail, name is to short\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "zooName",
+											"value": "Z",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"zoo",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Zoo To Long Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create zoo fail, name is to long\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "zooName",
+											"value": "The Name of this Zoo is very long and will fail therefore",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"zoo",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Zoo Empty Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create zoo fail, name is to empty\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "zooName",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"zoo",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Gehege",
+					"item": [
+						{
+							"name": "Create Enclosure",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create enclosure with correct values success\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "length",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Enclosure to Low Length",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create enclosure, to short length\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "length",
+											"value": "-5",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Enclosure to High Length",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create enclosure, to long length\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "length",
+											"value": "1000",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Enclosure Empty Length",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create enclosure empty length\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "length",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Enclosure to Low Width",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create enclosure, to short width\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "length",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "-7",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Enclosure to High Width",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create enclosure, to long width\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "length",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "1000",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Enclosure Empty Width",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create enclosure, empty width\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "length",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Enclosure To Long Kind of Enclosure",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create enclosure, to long kind of enclosure\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "length",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "This kind of enclosure is to long and will lead to an error",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Enclosure To Short Kind of Enclosure",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create enclosure, to short kind of enclosure\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "length",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "T",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Enclosure Empty Kind of Enclosure",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create enclosure empty kind of enclosure\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "length",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Enclosure Wrong Pattern for Zoo UUID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create enclosure wrong pattern for Zoo UUID\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "length",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d80-11ec-9d64-0242ac1200",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Enclosure Empty Zoo UUID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create enclosure empty Zoo UUID\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "length",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "5",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tier",
+					"item": [
+						{
+							"name": "Create Animal Correct Values",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal with correct values success\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal To Short",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal with to short name\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "F",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal To Long Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal with to long name\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz has a very long name so his name is invalid as a parameter",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal with Empty Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal with an empty name\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Birthday does not fit pattern",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal birthday does not fit the pattern\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz ",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "201-11-2012",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Birthday is Empty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal birthday is empty\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz ",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Amount of Legs is to small",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal amount of legs is to small\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "-1",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Amount of Legs is to large",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal amount of legs is to large\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Amount of Legs is Empty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal amount of legs is empty\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Gender is Empty & To Small",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal gender is empty and therefore to small\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Gender is To Large",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal gender is to large\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "Franz gender is male but very long written",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Feed to Small",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal feed is to Short\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "H",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Feed to Large",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal feed is to Large\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Franz likes the following kind of fish: Hering, Barsch,  Hering, Barsch,  Hering, Barsch, Hering, Barsch, Hering, Barsch, Hering, Barsch, Hering, Barsch, Hering, Barsch, Hering, Barsch, Hering, Barsch, Hering, Barsch, Hering, Barsch, Hering, Barsch, Hering, Barsch, Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Feed is Empty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal feed is to Empty\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Kind of Enclosure is to Short",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal kind of enclsoure is to short\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "T",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Kind of Enclosure is to Large",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal kind of enclsoure is to large\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Franz lives in a Trockengehege with very strage trees",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Kind of Enclosure is Empty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal kind of enclsoure is empty\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Kind is to Short",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal biotop is to short\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "T",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Biotop is to Large",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal biotop is to large\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "The tundra in which Franz lives is in the middle of a very hot desert",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Biotop is Empty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal biotop is empty\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Kind of Animal To Short",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal kind of animal is to short\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "B",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Kind of Animal To Large",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal kind of animal is to large\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Is Franz really a Braunbär or is he a little shark who got lost in the tundra?",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Kind of Animal is Empty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal kind of animal is empty\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Enclosure UUID Wrong Pattern",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal UUID for enclosrue does not match pattern\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b446c-ded-11c-9d64-0242ac12002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Animal Enclosure UUID Wrong Pattern Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status create animal empty UUID for enclosure\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"create",
+										""
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Test Single Gehege - Success",
-			"event": [
+			"name": "Update",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Test Status Single Gehege Success\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/gehege/read?uuid=9b45446c-d8ed-11ec-9d64-0242ac120002",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
-						"resource",
-						"gehege",
-						"read"
-					],
-					"query": [
+					"name": "Zoo",
+					"item": [
 						{
-							"key": "uuid",
-							"value": "9b45446c-d8ed-11ec-9d64-0242ac120002"
+							"name": "Update Zoo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update zoo with correct values success\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "zooUUID",
+											"value": "991478a6-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "zooName",
+											"value": "New York Zoo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"zoo",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Zoo To Short Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update zoo with to short name\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "zooUUID",
+											"value": "991478a6-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "zooName",
+											"value": "Zo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"zoo",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Zoo To Long Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update zoo with to long name\", function () {\r",
+											"        pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "zooUUID",
+											"value": "991478a6-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "zooName",
+											"value": "The Name of this Zoo is very long and will fail therefore",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"zoo",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Zoo Empty Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update zoo with empty name\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "zooUUID",
+											"value": "991478a6-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "zooName",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"zoo",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Zoo Empty UUID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update zoo with empty uuid\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "zooUUID",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "zooName",
+											"value": "New York Zoo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"zoo",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Zoo Invalid UUID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update zoo with invalid uuid\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "zooUUID",
+											"value": "27c2bf-1270-4936-8f1a-c8b3fa92e4",
+											"type": "text"
+										},
+										{
+											"key": "zooName",
+											"value": "New York Zoo",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"zoo",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Gehege",
+					"item": [
+						{
+							"name": "Update Enclosure",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure with valid values\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Abgedecktesgehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure Wrong Pattern Enclosure UUID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure with UUID with invalid pattern\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b446c-d8ed-11ec-964-0242ac120",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Abgedecktesgehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure Empty Enclosure UUID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure with empty enclosure uuid\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Abgedecktesgehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure to Low Length",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure, to short length\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "-5",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure to High Length",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure, to long length\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "1000",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure Empty Length",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure, empty length\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure To High Width",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure, to high width\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "1000",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure To Low Width",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure, to low width\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "-7",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure Empty Width",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure, to low width\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "-7",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure To Long Kind of Enclosure",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure,to long kind of enclosure\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "This kind of enclosure is to long and will lead to an error",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure To Short Kind of Enclosure",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure, to short kind of enclosure\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "T",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure Empty kind of enclosure",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure, empty kind of enclosure\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f574-d803-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure Wrong Pattern Zoo UUID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure, wrong pattern for zoo UUID\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "fe18f4-d803-11ec-d64-0242ac1202",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Enclosure Empty  Zoo UUID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update enclosure, empty zoo UUID\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "length",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "width",
+											"value": "20",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "zooUUID",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tier",
+					"item": [
+						{
+							"name": "Update Animal Correct Values Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with correct values success\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz the Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "Male",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbaer",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "d93e2f78-d923-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal Wrong Animal UUID Patttern",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with wrong Animal UUID Pattern \", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f35150-d9ea-1ec-9d64-0242ac1200",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal Empty Animal UUID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with empty Animal UUID \", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal To Short Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with to short name\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "F",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal To Long Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with to long name\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz as all the other Braunbären has a very long name",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal Empty Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with empty name\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal Birthday Wrong Pattern",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with wrong birthday pattern\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "201-11-20124",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal Empty Birthday",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with empty birthday\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal Amount of Legs To Small Amount",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal to small amount of legs\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "-1",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal Amount of Legs To Large Amount",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal to large amount of legs\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal Amount of Legs Empty Amount of Legs",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal empty amount of legs\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal Gender To Short & Empty",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal empty and therefore also to short gender\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal Gender To Long Gender",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with to long gender\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "Franz is a male Braunbär with blue eyes",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal Feed To Short",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with to short feed\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "H",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal Feed To Long",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with to long feed\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Franz the Braunbär likes the following fish:  Hering, Barsch,  Hering, Barsch,  Hering, Barsch,  Hering, Barsch,  Hering, Barsch,  Hering, Barsch,  Hering, Barsch, Hering, Barsch,  Hering, Barsch, Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal With Empty Feed",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with empty feed\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal With To Short Kind Of Enclosure",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with to short kind of enclosure\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "T",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal With To Long Kind Of Enclosure",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with to long kind of enclosure\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Franz the Braunbär lives in a beautiful Trockengehege with large windows to gaze at the stars",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal With Empty Kind Of Enclosure",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with empty kind of enclosure\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal With To Short Biotop",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with to short biotop\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "T",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal With To Long Biotop",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with to long  biotop\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Franz the Braunbär lives in a nice Tundra which is located in the middle of a very very hot desert so he wears a hat everyday",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal With Empty Biotop",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with empty biotop\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal With To Short Kind Of Animal",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with to short kind of animal\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "B",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal With To Long Kind Of Animal",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with to long kind of animal\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Franz the Braunbär is a very nice Braunbär if not to say the nicest Braunbär I've ever met...",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal With Empty Kind of Animal",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with empty kind of animal\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b45446c-d8ed-11ec-9d64-0242ac120002",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal With Wrong Enclosure UUID Pattern",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with wrong enclosure UUID pattern\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "9b4544-d8ed-11ec-9d4-0242ac1200",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Animal With Empty Enclosure UUID Pattern",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status update animal with empty enclosure UUID\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "animalUUID",
+											"value": "f3515080-d9ea-11ec-9d64-0242ac120002",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Franz",
+											"type": "text"
+										},
+										{
+											"key": "birthday",
+											"value": "2015-11-20",
+											"type": "text"
+										},
+										{
+											"key": "amountOfLegs",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "M",
+											"type": "text"
+										},
+										{
+											"key": "feed",
+											"value": "Hering, Barsch",
+											"type": "text"
+										},
+										{
+											"key": "kindOfEnclosure",
+											"value": "Trockengehege",
+											"type": "text"
+										},
+										{
+											"key": "biotop",
+											"value": "Tundra",
+											"type": "text"
+										},
+										{
+											"key": "kindOfAnimal",
+											"value": "Braunbär",
+											"type": "text"
+										},
+										{
+											"key": "enclosureUUID",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"update",
+										""
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Test  Gehege List - Success",
-			"event": [
+			"name": "Delete",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Test Status whole Gehege List Success\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/gehege/list/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
-						"resource",
-						"gehege",
-						"list",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Test Tier List - Success",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Test Status whole Tier List Success\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/tier/list/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
-						"resource",
-						"tier",
-						"list",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Test Single Tier - Success",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Test Status Single Tier Success\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/tier/read?uuid=f369d306-d8f2-11ec-9d64-0242ac120002",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
-						"resource",
-						"tier",
-						"read"
-					],
-					"query": [
+					"name": "Zoo",
+					"item": [
 						{
-							"key": "uuid",
-							"value": "f369d306-d8f2-11ec-9d64-0242ac120002"
+							"name": "DeleteZoo",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status delete zoo with correct UUID\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/delete/?zooUUID=27ce62bf-1270-4936-8f1a-c8b3fa92e498",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"zoo",
+										"delete",
+										""
+									],
+									"query": [
+										{
+											"key": "zooUUID",
+											"value": "27ce62bf-1270-4936-8f1a-c8b3fa92e498"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteZoo Wrong Pattern for UUID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status delete zoo invalid UUID\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/delete/?zooUUID=27ce6f-1270-4936-8f1a-c8b3fae498",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"zoo",
+										"delete",
+										""
+									],
+									"query": [
+										{
+											"key": "zooUUID",
+											"value": "27ce6f-1270-4936-8f1a-c8b3fae498"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Gehege",
+					"item": [
+						{
+							"name": "Delete Gehege",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status delete enclosure with correct UUID\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/delete?enclosureUUID=365c3daf-9ff2-4dee-aafe-545457e2f151",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "enclosureUUID",
+											"value": "365c3daf-9ff2-4dee-aafe-545457e2f151"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Gehege Wrong Pattern for UUID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status delete enclosure with invalid UUID\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/delete?enclosureUUID=3daf-92-4d-aafe-5457e2f1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"enclosure",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "enclosureUUID",
+											"value": "3daf-92-4d-aafe-5457e2f1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tier",
+					"item": [
+						{
+							"name": "Delete Animal Wrong UUID Pattern",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status delete animal with invalid UUID\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/delete?animalUUID=e5a3c7-540-4ce8-90ad-303665fc2c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "animalUUID",
+											"value": "e5a3c7-540-4ce8-90ad-303665fc2c"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Animal",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Test Status delete animal with invalid UUID\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/delete?animalUUID=e5a3c7fd-5440-4ce8-90ad-30379665fc2c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+										"resource",
+										"animal",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "animalUUID",
+											"value": "e5a3c7fd-5440-4ce8-90ad-30379665fc2c"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Test Single Tier - Fail",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Test Status Single Tier Fail\", function () {\r",
-							"    pm.response.to.have.status(410);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/tier/read?uuid=test1234",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
-						"resource",
-						"tier",
-						"read"
-					],
-					"query": [
-						{
-							"key": "uuid",
-							"value": "test1234"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Test Single Gehege - Fail",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Test Status Single Gehege Fail\", function () {\r",
-							"    pm.response.to.have.status(410);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/gehege/read?uuid=test1234",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
-						"resource",
-						"gehege",
-						"read"
-					],
-					"query": [
-						{
-							"key": "uuid",
-							"value": "test1234"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Test Single Zoo - Fail",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Test Status Single Gehege Fail\", function () {\r",
-							"    pm.response.to.have.status(410);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=test1234",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
-						"resource",
-						"zoo",
-						"read"
-					],
-					"query": [
-						{
-							"key": "uuid",
-							"value": "test1234"
-						}
-					]
-				}
-			},
-			"response": []
+			]
 		}
 	]
 }

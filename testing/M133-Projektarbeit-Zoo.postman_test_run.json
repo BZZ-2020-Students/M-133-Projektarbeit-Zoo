@@ -1,153 +1,99 @@
 {
-	"id": "5973dc18-8dee-4363-8c52-3c3a6939a129",
+	"id": "774ae11d-3755-4e5c-a776-4e770609beda",
 	"name": "M133-Projektarbeit-Zoo",
-	"timestamp": "2022-05-23T21:30:27.118Z",
+	"timestamp": "2022-06-19T19:51:37.347Z",
 	"collection_id": "20897198-bef27f0a-08a1-4872-8256-009ec8acbb20",
 	"folder_id": 0,
 	"environment_id": "0",
-	"totalPass": 9,
+	"totalPass": 103,
 	"totalFail": 0,
 	"results": [
 		{
-			"id": "b2d72e51-1c13-4e53-8ae7-16f167b6cf9c",
-			"name": "Test Zoo List - Success",
-			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/list/",
-			"time": 11,
+			"id": "d64708ae-0a6b-4da0-8449-28edf48b3314",
+			"name": "Test Single Enclosure - Fail",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/read?uuid=test1234",
+			"time": 60,
 			"responseCode": {
-				"code": 200,
-				"name": "OK"
+				"code": 400,
+				"name": "Bad Request"
 			},
 			"tests": {
-				"Test Status whole Zoo List Success": true
+				"Test Status Single Gehege Fail": true
 			},
 			"testPassFailCounts": {
-				"Test Status whole Zoo List Success": {
+				"Test Status Single Gehege Fail": {
 					"pass": 1,
 					"fail": 0
 				}
 			},
 			"times": [
-				11
+				60
 			],
 			"allTests": [
 				{
-					"Test Status whole Zoo List Success": true
+					"Test Status Single Gehege Fail": true
 				}
 			]
 		},
 		{
-			"id": "08846ad0-33ca-4534-a1e4-e843bfcc808c",
-			"name": "Test Single Zoo - Success",
-			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=fe18f574-d803-11ec-9d64-0242ac120002",
-			"time": 4,
+			"id": "75f424f4-58ae-4c44-b798-0016762c7638",
+			"name": "Test Single Zoo - Fail",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=test1234",
+			"time": 7,
 			"responseCode": {
-				"code": 200,
-				"name": "OK"
+				"code": 400,
+				"name": "Bad Request"
 			},
 			"tests": {
-				"Test Status Single Zoo Success": true
+				"Test Status Single Gehege Fail": true
 			},
 			"testPassFailCounts": {
-				"Test Status Single Zoo Success": {
+				"Test Status Single Gehege Fail": {
 					"pass": 1,
 					"fail": 0
 				}
 			},
 			"times": [
-				4
+				7
 			],
 			"allTests": [
 				{
-					"Test Status Single Zoo Success": true
+					"Test Status Single Gehege Fail": true
 				}
 			]
 		},
 		{
-			"id": "89c1a5e7-2aa6-43ea-80e3-8eab0f08a710",
-			"name": "Test Single Gehege - Success",
-			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/gehege/read?uuid=9b45446c-d8ed-11ec-9d64-0242ac120002",
-			"time": 3,
+			"id": "a5fd6a7f-613b-43b9-8fa0-5e854d14d3e8",
+			"name": "Test Single Animal- Fail",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/read?uuid=test1234",
+			"time": 15,
 			"responseCode": {
-				"code": 200,
-				"name": "OK"
+				"code": 400,
+				"name": "Bad Request"
 			},
 			"tests": {
-				"Test Status Single Gehege Success": true
+				"Test Status Single Tier Fail": true
 			},
 			"testPassFailCounts": {
-				"Test Status Single Gehege Success": {
+				"Test Status Single Tier Fail": {
 					"pass": 1,
 					"fail": 0
 				}
 			},
 			"times": [
-				3
+				15
 			],
 			"allTests": [
 				{
-					"Test Status Single Gehege Success": true
-				}
-			]
-		},
-		{
-			"id": "c9321f5c-de96-40cf-917d-63d942e1c95d",
-			"name": "Test  Gehege List - Success",
-			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/gehege/list/",
-			"time": 3,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Test Status whole Gehege List Success": true
-			},
-			"testPassFailCounts": {
-				"Test Status whole Gehege List Success": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				3
-			],
-			"allTests": [
-				{
-					"Test Status whole Gehege List Success": true
-				}
-			]
-		},
-		{
-			"id": "ecba0a86-7cde-4cee-9738-4de240fbe118",
-			"name": "Test Tier List - Success",
-			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/tier/list/",
-			"time": 4,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Test Status whole Tier List Success": true
-			},
-			"testPassFailCounts": {
-				"Test Status whole Tier List Success": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				4
-			],
-			"allTests": [
-				{
-					"Test Status whole Tier List Success": true
+					"Test Status Single Tier Fail": true
 				}
 			]
 		},
 		{
 			"id": "265768b6-0dec-4d00-82df-fb0465def465",
-			"name": "Test Single Tier - Success",
-			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/tier/read?uuid=f369d306-d8f2-11ec-9d64-0242ac120002",
-			"time": 3,
+			"name": "Test Single Animal- Success",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/read?uuid=f369d306-d8f2-11ec-9d64-0242ac120002",
+			"time": 882,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -162,7 +108,7 @@
 				}
 			},
 			"times": [
-				3
+				882
 			],
 			"allTests": [
 				{
@@ -171,73 +117,73 @@
 			]
 		},
 		{
-			"id": "a5fd6a7f-613b-43b9-8fa0-5e854d14d3e8",
-			"name": "Test Single Tier - Fail",
-			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/tier/read?uuid=test1234",
-			"time": 3,
+			"id": "ecba0a86-7cde-4cee-9738-4de240fbe118",
+			"name": "Test Animal List - Success",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/list/",
+			"time": 6,
 			"responseCode": {
-				"code": 410,
-				"name": "Gone"
+				"code": 200,
+				"name": "OK"
 			},
 			"tests": {
-				"Test Status Single Tier Fail": true
+				"Test Status whole Tier List Success": true
 			},
 			"testPassFailCounts": {
-				"Test Status Single Tier Fail": {
+				"Test Status whole Tier List Success": {
 					"pass": 1,
 					"fail": 0
 				}
 			},
 			"times": [
-				3
+				6
 			],
 			"allTests": [
 				{
-					"Test Status Single Tier Fail": true
+					"Test Status whole Tier List Success": true
 				}
 			]
 		},
 		{
-			"id": "d64708ae-0a6b-4da0-8449-28edf48b3314",
-			"name": "Test Single Gehege - Fail",
-			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/gehege/read?uuid=test1234",
-			"time": 3,
+			"id": "89c1a5e7-2aa6-43ea-80e3-8eab0f08a710",
+			"name": "Test Single Enclosure- Success",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/read?uuid=9b45446c-d8ed-11ec-9d64-0242ac120002",
+			"time": 4,
 			"responseCode": {
-				"code": 410,
-				"name": "Gone"
+				"code": 200,
+				"name": "OK"
 			},
 			"tests": {
-				"Test Status Single Gehege Fail": true
+				"Test Status Single Gehege Success": true
 			},
 			"testPassFailCounts": {
-				"Test Status Single Gehege Fail": {
+				"Test Status Single Gehege Success": {
 					"pass": 1,
 					"fail": 0
 				}
 			},
 			"times": [
-				3
+				4
 			],
 			"allTests": [
 				{
-					"Test Status Single Gehege Fail": true
+					"Test Status Single Gehege Success": true
 				}
 			]
 		},
 		{
-			"id": "75f424f4-58ae-4c44-b798-0016762c7638",
-			"name": "Test Single Zoo - Fail",
-			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=test1234",
+			"id": "b2d72e51-1c13-4e53-8ae7-16f167b6cf9c",
+			"name": "Test Zoo List - Success",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/list/",
 			"time": 3,
 			"responseCode": {
-				"code": 410,
-				"name": "Gone"
+				"code": 200,
+				"name": "OK"
 			},
 			"tests": {
-				"Test Status Single Gehege Fail": true
+				"Test Status whole Zoo List Success": true
 			},
 			"testPassFailCounts": {
-				"Test Status Single Gehege Fail": {
+				"Test Status whole Zoo List Success": {
 					"pass": 1,
 					"fail": 0
 				}
@@ -247,15 +193,2631 @@
 			],
 			"allTests": [
 				{
-					"Test Status Single Gehege Fail": true
+					"Test Status whole Zoo List Success": true
+				}
+			]
+		},
+		{
+			"id": "08846ad0-33ca-4534-a1e4-e843bfcc808c",
+			"name": "Test Single Zoo - Success",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=fe18f574-d803-11ec-9d64-0242ac120002",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status Single Zoo Success": true
+			},
+			"testPassFailCounts": {
+				"Test Status Single Zoo Success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Test Status Single Zoo Success": true
+				}
+			]
+		},
+		{
+			"id": "c9321f5c-de96-40cf-917d-63d942e1c95d",
+			"name": "Test  EnclosureList - Success",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/list/",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status whole Gehege List Success": true
+			},
+			"testPassFailCounts": {
+				"Test Status whole Gehege List Success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status whole Gehege List Success": true
+				}
+			]
+		},
+		{
+			"id": "0b7e616a-fe14-4d9a-805f-3e1b1ac2b638",
+			"name": "Create Zoo Correct Values",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/create/",
+			"time": 20,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status create zoo with correct values success": true
+			},
+			"testPassFailCounts": {
+				"Test Status create zoo with correct values success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				20
+			],
+			"allTests": [
+				{
+					"Test Status create zoo with correct values success": true
+				}
+			]
+		},
+		{
+			"id": "a2290cfb-0857-4803-b2be-dd8f057f20d2",
+			"name": "Create Zoo To Short Name",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create zoo fail, name is to short": true
+			},
+			"testPassFailCounts": {
+				"Test Status create zoo fail, name is to short": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create zoo fail, name is to short": true
+				}
+			]
+		},
+		{
+			"id": "94209c15-8d71-4b8b-8896-a7dde4b9f09e",
+			"name": "Create Zoo To Long Name",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/create/",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create zoo fail, name is to long": true
+			},
+			"testPassFailCounts": {
+				"Test Status create zoo fail, name is to long": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create zoo fail, name is to long": true
+				}
+			]
+		},
+		{
+			"id": "b609a08d-d466-408f-9fc5-5397489289e8",
+			"name": "Create Zoo Empty Name",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/create/",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create zoo fail, name is to empty": true
+			},
+			"testPassFailCounts": {
+				"Test Status create zoo fail, name is to empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create zoo fail, name is to empty": true
+				}
+			]
+		},
+		{
+			"id": "42ce65f3-f8b5-414e-a0ed-b97c8ed02f99",
+			"name": "Create Enclosure",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status create enclosure with correct values success": true
+			},
+			"testPassFailCounts": {
+				"Test Status create enclosure with correct values success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Test Status create enclosure with correct values success": true
+				}
+			]
+		},
+		{
+			"id": "32b7f1ac-ae26-4538-9498-234962be9ee5",
+			"name": "Create Enclosure to Low Length",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+			"time": 14,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create enclosure, to short length": true
+			},
+			"testPassFailCounts": {
+				"Test Status create enclosure, to short length": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"Test Status create enclosure, to short length": true
+				}
+			]
+		},
+		{
+			"id": "25a877d0-dcc3-44bf-b9f2-c869a32afd81",
+			"name": "Create Enclosure to High Length",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create enclosure, to long length": true
+			},
+			"testPassFailCounts": {
+				"Test Status create enclosure, to long length": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create enclosure, to long length": true
+				}
+			]
+		},
+		{
+			"id": "497c7753-6327-4e1b-b507-d9a3d3604f51",
+			"name": "Create Enclosure Empty Length",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create enclosure empty length": true
+			},
+			"testPassFailCounts": {
+				"Test Status create enclosure empty length": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create enclosure empty length": true
+				}
+			]
+		},
+		{
+			"id": "9302c292-2bac-4442-857b-291b85a0570e",
+			"name": "Create Enclosure to Low Width",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create enclosure, to short width": true
+			},
+			"testPassFailCounts": {
+				"Test Status create enclosure, to short width": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create enclosure, to short width": true
+				}
+			]
+		},
+		{
+			"id": "cbc0fdb7-74be-4258-8453-5f7a8cbab58b",
+			"name": "Create Enclosure to High Width",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create enclosure, to long width": true
+			},
+			"testPassFailCounts": {
+				"Test Status create enclosure, to long width": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create enclosure, to long width": true
+				}
+			]
+		},
+		{
+			"id": "dc524b2d-36f5-40da-90b6-45cc2b5025a6",
+			"name": "Create Enclosure Empty Width",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create enclosure, empty width": true
+			},
+			"testPassFailCounts": {
+				"Test Status create enclosure, empty width": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create enclosure, empty width": true
+				}
+			]
+		},
+		{
+			"id": "d95a5011-3598-4375-8e66-8604ebb41fd4",
+			"name": "Create Enclosure To Long Kind of Enclosure",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create enclosure, to long kind of enclosure": true
+			},
+			"testPassFailCounts": {
+				"Test Status create enclosure, to long kind of enclosure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create enclosure, to long kind of enclosure": true
+				}
+			]
+		},
+		{
+			"id": "5ae72c29-d015-4459-b116-d7025ab28ac6",
+			"name": "Create Enclosure To Short Kind of Enclosure",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create enclosure, to short kind of enclosure": true
+			},
+			"testPassFailCounts": {
+				"Test Status create enclosure, to short kind of enclosure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create enclosure, to short kind of enclosure": true
+				}
+			]
+		},
+		{
+			"id": "ea034354-0966-4cce-8331-4da042ebdc0a",
+			"name": "Create Enclosure Empty Kind of Enclosure",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create enclosure empty kind of enclosure": true
+			},
+			"testPassFailCounts": {
+				"Test Status create enclosure empty kind of enclosure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create enclosure empty kind of enclosure": true
+				}
+			]
+		},
+		{
+			"id": "842578de-ae9c-4780-abb1-98c1cdf974f3",
+			"name": "Create Enclosure Wrong Pattern for Zoo UUID",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create enclosure wrong pattern for Zoo UUID": true
+			},
+			"testPassFailCounts": {
+				"Test Status create enclosure wrong pattern for Zoo UUID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create enclosure wrong pattern for Zoo UUID": true
+				}
+			]
+		},
+		{
+			"id": "ba31c42a-a06b-4685-b09c-2327ea808e28",
+			"name": "Create Enclosure Empty Zoo UUID",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create enclosure empty Zoo UUID": true
+			},
+			"testPassFailCounts": {
+				"Test Status create enclosure empty Zoo UUID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create enclosure empty Zoo UUID": true
+				}
+			]
+		},
+		{
+			"id": "47286292-330c-4f8f-9b24-573ff32971b6",
+			"name": "Create Animal Correct Values",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status create animal with correct values success": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal with correct values success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"Test Status create animal with correct values success": true
+				}
+			]
+		},
+		{
+			"id": "06e7ac94-23e2-40b8-9402-01712798ad66",
+			"name": "Create Animal To Short",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal with to short name": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal with to short name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal with to short name": true
+				}
+			]
+		},
+		{
+			"id": "b4a0c660-4efa-472c-a7a1-d96873e08fc6",
+			"name": "Create Animal To Long Name",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal with to long name": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal with to long name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create animal with to long name": true
+				}
+			]
+		},
+		{
+			"id": "bfaa9dbc-6410-4185-8e7c-fa429a7c841e",
+			"name": "Create Animal with Empty Name",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal with an empty name": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal with an empty name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Test Status create animal with an empty name": true
+				}
+			]
+		},
+		{
+			"id": "17d918d5-45b3-4a76-b972-6445ec817a0a",
+			"name": "Create Animal Birthday does not fit pattern",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal birthday does not fit the pattern": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal birthday does not fit the pattern": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create animal birthday does not fit the pattern": true
+				}
+			]
+		},
+		{
+			"id": "9e974c67-6a75-4a9f-9d50-fd7139146ae4",
+			"name": "Create Animal Birthday is Empty",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal birthday is empty": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal birthday is empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create animal birthday is empty": true
+				}
+			]
+		},
+		{
+			"id": "fdcb9a0d-132e-4550-b599-f447d7b21864",
+			"name": "Create Animal Amount of Legs is to small",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal amount of legs is to small": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal amount of legs is to small": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create animal amount of legs is to small": true
+				}
+			]
+		},
+		{
+			"id": "0a746620-b687-4d6f-bde5-43df9a1609fa",
+			"name": "Create Animal Amount of Legs is to large",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal amount of legs is to large": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal amount of legs is to large": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal amount of legs is to large": true
+				}
+			]
+		},
+		{
+			"id": "506e81fe-4d06-4031-ad6f-9be5bc63b589",
+			"name": "Create Animal Amount of Legs is Empty",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal amount of legs is empty": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal amount of legs is empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal amount of legs is empty": true
+				}
+			]
+		},
+		{
+			"id": "b6e88d76-bc39-410f-9ba8-71e874637b2a",
+			"name": "Create Animal Gender is Empty & To Small",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal gender is empty and therefore to small": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal gender is empty and therefore to small": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create animal gender is empty and therefore to small": true
+				}
+			]
+		},
+		{
+			"id": "64c71315-1c89-41db-9e17-e779a6c899c9",
+			"name": "Create Animal Gender is To Large",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal gender is to large": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal gender is to large": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal gender is to large": true
+				}
+			]
+		},
+		{
+			"id": "2be3f0ee-7775-4f24-a436-0a01491580b0",
+			"name": "Create Animal Feed to Small",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal feed is to Short": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal feed is to Short": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal feed is to Short": true
+				}
+			]
+		},
+		{
+			"id": "f616b979-0ee1-41d4-94bd-70cf01917ec3",
+			"name": "Create Animal Feed to Large",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal feed is to Large": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal feed is to Large": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create animal feed is to Large": true
+				}
+			]
+		},
+		{
+			"id": "7ce8421a-3336-4fcf-aa8c-e7bb00909633",
+			"name": "Create Animal Feed is Empty",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal feed is to Empty": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal feed is to Empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal feed is to Empty": true
+				}
+			]
+		},
+		{
+			"id": "ef66c646-b412-41c0-b351-eca70d27f0f0",
+			"name": "Create Animal Kind of Enclosure is to Short",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal kind of enclsoure is to short": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal kind of enclsoure is to short": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal kind of enclsoure is to short": true
+				}
+			]
+		},
+		{
+			"id": "12319e52-b128-4355-b4c9-b042a271a702",
+			"name": "Create Animal Kind of Enclosure is to Large",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal kind of enclsoure is to large": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal kind of enclsoure is to large": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal kind of enclsoure is to large": true
+				}
+			]
+		},
+		{
+			"id": "e2386917-e124-4414-b4c9-ce1d5323ee16",
+			"name": "Create Animal Kind of Enclosure is Empty",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal kind of enclsoure is empty": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal kind of enclsoure is empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal kind of enclsoure is empty": true
+				}
+			]
+		},
+		{
+			"id": "da3a9667-55ad-40bb-b8a5-ab207a0fe898",
+			"name": "Create Animal Kind is to Short",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal biotop is to short": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal biotop is to short": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal biotop is to short": true
+				}
+			]
+		},
+		{
+			"id": "a3ad4eed-e415-4742-8a7d-9a457a9c5882",
+			"name": "Create Animal Biotop is to Large",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal biotop is to large": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal biotop is to large": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status create animal biotop is to large": true
+				}
+			]
+		},
+		{
+			"id": "3547ee84-f4e0-41b5-8b53-f06d27bdb9a1",
+			"name": "Create Animal Biotop is Empty",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal biotop is empty": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal biotop is empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal biotop is empty": true
+				}
+			]
+		},
+		{
+			"id": "d6ae0c91-0f6a-4b1d-ac5d-cbf3c00bbdb8",
+			"name": "Create Animal Kind of Animal To Short",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal kind of animal is to short": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal kind of animal is to short": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal kind of animal is to short": true
+				}
+			]
+		},
+		{
+			"id": "73a07c2c-22cc-426c-848c-042c04680ccf",
+			"name": "Create Animal Kind of Animal To Large",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal kind of animal is to large": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal kind of animal is to large": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal kind of animal is to large": true
+				}
+			]
+		},
+		{
+			"id": "d5cd0638-2e3a-4e0a-9533-b4fe16aff8b0",
+			"name": "Create Animal Kind of Animal is Empty",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal kind of animal is empty": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal kind of animal is empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal kind of animal is empty": true
+				}
+			]
+		},
+		{
+			"id": "15b6c4a5-ae4b-4ac2-8893-aeb3cdf7a519",
+			"name": "Create Animal Enclosure UUID Wrong Pattern",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal UUID for enclosrue does not match pattern": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal UUID for enclosrue does not match pattern": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal UUID for enclosrue does not match pattern": true
+				}
+			]
+		},
+		{
+			"id": "0b667b5c-d519-494d-95bb-d99544feb1ae",
+			"name": "Create Animal Enclosure UUID Wrong Pattern Copy",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status create animal empty UUID for enclosure": true
+			},
+			"testPassFailCounts": {
+				"Test Status create animal empty UUID for enclosure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status create animal empty UUID for enclosure": true
+				}
+			]
+		},
+		{
+			"id": "8960c0b1-aa96-4e3a-b2e8-28cfc0d281a9",
+			"name": "Update Zoo",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status update zoo with correct values success": true
+			},
+			"testPassFailCounts": {
+				"Test Status update zoo with correct values success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status update zoo with correct values success": true
+				}
+			]
+		},
+		{
+			"id": "9a02601f-96bf-4a78-a41e-1fbb7da9af6c",
+			"name": "Update Zoo To Short Name",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update zoo with to short name": true
+			},
+			"testPassFailCounts": {
+				"Test Status update zoo with to short name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Test Status update zoo with to short name": true
+				}
+			]
+		},
+		{
+			"id": "af19ca5f-cd5d-4cdb-9573-9f7123acc758",
+			"name": "Update Zoo To Long Name",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update zoo with to long name": true
+			},
+			"testPassFailCounts": {
+				"Test Status update zoo with to long name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update zoo with to long name": true
+				}
+			]
+		},
+		{
+			"id": "0c15ddd9-536d-478d-9733-b60f093afde6",
+			"name": "Update Zoo Empty Name",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update zoo with empty name": true
+			},
+			"testPassFailCounts": {
+				"Test Status update zoo with empty name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update zoo with empty name": true
+				}
+			]
+		},
+		{
+			"id": "09dbb75b-844d-44ba-8a90-3f6481406476",
+			"name": "Update Zoo Empty UUID",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update zoo with empty uuid": true
+			},
+			"testPassFailCounts": {
+				"Test Status update zoo with empty uuid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update zoo with empty uuid": true
+				}
+			]
+		},
+		{
+			"id": "f5f81215-77a4-4b5b-98a8-39c0556d18fb",
+			"name": "Update Zoo Invalid UUID",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update zoo with invalid uuid": true
+			},
+			"testPassFailCounts": {
+				"Test Status update zoo with invalid uuid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update zoo with invalid uuid": true
+				}
+			]
+		},
+		{
+			"id": "161cb0ed-17dd-4546-9243-823041eac228",
+			"name": "Update Enclosure",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update/",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status update enclosure with valid values": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure with valid values": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure with valid values": true
+				}
+			]
+		},
+		{
+			"id": "e8b5b1af-3f1a-48c8-8cd9-056a2fe08db8",
+			"name": "Update Enclosure Wrong Pattern Enclosure UUID",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update/",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure with UUID with invalid pattern": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure with UUID with invalid pattern": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure with UUID with invalid pattern": true
+				}
+			]
+		},
+		{
+			"id": "5812d459-633f-4552-906e-376250869ae7",
+			"name": "Update Enclosure Empty Enclosure UUID",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure with empty enclosure uuid": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure with empty enclosure uuid": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure with empty enclosure uuid": true
+				}
+			]
+		},
+		{
+			"id": "3a7dca1a-6c45-486e-82db-d31e3462c7b0",
+			"name": "Update Enclosure to Low Length",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure, to short length": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure, to short length": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure, to short length": true
+				}
+			]
+		},
+		{
+			"id": "3ca71d99-fdc1-415b-80ec-8904c2fd27bc",
+			"name": "Update Enclosure to High Length",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure, to long length": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure, to long length": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure, to long length": true
+				}
+			]
+		},
+		{
+			"id": "e99be25f-4752-4cc6-987f-f00213e1a7a4",
+			"name": "Update Enclosure Empty Length",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure, empty length": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure, empty length": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure, empty length": true
+				}
+			]
+		},
+		{
+			"id": "4bbec839-d341-41f6-92c8-70c76e3f62ab",
+			"name": "Update Enclosure To High Width",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure, to high width": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure, to high width": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure, to high width": true
+				}
+			]
+		},
+		{
+			"id": "121b9a0f-3629-4bd4-a19a-0bed1cfd87d8",
+			"name": "Update Enclosure To Low Width",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure, to low width": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure, to low width": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure, to low width": true
+				}
+			]
+		},
+		{
+			"id": "50b7cd2e-7bad-491c-9b40-31ff31961861",
+			"name": "Update Enclosure Empty Width",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure, to low width": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure, to low width": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure, to low width": true
+				}
+			]
+		},
+		{
+			"id": "cd91e1a0-95a6-4a35-ab97-69a4d88533e5",
+			"name": "Update Enclosure To Long Kind of Enclosure",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure,to long kind of enclosure": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure,to long kind of enclosure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure,to long kind of enclosure": true
+				}
+			]
+		},
+		{
+			"id": "c1713c09-7378-4ee6-afd1-91475f8b4462",
+			"name": "Update Enclosure To Short Kind of Enclosure",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure, to short kind of enclosure": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure, to short kind of enclosure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure, to short kind of enclosure": true
+				}
+			]
+		},
+		{
+			"id": "18efec62-5c20-4336-a27b-de4a70d8668d",
+			"name": "Update Enclosure Empty kind of enclosure",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure, empty kind of enclosure": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure, empty kind of enclosure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure, empty kind of enclosure": true
+				}
+			]
+		},
+		{
+			"id": "06cf6041-3810-460e-b024-de312fb043b0",
+			"name": "Update Enclosure Wrong Pattern Zoo UUID",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure, wrong pattern for zoo UUID": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure, wrong pattern for zoo UUID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure, wrong pattern for zoo UUID": true
+				}
+			]
+		},
+		{
+			"id": "924d9c0d-9c00-4fb6-8c03-5401af8a7478",
+			"name": "Update Enclosure Empty  Zoo UUID",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update enclosure, empty zoo UUID": true
+			},
+			"testPassFailCounts": {
+				"Test Status update enclosure, empty zoo UUID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status update enclosure, empty zoo UUID": true
+				}
+			]
+		},
+		{
+			"id": "cac28360-b0e3-42d9-95ef-c19e83c032c8",
+			"name": "Update Animal Correct Values Copy",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status update animal with correct values success": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with correct values success": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Test Status update animal with correct values success": true
+				}
+			]
+		},
+		{
+			"id": "c042994f-e127-475a-8cf6-2bf67f6ea57a",
+			"name": "Update Animal Wrong Animal UUID Patttern",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with wrong Animal UUID Pattern ": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with wrong Animal UUID Pattern ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Test Status update animal with wrong Animal UUID Pattern ": true
+				}
+			]
+		},
+		{
+			"id": "4802d134-90d8-4af4-ad7b-0d694c7b2cbc",
+			"name": "Update Animal Empty Animal UUID",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with empty Animal UUID ": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with empty Animal UUID ": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with empty Animal UUID ": true
+				}
+			]
+		},
+		{
+			"id": "a44c9d42-aaee-44d9-8967-bbd0c9167dba",
+			"name": "Update Animal To Short Name",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with to short name": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with to short name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with to short name": true
+				}
+			]
+		},
+		{
+			"id": "57191e66-0374-4a70-a00f-3769212bc11d",
+			"name": "Update Animal To Long Name",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with to long name": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with to long name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with to long name": true
+				}
+			]
+		},
+		{
+			"id": "4c91b914-dc73-468b-9a41-fafa05207799",
+			"name": "Update Animal Empty Name",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with empty name": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with empty name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with empty name": true
+				}
+			]
+		},
+		{
+			"id": "24188bb7-3a16-4ccf-bf94-0b5fdb7be158",
+			"name": "Update Animal Birthday Wrong Pattern",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with wrong birthday pattern": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with wrong birthday pattern": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status update animal with wrong birthday pattern": true
+				}
+			]
+		},
+		{
+			"id": "743537ea-9f86-4a87-8b60-a76f57f4bbea",
+			"name": "Update Animal Empty Birthday",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with empty birthday": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with empty birthday": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status update animal with empty birthday": true
+				}
+			]
+		},
+		{
+			"id": "c2fd2b0a-7014-43e8-bc75-ca67bd509179",
+			"name": "Update Animal Amount of Legs To Small Amount",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal to small amount of legs": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal to small amount of legs": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal to small amount of legs": true
+				}
+			]
+		},
+		{
+			"id": "df275496-552e-4e2a-8dad-3abe49f8b3f1",
+			"name": "Update Animal Amount of Legs To Large Amount",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal to large amount of legs": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal to large amount of legs": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal to large amount of legs": true
+				}
+			]
+		},
+		{
+			"id": "6c20c18a-dd4f-48d4-a96e-a70041994565",
+			"name": "Update Animal Amount of Legs Empty Amount of Legs",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal empty amount of legs": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal empty amount of legs": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal empty amount of legs": true
+				}
+			]
+		},
+		{
+			"id": "f2e57d96-1f7f-44a7-8df4-883082c54df6",
+			"name": "Update Animal Gender To Short & Empty",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal empty and therefore also to short gender": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal empty and therefore also to short gender": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal empty and therefore also to short gender": true
+				}
+			]
+		},
+		{
+			"id": "547a48a1-9bfc-4ac0-aee9-52aa6480acb8",
+			"name": "Update Animal Gender To Long Gender",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with to long gender": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with to long gender": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with to long gender": true
+				}
+			]
+		},
+		{
+			"id": "6776f074-902b-40b2-82b6-78832a399a65",
+			"name": "Update Animal Feed To Short",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with to short feed": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with to short feed": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with to short feed": true
+				}
+			]
+		},
+		{
+			"id": "8248f420-5ca6-495a-9adf-f9a686f4f52f",
+			"name": "Update Animal Feed To Long",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with to long feed": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with to long feed": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with to long feed": true
+				}
+			]
+		},
+		{
+			"id": "8566d390-b32c-41a0-9f8f-fb83b9161828",
+			"name": "Update Animal With Empty Feed",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with empty feed": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with empty feed": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with empty feed": true
+				}
+			]
+		},
+		{
+			"id": "3caff303-03ab-4510-976e-d3676aca1222",
+			"name": "Update Animal With To Short Kind Of Enclosure",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with to short kind of enclosure": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with to short kind of enclosure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with to short kind of enclosure": true
+				}
+			]
+		},
+		{
+			"id": "78b3cf04-4294-46b1-85a8-a790ec0392e1",
+			"name": "Update Animal With To Long Kind Of Enclosure",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with to long kind of enclosure": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with to long kind of enclosure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with to long kind of enclosure": true
+				}
+			]
+		},
+		{
+			"id": "a0974968-a3be-40ed-b80d-aeb953eead2d",
+			"name": "Update Animal With Empty Kind Of Enclosure",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with empty kind of enclosure": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with empty kind of enclosure": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with empty kind of enclosure": true
+				}
+			]
+		},
+		{
+			"id": "905d8f17-578a-4f1a-899f-e012e8281271",
+			"name": "Update Animal With To Short Biotop",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with to short biotop": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with to short biotop": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with to short biotop": true
+				}
+			]
+		},
+		{
+			"id": "f4a59e16-1680-4ad1-9e29-a9ffb8e84a8a",
+			"name": "Update Animal With To Long Biotop",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with to long  biotop": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with to long  biotop": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with to long  biotop": true
+				}
+			]
+		},
+		{
+			"id": "375dc1c7-9d70-4547-83e8-edd896ba823f",
+			"name": "Update Animal With Empty Biotop",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with empty biotop": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with empty biotop": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with empty biotop": true
+				}
+			]
+		},
+		{
+			"id": "eb35fbc1-f1b8-4e05-b1aa-e58b68eac109",
+			"name": "Update Animal With To Short Kind Of Animal",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with to short kind of animal": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with to short kind of animal": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with to short kind of animal": true
+				}
+			]
+		},
+		{
+			"id": "253e84b1-2c06-4b60-9a77-fa2d22a75abc",
+			"name": "Update Animal With To Long Kind Of Animal",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with to long kind of animal": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with to long kind of animal": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with to long kind of animal": true
+				}
+			]
+		},
+		{
+			"id": "0b40745a-8342-4f14-9ff6-c5a5c74a59e8",
+			"name": "Update Animal With Empty Kind of Animal",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with empty kind of animal": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with empty kind of animal": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with empty kind of animal": true
+				}
+			]
+		},
+		{
+			"id": "18c8fc32-0bad-4b24-bc68-2f15f9f1e960",
+			"name": "Update Animal With Wrong Enclosure UUID Pattern",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with wrong enclosure UUID pattern": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with wrong enclosure UUID pattern": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with wrong enclosure UUID pattern": true
+				}
+			]
+		},
+		{
+			"id": "c8ddbb6c-005b-4a6c-9c43-724d809fbb9b",
+			"name": "Update Animal With Empty Enclosure UUID Pattern",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status update animal with empty enclosure UUID": true
+			},
+			"testPassFailCounts": {
+				"Test Status update animal with empty enclosure UUID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status update animal with empty enclosure UUID": true
+				}
+			]
+		},
+		{
+			"id": "89cb1853-c31b-43b5-9809-7fc4954972f9",
+			"name": "DeleteZoo",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/delete/?zooUUID=27ce62bf-1270-4936-8f1a-c8b3fa92e498",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status delete zoo with correct UUID": true
+			},
+			"testPassFailCounts": {
+				"Test Status delete zoo with correct UUID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status delete zoo with correct UUID": true
+				}
+			]
+		},
+		{
+			"id": "a58cd28b-2ab7-49ad-bf01-eafe39083eca",
+			"name": "DeleteZoo Wrong Pattern for UUID",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/delete/?zooUUID=27ce6f-1270-4936-8f1a-c8b3fae498",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status delete zoo invalid UUID": true
+			},
+			"testPassFailCounts": {
+				"Test Status delete zoo invalid UUID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Test Status delete zoo invalid UUID": true
+				}
+			]
+		},
+		{
+			"id": "c5d4ed9f-3523-493a-83a4-65d899ecb597",
+			"name": "Delete Gehege",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/delete?enclosureUUID=365c3daf-9ff2-4dee-aafe-545457e2f151",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status delete enclosure with correct UUID": true
+			},
+			"testPassFailCounts": {
+				"Test Status delete enclosure with correct UUID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status delete enclosure with correct UUID": true
+				}
+			]
+		},
+		{
+			"id": "cfd42ebe-adc9-4492-ae10-5d3a2937cd48",
+			"name": "Delete Gehege Wrong Pattern for UUID",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/delete?enclosureUUID=3daf-92-4d-aafe-5457e2f1",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status delete enclosure with invalid UUID": true
+			},
+			"testPassFailCounts": {
+				"Test Status delete enclosure with invalid UUID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Test Status delete enclosure with invalid UUID": true
+				}
+			]
+		},
+		{
+			"id": "2a3abed4-1434-4093-93f6-41ffc3d42e3a",
+			"name": "Delete Animal Wrong UUID Pattern",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/delete?animalUUID=e5a3c7-540-4ce8-90ad-303665fc2c",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Test Status delete animal with invalid UUID": true
+			},
+			"testPassFailCounts": {
+				"Test Status delete animal with invalid UUID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Test Status delete animal with invalid UUID": true
+				}
+			]
+		},
+		{
+			"id": "cbf4feb6-a44b-49f3-9906-b086bba67b98",
+			"name": "Delete Animal",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/delete?animalUUID=e5a3c7fd-5440-4ce8-90ad-30379665fc2c",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Test Status delete animal with invalid UUID": true
+			},
+			"testPassFailCounts": {
+				"Test Status delete animal with invalid UUID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Test Status delete animal with invalid UUID": true
 				}
 			]
 		}
 	],
 	"count": 1,
-	"totalTime": 37,
+	"totalTime": 1424,
 	"collection": {
 		"requests": [
+			{
+				"id": "d64708ae-0a6b-4da0-8449-28edf48b3314",
+				"method": "GET"
+			},
+			{
+				"id": "75f424f4-58ae-4c44-b798-0016762c7638",
+				"method": "GET"
+			},
+			{
+				"id": "a5fd6a7f-613b-43b9-8fa0-5e854d14d3e8",
+				"method": "GET"
+			},
+			{
+				"id": "265768b6-0dec-4d00-82df-fb0465def465",
+				"method": "GET"
+			},
+			{
+				"id": "ecba0a86-7cde-4cee-9738-4de240fbe118",
+				"method": "GET"
+			},
+			{
+				"id": "89c1a5e7-2aa6-43ea-80e3-8eab0f08a710",
+				"method": "GET"
+			},
 			{
 				"id": "b2d72e51-1c13-4e53-8ae7-16f167b6cf9c",
 				"method": "GET"
@@ -265,32 +2827,384 @@
 				"method": "GET"
 			},
 			{
-				"id": "89c1a5e7-2aa6-43ea-80e3-8eab0f08a710",
-				"method": "GET"
-			},
-			{
 				"id": "c9321f5c-de96-40cf-917d-63d942e1c95d",
 				"method": "GET"
 			},
 			{
-				"id": "ecba0a86-7cde-4cee-9738-4de240fbe118",
-				"method": "GET"
+				"id": "0b7e616a-fe14-4d9a-805f-3e1b1ac2b638",
+				"method": "POST"
 			},
 			{
-				"id": "265768b6-0dec-4d00-82df-fb0465def465",
-				"method": "GET"
+				"id": "a2290cfb-0857-4803-b2be-dd8f057f20d2",
+				"method": "POST"
 			},
 			{
-				"id": "a5fd6a7f-613b-43b9-8fa0-5e854d14d3e8",
-				"method": "GET"
+				"id": "94209c15-8d71-4b8b-8896-a7dde4b9f09e",
+				"method": "POST"
 			},
 			{
-				"id": "d64708ae-0a6b-4da0-8449-28edf48b3314",
-				"method": "GET"
+				"id": "b609a08d-d466-408f-9fc5-5397489289e8",
+				"method": "POST"
 			},
 			{
-				"id": "75f424f4-58ae-4c44-b798-0016762c7638",
-				"method": "GET"
+				"id": "42ce65f3-f8b5-414e-a0ed-b97c8ed02f99",
+				"method": "POST"
+			},
+			{
+				"id": "32b7f1ac-ae26-4538-9498-234962be9ee5",
+				"method": "POST"
+			},
+			{
+				"id": "25a877d0-dcc3-44bf-b9f2-c869a32afd81",
+				"method": "POST"
+			},
+			{
+				"id": "497c7753-6327-4e1b-b507-d9a3d3604f51",
+				"method": "POST"
+			},
+			{
+				"id": "9302c292-2bac-4442-857b-291b85a0570e",
+				"method": "POST"
+			},
+			{
+				"id": "cbc0fdb7-74be-4258-8453-5f7a8cbab58b",
+				"method": "POST"
+			},
+			{
+				"id": "dc524b2d-36f5-40da-90b6-45cc2b5025a6",
+				"method": "POST"
+			},
+			{
+				"id": "d95a5011-3598-4375-8e66-8604ebb41fd4",
+				"method": "POST"
+			},
+			{
+				"id": "5ae72c29-d015-4459-b116-d7025ab28ac6",
+				"method": "POST"
+			},
+			{
+				"id": "ea034354-0966-4cce-8331-4da042ebdc0a",
+				"method": "POST"
+			},
+			{
+				"id": "842578de-ae9c-4780-abb1-98c1cdf974f3",
+				"method": "POST"
+			},
+			{
+				"id": "ba31c42a-a06b-4685-b09c-2327ea808e28",
+				"method": "POST"
+			},
+			{
+				"id": "47286292-330c-4f8f-9b24-573ff32971b6",
+				"method": "POST"
+			},
+			{
+				"id": "06e7ac94-23e2-40b8-9402-01712798ad66",
+				"method": "POST"
+			},
+			{
+				"id": "b4a0c660-4efa-472c-a7a1-d96873e08fc6",
+				"method": "POST"
+			},
+			{
+				"id": "bfaa9dbc-6410-4185-8e7c-fa429a7c841e",
+				"method": "POST"
+			},
+			{
+				"id": "17d918d5-45b3-4a76-b972-6445ec817a0a",
+				"method": "POST"
+			},
+			{
+				"id": "9e974c67-6a75-4a9f-9d50-fd7139146ae4",
+				"method": "POST"
+			},
+			{
+				"id": "fdcb9a0d-132e-4550-b599-f447d7b21864",
+				"method": "POST"
+			},
+			{
+				"id": "0a746620-b687-4d6f-bde5-43df9a1609fa",
+				"method": "POST"
+			},
+			{
+				"id": "506e81fe-4d06-4031-ad6f-9be5bc63b589",
+				"method": "POST"
+			},
+			{
+				"id": "b6e88d76-bc39-410f-9ba8-71e874637b2a",
+				"method": "POST"
+			},
+			{
+				"id": "64c71315-1c89-41db-9e17-e779a6c899c9",
+				"method": "POST"
+			},
+			{
+				"id": "2be3f0ee-7775-4f24-a436-0a01491580b0",
+				"method": "POST"
+			},
+			{
+				"id": "f616b979-0ee1-41d4-94bd-70cf01917ec3",
+				"method": "POST"
+			},
+			{
+				"id": "7ce8421a-3336-4fcf-aa8c-e7bb00909633",
+				"method": "POST"
+			},
+			{
+				"id": "ef66c646-b412-41c0-b351-eca70d27f0f0",
+				"method": "POST"
+			},
+			{
+				"id": "12319e52-b128-4355-b4c9-b042a271a702",
+				"method": "POST"
+			},
+			{
+				"id": "e2386917-e124-4414-b4c9-ce1d5323ee16",
+				"method": "POST"
+			},
+			{
+				"id": "da3a9667-55ad-40bb-b8a5-ab207a0fe898",
+				"method": "POST"
+			},
+			{
+				"id": "a3ad4eed-e415-4742-8a7d-9a457a9c5882",
+				"method": "POST"
+			},
+			{
+				"id": "3547ee84-f4e0-41b5-8b53-f06d27bdb9a1",
+				"method": "POST"
+			},
+			{
+				"id": "d6ae0c91-0f6a-4b1d-ac5d-cbf3c00bbdb8",
+				"method": "POST"
+			},
+			{
+				"id": "73a07c2c-22cc-426c-848c-042c04680ccf",
+				"method": "POST"
+			},
+			{
+				"id": "d5cd0638-2e3a-4e0a-9533-b4fe16aff8b0",
+				"method": "POST"
+			},
+			{
+				"id": "15b6c4a5-ae4b-4ac2-8893-aeb3cdf7a519",
+				"method": "POST"
+			},
+			{
+				"id": "0b667b5c-d519-494d-95bb-d99544feb1ae",
+				"method": "POST"
+			},
+			{
+				"id": "8960c0b1-aa96-4e3a-b2e8-28cfc0d281a9",
+				"method": "PUT"
+			},
+			{
+				"id": "9a02601f-96bf-4a78-a41e-1fbb7da9af6c",
+				"method": "PUT"
+			},
+			{
+				"id": "af19ca5f-cd5d-4cdb-9573-9f7123acc758",
+				"method": "PUT"
+			},
+			{
+				"id": "0c15ddd9-536d-478d-9733-b60f093afde6",
+				"method": "PUT"
+			},
+			{
+				"id": "09dbb75b-844d-44ba-8a90-3f6481406476",
+				"method": "PUT"
+			},
+			{
+				"id": "f5f81215-77a4-4b5b-98a8-39c0556d18fb",
+				"method": "PUT"
+			},
+			{
+				"id": "161cb0ed-17dd-4546-9243-823041eac228",
+				"method": "PUT"
+			},
+			{
+				"id": "e8b5b1af-3f1a-48c8-8cd9-056a2fe08db8",
+				"method": "PUT"
+			},
+			{
+				"id": "5812d459-633f-4552-906e-376250869ae7",
+				"method": "PUT"
+			},
+			{
+				"id": "3a7dca1a-6c45-486e-82db-d31e3462c7b0",
+				"method": "PUT"
+			},
+			{
+				"id": "3ca71d99-fdc1-415b-80ec-8904c2fd27bc",
+				"method": "PUT"
+			},
+			{
+				"id": "e99be25f-4752-4cc6-987f-f00213e1a7a4",
+				"method": "PUT"
+			},
+			{
+				"id": "4bbec839-d341-41f6-92c8-70c76e3f62ab",
+				"method": "PUT"
+			},
+			{
+				"id": "121b9a0f-3629-4bd4-a19a-0bed1cfd87d8",
+				"method": "PUT"
+			},
+			{
+				"id": "50b7cd2e-7bad-491c-9b40-31ff31961861",
+				"method": "PUT"
+			},
+			{
+				"id": "cd91e1a0-95a6-4a35-ab97-69a4d88533e5",
+				"method": "PUT"
+			},
+			{
+				"id": "c1713c09-7378-4ee6-afd1-91475f8b4462",
+				"method": "PUT"
+			},
+			{
+				"id": "18efec62-5c20-4336-a27b-de4a70d8668d",
+				"method": "PUT"
+			},
+			{
+				"id": "06cf6041-3810-460e-b024-de312fb043b0",
+				"method": "PUT"
+			},
+			{
+				"id": "924d9c0d-9c00-4fb6-8c03-5401af8a7478",
+				"method": "PUT"
+			},
+			{
+				"id": "cac28360-b0e3-42d9-95ef-c19e83c032c8",
+				"method": "PUT"
+			},
+			{
+				"id": "c042994f-e127-475a-8cf6-2bf67f6ea57a",
+				"method": "PUT"
+			},
+			{
+				"id": "4802d134-90d8-4af4-ad7b-0d694c7b2cbc",
+				"method": "PUT"
+			},
+			{
+				"id": "a44c9d42-aaee-44d9-8967-bbd0c9167dba",
+				"method": "PUT"
+			},
+			{
+				"id": "57191e66-0374-4a70-a00f-3769212bc11d",
+				"method": "PUT"
+			},
+			{
+				"id": "4c91b914-dc73-468b-9a41-fafa05207799",
+				"method": "PUT"
+			},
+			{
+				"id": "24188bb7-3a16-4ccf-bf94-0b5fdb7be158",
+				"method": "PUT"
+			},
+			{
+				"id": "743537ea-9f86-4a87-8b60-a76f57f4bbea",
+				"method": "PUT"
+			},
+			{
+				"id": "c2fd2b0a-7014-43e8-bc75-ca67bd509179",
+				"method": "PUT"
+			},
+			{
+				"id": "df275496-552e-4e2a-8dad-3abe49f8b3f1",
+				"method": "PUT"
+			},
+			{
+				"id": "6c20c18a-dd4f-48d4-a96e-a70041994565",
+				"method": "PUT"
+			},
+			{
+				"id": "f2e57d96-1f7f-44a7-8df4-883082c54df6",
+				"method": "PUT"
+			},
+			{
+				"id": "547a48a1-9bfc-4ac0-aee9-52aa6480acb8",
+				"method": "PUT"
+			},
+			{
+				"id": "6776f074-902b-40b2-82b6-78832a399a65",
+				"method": "PUT"
+			},
+			{
+				"id": "8248f420-5ca6-495a-9adf-f9a686f4f52f",
+				"method": "PUT"
+			},
+			{
+				"id": "8566d390-b32c-41a0-9f8f-fb83b9161828",
+				"method": "PUT"
+			},
+			{
+				"id": "3caff303-03ab-4510-976e-d3676aca1222",
+				"method": "PUT"
+			},
+			{
+				"id": "78b3cf04-4294-46b1-85a8-a790ec0392e1",
+				"method": "PUT"
+			},
+			{
+				"id": "a0974968-a3be-40ed-b80d-aeb953eead2d",
+				"method": "PUT"
+			},
+			{
+				"id": "905d8f17-578a-4f1a-899f-e012e8281271",
+				"method": "PUT"
+			},
+			{
+				"id": "f4a59e16-1680-4ad1-9e29-a9ffb8e84a8a",
+				"method": "PUT"
+			},
+			{
+				"id": "375dc1c7-9d70-4547-83e8-edd896ba823f",
+				"method": "PUT"
+			},
+			{
+				"id": "eb35fbc1-f1b8-4e05-b1aa-e58b68eac109",
+				"method": "PUT"
+			},
+			{
+				"id": "253e84b1-2c06-4b60-9a77-fa2d22a75abc",
+				"method": "PUT"
+			},
+			{
+				"id": "0b40745a-8342-4f14-9ff6-c5a5c74a59e8",
+				"method": "PUT"
+			},
+			{
+				"id": "18c8fc32-0bad-4b24-bc68-2f15f9f1e960",
+				"method": "PUT"
+			},
+			{
+				"id": "c8ddbb6c-005b-4a6c-9c43-724d809fbb9b",
+				"method": "PUT"
+			},
+			{
+				"id": "89cb1853-c31b-43b5-9809-7fc4954972f9",
+				"method": "DELETE"
+			},
+			{
+				"id": "a58cd28b-2ab7-49ad-bf01-eafe39083eca",
+				"method": "DELETE"
+			},
+			{
+				"id": "c5d4ed9f-3523-493a-83a4-65d899ecb597",
+				"method": "DELETE"
+			},
+			{
+				"id": "cfd42ebe-adc9-4492-ae10-5d3a2937cd48",
+				"method": "DELETE"
+			},
+			{
+				"id": "2a3abed4-1434-4093-93f6-41ffc3d42e3a",
+				"method": "DELETE"
+			},
+			{
+				"id": "cbf4feb6-a44b-49f3-9906-b086bba67b98",
+				"method": "DELETE"
 			}
 		]
 	}
