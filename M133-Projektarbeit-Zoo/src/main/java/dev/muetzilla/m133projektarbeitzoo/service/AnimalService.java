@@ -48,7 +48,7 @@ public class AnimalService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response readAnimal(
             @NotEmpty
-            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
+                @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @QueryParam("uuid") String tierUUID
     ) {
         int httpStatus = 200;

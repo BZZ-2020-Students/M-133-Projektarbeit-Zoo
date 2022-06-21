@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import dev.muetzilla.m133projektarbeitzoo.model.Enclosure;
 import dev.muetzilla.m133projektarbeitzoo.model.Animal;
+import dev.muetzilla.m133projektarbeitzoo.model.User;
 import dev.muetzilla.m133projektarbeitzoo.model.Zoo;
 import dev.muetzilla.m133projektarbeitzoo.service.Config;
 
@@ -29,6 +30,8 @@ public class DataHandler {
     private List<Zoo> zooList;
     private List<Enclosure> enclosureList;
     private List<Animal> animalList;
+    private List<User> userList;
+
 
     /**
      * private constructor defeats instantiation
@@ -40,6 +43,8 @@ public class DataHandler {
         readGehegeJSON();
         setAnimalList(new ArrayList<>());
         readAnimalJSON();
+        setUserList(new ArrayList<>());
+        readUserJSON();
     }
 
     /**
@@ -375,6 +380,52 @@ public class DataHandler {
 
     private void setAnimalList(List<Animal> animalList) {
         this.animalList = animalList;
+    }
+
+
+    /**
+     * reads the users from the JSON-file
+     */
+    private void readUserJSON() {
+        try {
+            byte[] jsonData = Files.readAllBytes(
+                    Paths.get(
+                            Config.getProperty("userJSON")
+                    )
+            );
+            ObjectMapper objectMapper = new ObjectMapper();
+            User[] users = objectMapper.readValue(jsonData, User[].class);
+            for (User user : users) {
+                getUserList().add(user);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public String readUserRole(String username, String password) {
+        for (User user : getUserList()) {
+            if (user.getUsername().equals(username) &&
+                    user.getPassword().equals(password)) {
+                return user.getUsername();
+            }
+
+        }
+        return "guest";
+    }
+
+
+    /**
+     * gets userList
+     *
+     * @return value of userList
+     */
+
+    public List<User> getUserList() {
+        return userList;
+    }
+    public void setUserList(List<User> userlist){
+        this.userList = userlist;
     }
 
 }

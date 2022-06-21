@@ -1,0 +1,14 @@
+[
+    {
+      "userUUID" : "29470b38-26bd-42de-9806-0efc79a90159",
+      "username" : "MustermannM",
+      "role" : "admin",
+      "password" : "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
+    },
+    {
+      "userUUID" : "99e8bb8a-f13e-11ec-8ea0-0242ac120002",
+      "username" : "MeierF",
+      "role" : "user",
+      "password" : "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+    }
+  ]
