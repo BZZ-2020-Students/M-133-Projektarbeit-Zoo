@@ -1,5 +1,6 @@
 package dev.muetzilla.m133projektarbeitzoo.service;
 
+import com.sun.jersey.multipart.FormDataParam;
 import dev.muetzilla.m133projektarbeitzoo.data.DataHandler;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;

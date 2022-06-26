@@ -240,7 +240,7 @@ public class DataHandler {
             Enclosure[] enclosureArray = objectMapper.readValue(jsonData, Enclosure[].class);
             for (Enclosure enclosure : enclosureArray) {
                 getEnclosureList().add(enclosure);
-                System.out.println(enclosure);
+                System.out.println(enclosure); 
             }
         } catch (IOException ex) {
             ex.printStackTrace();
