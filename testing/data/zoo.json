@@ -1,6 +1,6 @@
 [ {
   "zooUUID" : "991478a6-d803-11ec-9d64-0242ac120002",
-  "zooName" : "Zoo Zürich"
+  "zooName" : "New York Zoo"
 }, {
   "zooUUID" : "fe18f574-d803-11ec-9d64-0242ac120002",
   "zooName" : "Zoo München"
@@ -21,5 +21,11 @@
   "zooName" : "Zoo London"
 }, {
   "zooUUID" : "c882b4a7-595d-45d7-b127-f312a1c4774b",
+  "zooName" : "Zoo London"
+}, {
+  "zooUUID" : "b452cfbd-fee2-4779-8e51-701bb40dcd7e",
+  "zooName" : "Zoo London"
+}, {
+  "zooUUID" : "498d0d61-368a-41e0-bc87-4fb051ada22d",
   "zooName" : "Zoo London"
 } ]

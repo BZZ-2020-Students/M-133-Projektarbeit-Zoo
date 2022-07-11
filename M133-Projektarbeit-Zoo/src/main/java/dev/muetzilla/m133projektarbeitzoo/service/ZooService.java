@@ -2,6 +2,7 @@ package dev.muetzilla.m133projektarbeitzoo.service;
 
 import dev.muetzilla.m133projektarbeitzoo.data.DataHandler;
 import dev.muetzilla.m133projektarbeitzoo.model.Zoo;
+import dev.muetzilla.m133projektarbeitzoo.util.AES256;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -24,21 +25,32 @@ import java.util.UUID;
 public class ZooService {
 
     /**
+     * @param userRole role of the user
      * @return a list of all the zoos in the JSON file
      */
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listZoos() {
-        List<Zoo> zooList = DataHandler.getInstance().readAllZoos();
+    public Response listZoos(
+            @CookieParam("userRole") String userRole
+    ) {
+        List<Zoo> zooList = null;
+        int httpStatus;
+        if(userRole == null || AES256.decrypt(userRole).equals("guest")){
+            httpStatus = 401;
+        }else{
+            httpStatus = 200;
+            zooList = DataHandler.getInstance().readAllZoos();
+        }
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity(zooList)
                 .build();
     }
 
     /**
      * @param zooUUID the UUID of the zoo
+     * @param userRole role of the user
      * @return the zoo with the UUID passed as parameter
      */
     @GET
@@ -47,12 +59,19 @@ public class ZooService {
     public Response readZoo(
             @NotEmpty
             @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
-            @QueryParam("uuid") String zooUUID
+            @QueryParam("uuid") String zooUUID,
+            @CookieParam("userRole") String userRole
+
     ) {
         int httpStatus = 200;
-        Zoo zoo = DataHandler.getInstance().readZooByUUID(zooUUID);
-        if (zoo == null) {
-            httpStatus = 410;
+        Zoo zoo = null;
+        if(userRole == null || AES256.decrypt(userRole).equals("guest")){
+            httpStatus = 401;
+        }else {
+            zoo = DataHandler.getInstance().readZooByUUID(zooUUID);
+            if (zoo == null) {
+                httpStatus = 410;
+            }
         }
         return Response
                 .status(httpStatus)
@@ -63,6 +82,7 @@ public class ZooService {
     /**
      *
      * @param zooUUID the UUID of the zoo that should be deleted
+     * @param userRole role of the user
      * @return weather the deletion of the zoo was successful or not
      */
     @DELETE
@@ -71,13 +91,21 @@ public class ZooService {
     public Response deleteZoo(
             @NotEmpty
             @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
-            @QueryParam("zooUUID") String zooUUID
+            @QueryParam("zooUUID") String zooUUID,
+            @CookieParam("userRole") String userRole
     ) {
         int httpStatus = 200;
-        DataHandler.getInstance().deleteZoo(zooUUID);
+        String message = "";
+        if(userRole == null || AES256.decrypt(userRole).equals("guest") ||  AES256.decrypt(userRole).equals("user")){
+            httpStatus = 401;
+            message = "Deletion of zoo failed, try again as a different user";
+        }else {
+            DataHandler.getInstance().deleteZoo(zooUUID);
+            message = "Deletion of zoo successful";
+        }
         return Response
                 .status(httpStatus)
-                .entity("Deletion of zoo successful")
+                .entity(message)
                 .build();
     }
 
@@ -85,6 +113,7 @@ public class ZooService {
      *
      * @param zooUUID the UUID of the zoo that should be updated
      * @param zooName the name of the zoo
+     * @param userRole role of the user
      * @return weather the update of the zoo was successful or not
      */
     @PUT
@@ -97,21 +126,31 @@ public class ZooService {
 
             @NotEmpty
             @Size(min=3, max=30)
-            @FormParam("zooName") String zooName) {
+            @FormParam("zooName") String zooName,
+            @CookieParam("userRole") String userRole
+    )
+    {
         int httpStatus = 200;
-        Zoo zoo = DataHandler.getInstance().readZooByUUID(zooUUID);
-        zoo.setZooName(zooName);
-
-        DataHandler.getInstance().upadteZoo();
+        String message = "";
+        if(userRole == null || AES256.decrypt(userRole).equals("guest")  || AES256.decrypt(userRole).equals("user")){
+            httpStatus = 401;
+            message = "Update of zoo failed, try again as a different user";
+        }else {
+            Zoo zoo = DataHandler.getInstance().readZooByUUID(zooUUID);
+            zoo.setZooName(zooName);
+            DataHandler.getInstance().upadteZoo();
+            message = "Update of zoo successful";
+        }
         return Response
                 .status(httpStatus)
-                .entity("Update of zoo successful")
+                .entity(message)
                 .build();
     }
 
     /**
      *
      * @param zooName the name of the zoo
+     * @param userRole role of the user
      * @return weather the creation of the zoo was successful or not
      */
     @POST
@@ -121,18 +160,24 @@ public class ZooService {
     public Response insertZoo(
             @NotEmpty
             @Size(min=5, max=30)
-            @FormParam("zooName") String zooName) {
-        Zoo zoo = new Zoo();
-        zoo.setZooUUID(UUID.randomUUID().toString());
-        zoo.setZooName(zooName);
-
-        DataHandler.getInstance().insertZoo(zoo);
-
+            @FormParam("zooName") String zooName,
+            @CookieParam("userRole") String userRole
+    ) {
         int httpStatus = 200;
-
+        String message = "";
+        if(userRole == null || AES256.decrypt(userRole).equals("guest") || AES256.decrypt(userRole).equals("user")){
+            httpStatus = 401;
+            message = "Creation of zoo failed, try again with a different user";
+        }else {
+            Zoo zoo = new Zoo();
+            zoo.setZooUUID(UUID.randomUUID().toString());
+            zoo.setZooName(zooName);
+            DataHandler.getInstance().insertZoo(zoo);
+            message = "Creation of Zoo successful";
+        }
         return Response
                 .status(httpStatus)
-                .entity("Creation of Zoo successful")
+                .entity(message)
                 .build();
     }
 }

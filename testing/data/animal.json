@@ -1,38 +1,56 @@
-[
-  {
-    "animalUUID": "f369d306-d8f2-11ec-9d64-0242ac120002",
-    "name":"Max der Tiger",
-    "birthday": "2015-07-12",
-    "amountOfLegs": 4,
-    "gender": "M",
-    "kindOfEnclosure": "Trockengehege",
-    "biotop": "Savanne",
-    "feed": "Fleisch, Fisch",
-    "kindOfAnimal" : "Tiger",
-    "enclosureUUID" : "9b45446c-d8ed-11ec-9d64-0242ac120002"
-  },
-  {
-    "animalUUID": "e5a3c7fd-5440-4ce8-90ad-30379665fc2c",
-    "name":"Michelle die Giraffe",
-    "birthday": "2012-12-09",
-    "amountOfLegs": 4,
-    "gender": "W",
-    "kindOfEnclosure": "Trockengehege",
-    "biotop": "Savanne",
-    "feed": "Blätter, Äste",
-    "kindOfAnimal" : "Giraffe",
-    "enclosureUUID" : "d93e2f78-d923-11ec-9d64-0242ac120002"
-  },
-  {
-    "animalUUID": "f3515080-d9ea-11ec-9d64-0242ac120002",
-    "name":"Peter der Pinguin",
-    "birthday": "2020-11-11",
-    "amountOfLegs": 2,
-    "gender": "M",
-    "kindOfEnclosure": "Abgedecktesgehege",
-    "biotop": "Savanne",
-    "feed": "Fisch",
-    "kindOfAnimal" : "Pinguin",
-    "enclosureUUID" : "a022a586-d8ef-11ec-9d64-0242ac120002"
-  }
-]
+[ {
+  "animalUUID" : "f369d306-d8f2-11ec-9d64-0242ac120002",
+  "name" : "Max der Tiger",
+  "birthday" : "2015-07-12",
+  "amountOfLegs" : 4,
+  "gender" : "M",
+  "feed" : "Fleisch, Fisch",
+  "kindOfEnclosure" : "Trockengehege",
+  "biotop" : "Savanne",
+  "kindOfAnimal" : "Tiger",
+  "enclosureUUID" : "9b45446c-d8ed-11ec-9d64-0242ac120002"
+}, {
+  "animalUUID" : "e5a3c7fd-5440-4ce8-90ad-30379665fc2c",
+  "name" : "Michelle die Giraffe",
+  "birthday" : "2012-12-09",
+  "amountOfLegs" : 4,
+  "gender" : "W",
+  "feed" : "Blätter, Äste",
+  "kindOfEnclosure" : "Trockengehege",
+  "biotop" : "Savanne",
+  "kindOfAnimal" : "Giraffe",
+  "enclosureUUID" : "d93e2f78-d923-11ec-9d64-0242ac120002"
+}, {
+  "animalUUID" : "f3515080-d9ea-11ec-9d64-0242ac120002",
+  "name" : "Franz the Braunbär",
+  "birthday" : "2015-11-19",
+  "amountOfLegs" : 6,
+  "gender" : "Male",
+  "feed" : "Hering, Barsch",
+  "kindOfEnclosure" : "Trockengehege",
+  "biotop" : "Tundra",
+  "kindOfAnimal" : "Braunbaer",
+  "enclosureUUID" : "d93e2f78-d923-11ec-9d64-0242ac120002"
+}, {
+  "animalUUID" : "5df3aee8-84b9-490f-985f-7ece2df5ad54",
+  "name" : "Franz",
+  "birthday" : "2015-11-19",
+  "amountOfLegs" : 4,
+  "gender" : "M",
+  "feed" : "Hering, Barsch",
+  "kindOfEnclosure" : "Trockengehege",
+  "biotop" : "Tundra",
+  "kindOfAnimal" : "Braunbär",
+  "enclosureUUID" : "9b45446c-d8ed-11ec-9d64-0242ac120002"
+}, {
+  "animalUUID" : "8cee5ec8-733c-4c28-9f12-4609f8bdc722",
+  "name" : "Franz",
+  "birthday" : "2015-11-19",
+  "amountOfLegs" : 4,
+  "gender" : "M",
+  "feed" : "Hering, Barsch",
+  "kindOfEnclosure" : "Trockengehege",
+  "biotop" : "Tundra",
+  "kindOfAnimal" : "Braunbär",
+  "enclosureUUID" : "9b45446c-d8ed-11ec-9d64-0242ac120002"
+} ]

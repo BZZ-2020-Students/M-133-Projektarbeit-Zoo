@@ -2,6 +2,7 @@ package dev.muetzilla.m133projektarbeitzoo.service;
 
 import dev.muetzilla.m133projektarbeitzoo.data.DataHandler;
 import dev.muetzilla.m133projektarbeitzoo.model.Enclosure;
+import dev.muetzilla.m133projektarbeitzoo.util.AES256;
 import jakarta.validation.constraints.*;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -22,15 +23,26 @@ import java.util.UUID;
 public class EnclosureService {
 
     /**
+     * @param userRole role of the user
      * @return all enclosures saved in the JSON file
      */
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listEnclosures() {
-        List<Enclosure> enclosures = DataHandler.getInstance().readAllEnclsoure();
+    public Response listEnclosures(
+            @CookieParam("userRole") String userRole
+
+    ) {
+        List<Enclosure> enclosures = null;
+        int httpStatus;
+        if(userRole == null || AES256.decrypt(userRole).equals("guest") ){
+            httpStatus = 401;
+        }else {
+            httpStatus = 200;
+            enclosures = DataHandler.getInstance().readAllEnclsoure();
+        }
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity(enclosures)
                 .build();
     }
@@ -38,6 +50,7 @@ public class EnclosureService {
     /**
      *
      * @param enclosureUUID the UUID of the enclosure that should be read
+     * @param userRole role of the user
      * @return UUID which has the UUID passed as parameter
      */
     @GET
@@ -46,12 +59,20 @@ public class EnclosureService {
     public Response readEnclosures(
             @NotEmpty
             @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
-            @QueryParam("uuid") String enclosureUUID
+            @QueryParam("uuid") String enclosureUUID,
+            @CookieParam("userRole") String userRole
+
     ) {
         int httpStatus = 200;
-        Enclosure enclosure = DataHandler.getInstance().readEnclosureByUUID(enclosureUUID);
-        if (enclosure == null) {
-            httpStatus = 410;
+        Enclosure enclosure = null;
+        if(userRole == null || AES256.decrypt(userRole).equals("guest")){
+            httpStatus = 401;
+
+        }else {
+            enclosure = DataHandler.getInstance().readEnclosureByUUID(enclosureUUID);
+            if (enclosure == null) {
+                httpStatus = 410;
+            }
         }
         return Response
                 .status(httpStatus)
@@ -65,6 +86,7 @@ public class EnclosureService {
      * @param width the width of the enclosure
      * @param kindOfEnclosure the kind of the enclosure
      * @param zooUUID the UUID of the zoo in which the enclosure is
+     * @param userRole role of the user
      * @return weather the creation of the zoo was successful or not
      */
     @POST
@@ -87,18 +109,29 @@ public class EnclosureService {
 
             @NotEmpty
             @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
-            @FormParam("zooUUID") String zooUUID
+            @FormParam("zooUUID") String zooUUID,
+            @CookieParam("userRole") String userRole
+
     ) {
-        Enclosure enclosure = new Enclosure();
-        enclosure.setEnclosureUUID(UUID.randomUUID().toString());
-        enclosure.setLength(length);
-        enclosure.setWidth(width);
-        enclosure.setKindOfEnclosure(kindOfEnclosure);
-        enclosure.setZooUUID(zooUUID);
-        DataHandler.getInstance().insertEnclosure(enclosure);
+        int httpStatus;
+        String message = "";
+        if(userRole == null || AES256.decrypt(userRole).equals("guest") || AES256.decrypt(userRole).equals("user")){
+            httpStatus = 401;
+            message = "Creation of enclosure failed, try as a different user again";
+        }else {
+            Enclosure enclosure = new Enclosure();
+            enclosure.setEnclosureUUID(UUID.randomUUID().toString());
+            enclosure.setLength(length);
+            enclosure.setWidth(width);
+            enclosure.setKindOfEnclosure(kindOfEnclosure);
+            enclosure.setZooUUID(zooUUID);
+            DataHandler.getInstance().insertEnclosure(enclosure);
+            httpStatus = 200;
+            message = "Creation of enclosure successful";
+        }
         return Response
-                .status(200)
-                .entity("Creation of Gehege successful")
+                .status(httpStatus)
+                .entity(message)
                 .build();
     }
 
@@ -109,6 +142,7 @@ public class EnclosureService {
      * @param width the width of the enclosure
      * @param kindOfEnclosure the kind of enclosure
      * @param zooUUID the UUID of the zoo the enclosure is in
+     * @param userRole role of the user
      * @return weather the update of the enclosure was successful or not
      */
     @PUT
@@ -135,23 +169,37 @@ public class EnclosureService {
 
             @NotEmpty
             @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
-            @FormParam("zooUUID") String zooUUID) {
-        Enclosure enclosure = DataHandler.getInstance().readEnclosureByUUID(enclosureUUID);
-        enclosure.setLength(length);
-        enclosure.setWidth(width);
-        enclosure.setKindOfEnclosure(kindOfEnclosure);
-        enclosure.setZooUUID(zooUUID);
+            @FormParam("zooUUID") String zooUUID,
+            @CookieParam("userRole") String userRole
 
-        DataHandler.getInstance().updateEnclosure();
+    ) {
+        int httpStatus;
+        String message = "";
+
+        if(userRole == null || AES256.decrypt(userRole).equals("guest") || AES256.decrypt(userRole).equals("user")){
+            httpStatus = 401;
+            message = "Update of enclosure failed, try as a different user again";
+        }else {
+            Enclosure enclosure = DataHandler.getInstance().readEnclosureByUUID(enclosureUUID);
+            enclosure.setLength(length);
+            enclosure.setWidth(width);
+            enclosure.setKindOfEnclosure(kindOfEnclosure);
+            enclosure.setZooUUID(zooUUID);
+            DataHandler.getInstance().updateEnclosure();
+            httpStatus = 200;
+            message = "Update of enclosure successful";
+        }
+
         return Response
-                .status(200)
-                .entity("Update of enclosure successful")
+                .status(httpStatus)
+                .entity(message)
                 .build();
     }
 
     /**
      *
      * @param enclosureUUID the UUID of the enclosure which should be deleted
+     * @param userRole role of the user
      * @return weather the deletion of the enclosure was successful or not
      */
     @DELETE
@@ -160,12 +208,22 @@ public class EnclosureService {
     public Response deleteEnclosure(
             @NotEmpty
             @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
-            @QueryParam("enclosureUUID") String enclosureUUID
+            @QueryParam("enclosureUUID") String enclosureUUID,
+            @CookieParam("userRole") String userRole
     ) {
-        DataHandler.getInstance().deleteEnclosure(enclosureUUID);
+        int httpStatus;
+        String message = "";
+        if(userRole == null || AES256.decrypt(userRole).equals("guest") || AES256.decrypt(userRole).equals("user")){
+            httpStatus = 401;
+            message = "Deletion of enclosure failed, try as a different user again";
+        }else {
+            DataHandler.getInstance().deleteEnclosure(enclosureUUID);
+            httpStatus = 200;
+            message = "Deletion of Gehege successful";
+        }
         return Response
-                .status(200)
-                .entity("Deletion of Gehege successful")
+                .status(httpStatus)
+                .entity(message)
                 .build();
     }
 }

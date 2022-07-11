@@ -252,6 +252,7 @@ public class DataHandler {
      */
     private void writeGehegeJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
+
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
@@ -403,15 +404,24 @@ public class DataHandler {
         }
     }
 
-    public String readUserRole(String username, String password) {
+    public User readUserRole(String username, String password) {
         for (User user : getUserList()) {
             if (user.getUsername().equals(username) &&
                     user.getPassword().equals(password)) {
-                return user.getUsername();
+                return user;
             }
 
         }
-        return "guest";
+        return new User("", "", "", "guest", "");
+    }
+    public User readUser(String username){
+        for (User user : getUserList()) {
+            if (user.getUsername().equals(username)) {
+                return user;
+            }
+
+        }
+        return new User("", "", "", "guest", "");
     }
 
 

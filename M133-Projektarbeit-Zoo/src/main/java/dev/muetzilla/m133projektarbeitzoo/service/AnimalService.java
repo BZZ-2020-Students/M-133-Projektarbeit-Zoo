@@ -2,6 +2,7 @@ package dev.muetzilla.m133projektarbeitzoo.service;
 
 import dev.muetzilla.m133projektarbeitzoo.data.DataHandler;
 import dev.muetzilla.m133projektarbeitzoo.model.Animal;
+import dev.muetzilla.m133projektarbeitzoo.util.AES256;
 import jakarta.validation.constraints.*;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -30,10 +31,19 @@ public class AnimalService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listAnimal() {
-        List<Animal> tierliste = DataHandler.getInstance().readAllAnimals();
+    public Response listAnimal(
+            @CookieParam("userRole") String userRole
+    ) {
+        List<Animal> tierliste = null;
+        int httpStatus;
+        if(userRole == null || AES256.decrypt(userRole).equals("guest")){
+            httpStatus = 401;
+        }else {
+            tierliste = DataHandler.getInstance().readAllAnimals();
+            httpStatus = 200;
+        }
         return Response
-                .status(200)
+                .status(httpStatus)
                 .entity(tierliste)
                 .build();
     }
@@ -41,6 +51,7 @@ public class AnimalService {
     /**
      *
      * @param tierUUID the UUID of the animal that should be read
+     * @param userRole role of the user
      * @return the animal which has the UUID passed as parameter
      */
     @GET
@@ -48,17 +59,24 @@ public class AnimalService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response readAnimal(
             @NotEmpty
-                @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
-            @QueryParam("uuid") String tierUUID
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
+            @QueryParam("uuid") String tierUUID,
+            @CookieParam("userRole") String userRole
     ) {
         int httpStatus = 200;
-        Animal tier = DataHandler.getInstance().readAnimalByUUID(tierUUID);
-        if (tier == null) {
-            httpStatus = 410;
+        Animal animal = null;
+        if(userRole == null || AES256.decrypt(userRole).equals("guest")){
+            httpStatus = 401;
+        }else {
+            animal = DataHandler.getInstance().readAnimalByUUID(tierUUID);
+            if (animal == null) {
+                httpStatus = 410;
+            }
         }
+
         return Response
                 .status(httpStatus)
-                .entity(tier)
+                .entity(animal)
                 .build();
     }
 
@@ -73,6 +91,7 @@ public class AnimalService {
      * @param biotop the natural biotop the animals would live in
      * @param kindOfAnimal the kind of this animal
      * @param enclosureUUID the UUID in which this animal lives
+     * @param userRole role of the user
      * @return a message weather the creation of a new animal was successful or not
      */
     @POST
@@ -114,28 +133,40 @@ public class AnimalService {
 
             @NotEmpty
             @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
-            @FormParam("enclosureUUID") String enclosureUUID
+            @FormParam("enclosureUUID") String enclosureUUID,
+
+            @CookieParam("userRole") String userRole
     ) {
-        Animal animal = new Animal();
-        animal.setAnimalUUID(UUID.randomUUID().toString());
-        animal.setName(name);
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.GERMANY);
-        try {
-            animal.setBirthday(formatter.parse(birthday));
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
+        int httpStatus;
+        String message = "";
+
+        if(userRole == null || AES256.decrypt(userRole).equals("guest") || AES256.decrypt(userRole).equals("user")){
+            httpStatus = 401;
+            message = "Creation of animal failed, try as a different user again";
+        }else {
+            Animal animal = new Animal();
+            animal.setAnimalUUID(UUID.randomUUID().toString());
+            animal.setName(name);
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.GERMANY);
+            try {
+                animal.setBirthday(formatter.parse(birthday));
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
+            animal.setAmountOfLegs(amountOfLegs);
+            animal.setGender(gender);
+            animal.setFeed(feed);
+            animal.setKindOfEnclosure(kindOfEnclosure);
+            animal.setBiotop(biotop);
+            animal.setKindOfAnimal(kindOfAnimal);
+            animal.setEnclosureUUID(enclosureUUID);
+            DataHandler.getInstance().insertAnimal(animal);
+            httpStatus = 200;
+            message = "Creation of animal successful";
         }
-        animal.setAmountOfLegs(amountOfLegs);
-        animal.setGender(gender);
-        animal.setFeed(feed);
-        animal.setKindOfEnclosure(kindOfEnclosure);
-        animal.setBiotop(biotop);
-        animal.setKindOfAnimal(kindOfAnimal);
-        animal.setEnclosureUUID(enclosureUUID);
-        DataHandler.getInstance().insertAnimal(animal);
         return Response
-                .status(200)
-                .entity("Creation of animal successful")
+                .status(httpStatus)
+                .entity(message)
                 .build();
     }
     /**
@@ -149,6 +180,7 @@ public class AnimalService {
      * @param biotop the natural biotop the animals would live in
      * @param kindOfAnimal the kind of this animal
      * @param enclosureUUID the UUID in which this animal lives
+     * @param userRole role of the user
      * @return a message weather the update of an animal was successful or not
      */
     @PUT
@@ -194,34 +226,44 @@ public class AnimalService {
 
             @NotEmpty
             @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
-            @FormParam("enclosureUUID") String enclosureUUID)
-            {
-                Animal animal = DataHandler.getInstance().readAnimalByUUID(animalUUID);
-                animal.setName(name);
-                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.GERMANY);
-                try {
-                    animal.setBirthday(formatter.parse(birthday));
-                } catch (ParseException e) {
-                    throw new RuntimeException(e);
-                }
-                animal.setAmountOfLegs(amountOfLegs);
-                animal.setGender(gender);
-                animal.setFeed(feed);
-                animal.setKindOfEnclosure(kindOfEnclosure);
-                animal.setBiotop(biotop);
-                animal.setKindOfAnimal(kindOfAnimal);
-                animal.setEnclosureUUID(enclosureUUID);
-                DataHandler.getInstance().updateAnimal();
-
+            @FormParam("enclosureUUID") String enclosureUUID,
+            @CookieParam("userRole") String userRole
+    ) {
+        int httpStatus;
+        String message = "";
+        if(userRole == null || AES256.decrypt(userRole).equals("guest") || AES256.decrypt(userRole).equals("user")){
+            httpStatus = 401;
+            message = "Update of animal failed, try as a different user again";
+        }else {
+            Animal animal = DataHandler.getInstance().readAnimalByUUID(animalUUID);
+            animal.setName(name);
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.GERMANY);
+            try {
+                animal.setBirthday(formatter.parse(birthday));
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
+            animal.setAmountOfLegs(amountOfLegs);
+            animal.setGender(gender);
+            animal.setFeed(feed);
+            animal.setKindOfEnclosure(kindOfEnclosure);
+            animal.setBiotop(biotop);
+            animal.setKindOfAnimal(kindOfAnimal);
+            animal.setEnclosureUUID(enclosureUUID);
+            DataHandler.getInstance().updateAnimal();
+            httpStatus = 200;
+            message = "Update of animal successful";
+        }
                 return Response
-                .status(200)
-                .entity("Update of animal successful")
+                .status(httpStatus)
+                .entity(message)
                 .build();
     }
 
     /**
      *
      * @param animalUUID the UUID of the animal that should be deleted
+     * @param userRole role of the user
      * @return weather the deletion of the animal was successful or not
      */
     @DELETE
@@ -230,12 +272,24 @@ public class AnimalService {
     public Response deleteAnimal(
             @NotEmpty
             @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
-            @QueryParam("animalUUID") String animalUUID
+            @QueryParam("animalUUID") String animalUUID,
+            @CookieParam("userRole") String userRole
+
     ) {
-        DataHandler.getInstance().deleteAnimal(animalUUID);
+        int httpStatus;
+        String message = "";
+
+        if(userRole == null || AES256.decrypt(userRole).equals("guest") || AES256.decrypt(userRole).equals("user")){
+            httpStatus = 401;
+            message = "Deletion of animal failed, try as a different user again";
+        }else {
+            DataHandler.getInstance().deleteAnimal(animalUUID);
+            httpStatus = 200;
+            message = "Deletion of animal successful";
+        }
         return Response
-                .status(200)
-                .entity("Deletion of animal successful")
+                .status(httpStatus)
+                .entity(message)
                 .build();
     }
 }

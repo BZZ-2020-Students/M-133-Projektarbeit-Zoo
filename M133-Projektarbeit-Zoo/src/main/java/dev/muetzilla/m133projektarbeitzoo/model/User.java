@@ -5,6 +5,7 @@ public class User {
     private String username;
     private String password;
     private String role;
+    private String recoverySentence;
 
     /**
      * Default constructor
@@ -20,11 +21,12 @@ public class User {
      * @param password for a user hashed with SHA256
      * @param role the user has
      */
-    public User(String userUUID, String username, String password, String role) {
+    public User(String userUUID, String username, String password, String role, String recoverySentence) {
         this.userUUID = userUUID;
         this.username = username;
         this.password = password;
         this.role = role;
+        this.recoverySentence = recoverySentence;
     }
 
     /**
@@ -105,5 +107,22 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    /**
+     *
+     * @return the recovery sentence of for an user
+     */
+    public String getRecoverySentence() {
+        return recoverySentence;
+    }
+
+
+    /**
+     *
+     * @param recoverySentence the sentence used for 2FA
+     */
+    public void setRecoverySentence(String recoverySentence) {
+        this.recoverySentence = recoverySentence;
     }
 }
