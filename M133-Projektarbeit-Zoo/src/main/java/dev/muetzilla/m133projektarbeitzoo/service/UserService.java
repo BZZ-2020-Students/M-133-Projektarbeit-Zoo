@@ -76,7 +76,6 @@ public class UserService {
      *
      * @param recoverySentence the sentence only the user knows for 2FA
      * @param username username of the user
-     * @param userRole role of the user
      * @return if hte 2FA was successful
      */
     @POST
@@ -84,22 +83,19 @@ public class UserService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response authenticateUser(
             @FormParam("recoverySentence") String recoverySentence,
-            @FormParam("username") String username,
-            @CookieParam("userRole")String userRole) {
+            @FormParam("username") String username) {
         User user = DataHandler.getInstance().readUser(username);
         int httpStatus;
         String returnMessage = "";
-        if(userRole.equals("guest")){
-            httpStatus = 401;
+
+        if(user.getRecoverySentence().equals(recoverySentence)){
+            httpStatus = 200;
+            returnMessage += "Recovery sentence was correct";
         }else{
-            if(user.getRecoverySentence().equals(recoverySentence)){
-                httpStatus = 200;
-                returnMessage += "Recovery sentence was correct";
-            }else{
-                httpStatus = 401;
-                returnMessage += "2Factor Authentication failed, please try again";
-            }
+            httpStatus = 401;
+            returnMessage += "2Factor Authentication failed, please try again";
         }
+
 
         return Response
                 .status(httpStatus)
