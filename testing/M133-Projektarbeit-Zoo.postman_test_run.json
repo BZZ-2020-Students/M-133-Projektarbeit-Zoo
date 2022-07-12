@@ -1,18 +1,126 @@
 {
-	"id": "774ae11d-3755-4e5c-a776-4e770609beda",
+	"id": "c73152e0-94da-4a33-9b4b-2ad37c3d9bec",
 	"name": "M133-Projektarbeit-Zoo",
-	"timestamp": "2022-06-19T19:51:37.347Z",
+	"timestamp": "2022-07-12T15:46:35.671Z",
 	"collection_id": "20897198-bef27f0a-08a1-4872-8256-009ec8acbb20",
 	"folder_id": 0,
 	"environment_id": "0",
-	"totalPass": 103,
+	"totalPass": 108,
 	"totalFail": 0,
 	"results": [
+		{
+			"id": "3e3d1795-dbb8-4d99-9f34-4b89dcab5d76",
+			"name": "User Login Wrong User Login",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/user/login",
+			"time": 1297,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"User logged in with wrong login": true
+			},
+			"testPassFailCounts": {
+				"User logged in with wrong login": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1297
+			],
+			"allTests": [
+				{
+					"User logged in with wrong login": true
+				}
+			]
+		},
+		{
+			"id": "41750073-11be-4691-955e-2fc9e5a7c909",
+			"name": "User Login Correct User Login",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/user/login",
+			"time": 65,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"User logged in with correct login": true
+			},
+			"testPassFailCounts": {
+				"User logged in with correct login": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				65
+			],
+			"allTests": [
+				{
+					"User logged in with correct login": true
+				}
+			]
+		},
+		{
+			"id": "ed57d9af-1b87-442c-b4c3-7a628a30adb7",
+			"name": "User Loggin 2FA wrong Sentence",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/user/authentication",
+			"time": 5,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"2FA for user was wrong": true
+			},
+			"testPassFailCounts": {
+				"2FA for user was wrong": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"2FA for user was wrong": true
+				}
+			]
+		},
+		{
+			"id": "6d225552-1da5-410d-a21a-1547480cffb5",
+			"name": "User Loggin 2FA correct Sentence",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/user/authentication",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"2FA for user was correct": true
+			},
+			"testPassFailCounts": {
+				"2FA for user was correct": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"2FA for user was correct": true
+				}
+			]
+		},
 		{
 			"id": "d64708ae-0a6b-4da0-8449-28edf48b3314",
 			"name": "Test Single Enclosure - Fail",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/read?uuid=test1234",
-			"time": 60,
+			"time": 61,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -27,7 +135,7 @@
 				}
 			},
 			"times": [
-				60
+				61
 			],
 			"allTests": [
 				{
@@ -39,7 +147,7 @@
 			"id": "75f424f4-58ae-4c44-b798-0016762c7638",
 			"name": "Test Single Zoo - Fail",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=test1234",
-			"time": 7,
+			"time": 9,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -54,7 +162,7 @@
 				}
 			},
 			"times": [
-				7
+				9
 			],
 			"allTests": [
 				{
@@ -66,7 +174,7 @@
 			"id": "a5fd6a7f-613b-43b9-8fa0-5e854d14d3e8",
 			"name": "Test Single Animal- Fail",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/read?uuid=test1234",
-			"time": 15,
+			"time": 18,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -81,7 +189,7 @@
 				}
 			},
 			"times": [
-				15
+				18
 			],
 			"allTests": [
 				{
@@ -93,7 +201,7 @@
 			"id": "265768b6-0dec-4d00-82df-fb0465def465",
 			"name": "Test Single Animal- Success",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/read?uuid=f369d306-d8f2-11ec-9d64-0242ac120002",
-			"time": 882,
+			"time": 147,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -108,7 +216,7 @@
 				}
 			},
 			"times": [
-				882
+				147
 			],
 			"allTests": [
 				{
@@ -120,7 +228,7 @@
 			"id": "ecba0a86-7cde-4cee-9738-4de240fbe118",
 			"name": "Test Animal List - Success",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/list/",
-			"time": 6,
+			"time": 21,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -135,7 +243,7 @@
 				}
 			},
 			"times": [
-				6
+				21
 			],
 			"allTests": [
 				{
@@ -147,7 +255,7 @@
 			"id": "89c1a5e7-2aa6-43ea-80e3-8eab0f08a710",
 			"name": "Test Single Enclosure- Success",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/read?uuid=9b45446c-d8ed-11ec-9d64-0242ac120002",
-			"time": 4,
+			"time": 20,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -162,7 +270,7 @@
 				}
 			},
 			"times": [
-				4
+				20
 			],
 			"allTests": [
 				{
@@ -174,7 +282,7 @@
 			"id": "b2d72e51-1c13-4e53-8ae7-16f167b6cf9c",
 			"name": "Test Zoo List - Success",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/list/",
-			"time": 3,
+			"time": 19,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -189,7 +297,7 @@
 				}
 			},
 			"times": [
-				3
+				19
 			],
 			"allTests": [
 				{
@@ -201,7 +309,7 @@
 			"id": "08846ad0-33ca-4534-a1e4-e843bfcc808c",
 			"name": "Test Single Zoo - Success",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/read?uuid=fe18f574-d803-11ec-9d64-0242ac120002",
-			"time": 3,
+			"time": 20,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -216,7 +324,7 @@
 				}
 			},
 			"times": [
-				3
+				20
 			],
 			"allTests": [
 				{
@@ -228,7 +336,7 @@
 			"id": "c9321f5c-de96-40cf-917d-63d942e1c95d",
 			"name": "Test  EnclosureList - Success",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/list/",
-			"time": 4,
+			"time": 20,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -243,7 +351,7 @@
 				}
 			},
 			"times": [
-				4
+				20
 			],
 			"allTests": [
 				{
@@ -255,7 +363,7 @@
 			"id": "0b7e616a-fe14-4d9a-805f-3e1b1ac2b638",
 			"name": "Create Zoo Correct Values",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/create/",
-			"time": 20,
+			"time": 271,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -270,7 +378,7 @@
 				}
 			},
 			"times": [
-				20
+				271
 			],
 			"allTests": [
 				{
@@ -363,7 +471,7 @@
 			"id": "42ce65f3-f8b5-414e-a0ed-b97c8ed02f99",
 			"name": "Create Enclosure",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
-			"time": 6,
+			"time": 44,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -378,7 +486,7 @@
 				}
 			},
 			"times": [
-				6
+				44
 			],
 			"allTests": [
 				{
@@ -390,7 +498,7 @@
 			"id": "32b7f1ac-ae26-4538-9498-234962be9ee5",
 			"name": "Create Enclosure to Low Length",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
-			"time": 14,
+			"time": 15,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -405,7 +513,7 @@
 				}
 			},
 			"times": [
-				14
+				15
 			],
 			"allTests": [
 				{
@@ -444,7 +552,7 @@
 			"id": "497c7753-6327-4e1b-b507-d9a3d3604f51",
 			"name": "Create Enclosure Empty Length",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
-			"time": 5,
+			"time": 6,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -459,7 +567,7 @@
 				}
 			},
 			"times": [
-				5
+				6
 			],
 			"allTests": [
 				{
@@ -552,7 +660,7 @@
 			"id": "d95a5011-3598-4375-8e66-8604ebb41fd4",
 			"name": "Create Enclosure To Long Kind of Enclosure",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
-			"time": 5,
+			"time": 6,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -567,7 +675,7 @@
 				}
 			},
 			"times": [
-				5
+				6
 			],
 			"allTests": [
 				{
@@ -633,7 +741,7 @@
 			"id": "842578de-ae9c-4780-abb1-98c1cdf974f3",
 			"name": "Create Enclosure Wrong Pattern for Zoo UUID",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
-			"time": 5,
+			"time": 4,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -648,7 +756,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -660,7 +768,7 @@
 			"id": "ba31c42a-a06b-4685-b09c-2327ea808e28",
 			"name": "Create Enclosure Empty Zoo UUID",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/create",
-			"time": 4,
+			"time": 5,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -675,7 +783,7 @@
 				}
 			},
 			"times": [
-				4
+				5
 			],
 			"allTests": [
 				{
@@ -687,7 +795,7 @@
 			"id": "47286292-330c-4f8f-9b24-573ff32971b6",
 			"name": "Create Animal Correct Values",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
-			"time": 11,
+			"time": 43,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -702,7 +810,7 @@
 				}
 			},
 			"times": [
-				11
+				43
 			],
 			"allTests": [
 				{
@@ -768,7 +876,7 @@
 			"id": "bfaa9dbc-6410-4185-8e7c-fa429a7c841e",
 			"name": "Create Animal with Empty Name",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
-			"time": 6,
+			"time": 5,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -783,7 +891,7 @@
 				}
 			},
 			"times": [
-				6
+				5
 			],
 			"allTests": [
 				{
@@ -822,7 +930,7 @@
 			"id": "9e974c67-6a75-4a9f-9d50-fd7139146ae4",
 			"name": "Create Animal Birthday is Empty",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
-			"time": 5,
+			"time": 4,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -837,7 +945,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -903,7 +1011,7 @@
 			"id": "506e81fe-4d06-4031-ad6f-9be5bc63b589",
 			"name": "Create Animal Amount of Legs is Empty",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
-			"time": 4,
+			"time": 5,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -918,7 +1026,7 @@
 				}
 			},
 			"times": [
-				4
+				5
 			],
 			"allTests": [
 				{
@@ -930,7 +1038,7 @@
 			"id": "b6e88d76-bc39-410f-9ba8-71e874637b2a",
 			"name": "Create Animal Gender is Empty & To Small",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
-			"time": 5,
+			"time": 4,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -945,7 +1053,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -957,7 +1065,7 @@
 			"id": "64c71315-1c89-41db-9e17-e779a6c899c9",
 			"name": "Create Animal Gender is To Large",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
-			"time": 4,
+			"time": 5,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -972,7 +1080,7 @@
 				}
 			},
 			"times": [
-				4
+				5
 			],
 			"allTests": [
 				{
@@ -1011,7 +1119,7 @@
 			"id": "f616b979-0ee1-41d4-94bd-70cf01917ec3",
 			"name": "Create Animal Feed to Large",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
-			"time": 5,
+			"time": 4,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1026,7 +1134,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -1065,7 +1173,7 @@
 			"id": "ef66c646-b412-41c0-b351-eca70d27f0f0",
 			"name": "Create Animal Kind of Enclosure is to Short",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
-			"time": 4,
+			"time": 5,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1080,7 +1188,7 @@
 				}
 			},
 			"times": [
-				4
+				5
 			],
 			"allTests": [
 				{
@@ -1173,7 +1281,7 @@
 			"id": "a3ad4eed-e415-4742-8a7d-9a457a9c5882",
 			"name": "Create Animal Biotop is to Large",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/create/",
-			"time": 5,
+			"time": 4,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1188,7 +1296,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -1362,7 +1470,7 @@
 			"id": "8960c0b1-aa96-4e3a-b2e8-28cfc0d281a9",
 			"name": "Update Zoo",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/update/",
-			"time": 5,
+			"time": 37,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1377,7 +1485,7 @@
 				}
 			},
 			"times": [
-				5
+				37
 			],
 			"allTests": [
 				{
@@ -1524,7 +1632,7 @@
 			"id": "161cb0ed-17dd-4546-9243-823041eac228",
 			"name": "Update Enclosure",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update/",
-			"time": 6,
+			"time": 37,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1539,7 +1647,7 @@
 				}
 			},
 			"times": [
-				6
+				37
 			],
 			"allTests": [
 				{
@@ -1605,7 +1713,7 @@
 			"id": "3a7dca1a-6c45-486e-82db-d31e3462c7b0",
 			"name": "Update Enclosure to Low Length",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
-			"time": 5,
+			"time": 4,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1620,7 +1728,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -1713,7 +1821,7 @@
 			"id": "121b9a0f-3629-4bd4-a19a-0bed1cfd87d8",
 			"name": "Update Enclosure To Low Width",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
-			"time": 5,
+			"time": 4,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1728,7 +1836,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -1767,7 +1875,7 @@
 			"id": "cd91e1a0-95a6-4a35-ab97-69a4d88533e5",
 			"name": "Update Enclosure To Long Kind of Enclosure",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
-			"time": 4,
+			"time": 5,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1782,7 +1890,7 @@
 				}
 			},
 			"times": [
-				4
+				5
 			],
 			"allTests": [
 				{
@@ -1848,7 +1956,7 @@
 			"id": "06cf6041-3810-460e-b024-de312fb043b0",
 			"name": "Update Enclosure Wrong Pattern Zoo UUID",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
-			"time": 5,
+			"time": 4,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1863,7 +1971,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -1875,7 +1983,7 @@
 			"id": "924d9c0d-9c00-4fb6-8c03-5401af8a7478",
 			"name": "Update Enclosure Empty  Zoo UUID",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/update",
-			"time": 5,
+			"time": 4,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1890,7 +1998,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -1902,7 +2010,7 @@
 			"id": "cac28360-b0e3-42d9-95ef-c19e83c032c8",
 			"name": "Update Animal Correct Values Copy",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
-			"time": 7,
+			"time": 41,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1917,7 +2025,7 @@
 				}
 			},
 			"times": [
-				7
+				41
 			],
 			"allTests": [
 				{
@@ -1956,7 +2064,7 @@
 			"id": "4802d134-90d8-4af4-ad7b-0d694c7b2cbc",
 			"name": "Update Animal Empty Animal UUID",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
-			"time": 4,
+			"time": 5,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -1971,7 +2079,7 @@
 				}
 			},
 			"times": [
-				4
+				5
 			],
 			"allTests": [
 				{
@@ -2091,7 +2199,7 @@
 			"id": "743537ea-9f86-4a87-8b60-a76f57f4bbea",
 			"name": "Update Animal Empty Birthday",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
-			"time": 5,
+			"time": 4,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -2106,7 +2214,7 @@
 				}
 			},
 			"times": [
-				5
+				4
 			],
 			"allTests": [
 				{
@@ -2415,7 +2523,7 @@
 			"id": "905d8f17-578a-4f1a-899f-e012e8281271",
 			"name": "Update Animal With To Short Biotop",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
-			"time": 4,
+			"time": 5,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -2430,7 +2538,7 @@
 				}
 			},
 			"times": [
-				4
+				5
 			],
 			"allTests": [
 				{
@@ -2496,7 +2604,7 @@
 			"id": "eb35fbc1-f1b8-4e05-b1aa-e58b68eac109",
 			"name": "Update Animal With To Short Kind Of Animal",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
-			"time": 4,
+			"time": 5,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -2511,7 +2619,7 @@
 				}
 			},
 			"times": [
-				4
+				5
 			],
 			"allTests": [
 				{
@@ -2550,7 +2658,7 @@
 			"id": "0b40745a-8342-4f14-9ff6-c5a5c74a59e8",
 			"name": "Update Animal With Empty Kind of Animal",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/update/",
-			"time": 4,
+			"time": 5,
 			"responseCode": {
 				"code": 400,
 				"name": "Bad Request"
@@ -2565,7 +2673,7 @@
 				}
 			},
 			"times": [
-				4
+				5
 			],
 			"allTests": [
 				{
@@ -2631,7 +2739,7 @@
 			"id": "89cb1853-c31b-43b5-9809-7fc4954972f9",
 			"name": "DeleteZoo",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/zoo/delete/?zooUUID=27ce62bf-1270-4936-8f1a-c8b3fa92e498",
-			"time": 4,
+			"time": 36,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -2646,7 +2754,7 @@
 				}
 			},
 			"times": [
-				4
+				36
 			],
 			"allTests": [
 				{
@@ -2685,7 +2793,7 @@
 			"id": "c5d4ed9f-3523-493a-83a4-65d899ecb597",
 			"name": "Delete Gehege",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/enclosure/delete?enclosureUUID=365c3daf-9ff2-4dee-aafe-545457e2f151",
-			"time": 4,
+			"time": 37,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -2700,7 +2808,7 @@
 				}
 			},
 			"times": [
-				4
+				37
 			],
 			"allTests": [
 				{
@@ -2766,7 +2874,7 @@
 			"id": "cbf4feb6-a44b-49f3-9906-b086bba67b98",
 			"name": "Delete Animal",
 			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/animal/delete?animalUUID=e5a3c7fd-5440-4ce8-90ad-30379665fc2c",
-			"time": 5,
+			"time": 39,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -2781,19 +2889,62 @@
 				}
 			},
 			"times": [
-				5
+				39
 			],
 			"allTests": [
 				{
 					"Test Status delete animal with invalid UUID": true
 				}
 			]
+		},
+		{
+			"id": "b9050eff-6583-4638-bba7-4f5d2cfafc27",
+			"name": "Logoff User",
+			"url": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/user/logoff",
+			"time": 20,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"User logoff was successful": true
+			},
+			"testPassFailCounts": {
+				"User logoff was successful": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				20
+			],
+			"allTests": [
+				{
+					"User logoff was successful": true
+				}
+			]
 		}
 	],
 	"count": 1,
-	"totalTime": 1424,
+	"totalTime": 2685,
 	"collection": {
 		"requests": [
+			{
+				"id": "3e3d1795-dbb8-4d99-9f34-4b89dcab5d76",
+				"method": "POST"
+			},
+			{
+				"id": "41750073-11be-4691-955e-2fc9e5a7c909",
+				"method": "POST"
+			},
+			{
+				"id": "ed57d9af-1b87-442c-b4c3-7a628a30adb7",
+				"method": "POST"
+			},
+			{
+				"id": "6d225552-1da5-410d-a21a-1547480cffb5",
+				"method": "POST"
+			},
 			{
 				"id": "d64708ae-0a6b-4da0-8449-28edf48b3314",
 				"method": "GET"
@@ -3205,6 +3356,10 @@
 			{
 				"id": "cbf4feb6-a44b-49f3-9906-b086bba67b98",
 				"method": "DELETE"
+			},
+			{
+				"id": "b9050eff-6583-4638-bba7-4f5d2cfafc27",
+				"method": "GET"
 			}
 		]
 	}

@@ -53,4 +53,15 @@
   "biotop" : "Tundra",
   "kindOfAnimal" : "Braunbär",
   "enclosureUUID" : "9b45446c-d8ed-11ec-9d64-0242ac120002"
+}, {
+  "animalUUID" : "4826cc6d-5f0c-43d8-924c-5fe29a529e76",
+  "name" : "Franz",
+  "birthday" : "2015-11-19",
+  "amountOfLegs" : 4,
+  "gender" : "M",
+  "feed" : "Hering, Barsch",
+  "kindOfEnclosure" : "Trockengehege",
+  "biotop" : "Tundra",
+  "kindOfAnimal" : "Braunbär",
+  "enclosureUUID" : "9b45446c-d8ed-11ec-9d64-0242ac120002"
 } ]

@@ -1,6 +1,8 @@
 package dev.muetzilla.m133projektarbeitzoo.model;
 
-public class User {
+import dev.muetzilla.m133projektarbeitzoo.util.AES256;
+
+public class User{
     private String userUUID;
     private String username;
     private String password;

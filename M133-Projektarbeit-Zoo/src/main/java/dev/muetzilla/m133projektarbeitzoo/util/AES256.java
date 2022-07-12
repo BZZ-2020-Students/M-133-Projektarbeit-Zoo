@@ -19,7 +19,7 @@ public class AES256 {
     private static final String SALT = "ssshhhhhhhhhhh!!!!";
 
 
-    private interface Executable {
+    public interface Executable {
         String execute(IvParameterSpec ivSpec, SecretKeyFactory factory, KeySpec spec, SecretKey tmp, SecretKeySpec secretKey) throws IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException, InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException;
     }
 

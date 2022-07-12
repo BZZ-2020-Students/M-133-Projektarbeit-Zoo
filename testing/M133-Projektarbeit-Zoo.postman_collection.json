@@ -7,6 +7,215 @@
 	},
 	"item": [
 		{
+			"name": "UserLogin",
+			"item": [
+				{
+					"name": "User Login Wrong User Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"User logged in with wrong login\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "MustermannM",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "passworf",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login Correct User Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"User logged in with correct login\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "MustermannM",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Loggin 2FA wrong Sentence",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"2FA for user was wrong\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "MustermannM",
+									"type": "text"
+								},
+								{
+									"key": "recoverySentence",
+									"value": "Eine Maus rennt durch den Garten mit einer Katze als Haustier",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/user/authentication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"user",
+								"authentication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Loggin 2FA correct Sentence",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"2FA for user was correct\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "MustermannM",
+									"type": "text"
+								},
+								{
+									"key": "recoverySentence",
+									"value": "Eine Maus rennt durch den Garten",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/user/authentication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"user",
+								"authentication"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Read",
 			"item": [
 				{
@@ -7499,6 +7708,47 @@
 							"response": []
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "User Logoff",
+			"item": [
+				{
+					"name": "Logoff User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"User logoff was successful\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/M133-Projektarbeit-Zoo-1.0-SNAPSHOT/resource/user/logoff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"M133-Projektarbeit-Zoo-1.0-SNAPSHOT",
+								"resource",
+								"user",
+								"logoff"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
